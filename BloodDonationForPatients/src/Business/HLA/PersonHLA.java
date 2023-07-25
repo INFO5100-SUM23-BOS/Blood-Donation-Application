@@ -23,7 +23,15 @@ public class PersonHLA {
         HLA_B("HLA_B"),
         HLA_C("HLA_C"),
         HLA_DR("HLA_DR"),
-        HLA_DBQ1("HLA_DBQ1");
+        HLA_DBQ1("HLA_DBQ1"),
+        A_POS("A+"),
+        A_NEG("A-"),
+        B_POS("B+"),
+        B_NEG("B-"),
+        AB_POS("AB+"),
+        AB_NEG("AB-"),
+        O_POS("O+"),
+        O_NEG("O-");
         
         private String value;
         private HLAType(String value){

@@ -457,6 +457,7 @@ public class NewDonorJPanel extends javax.swing.JPanel {
         jLabel25.setForeground(new java.awt.Color(255, 255, 255));
         jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel25.setText("Blood Donor Registration Form ");
+        jLabel25.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -980,14 +981,14 @@ JOptionPane.showMessageDialog(null, new JLabel("<html><b>Email ID must be in cor
     }
 
     private void populatebloodTypeComboBox() {
-        bloodTypeComboBox.addItem("A+");
-        bloodTypeComboBox.addItem("A-");
-        bloodTypeComboBox.addItem("B+");
-        bloodTypeComboBox.addItem("B-");
-        bloodTypeComboBox.addItem("AB+");
-        bloodTypeComboBox.addItem("AB-");
-        bloodTypeComboBox.addItem("O+");
-        bloodTypeComboBox.addItem("O-");
+        bloodTypeComboBox.addItem("A_POS");
+        bloodTypeComboBox.addItem("A_NEG");
+        bloodTypeComboBox.addItem("B_POS");
+        bloodTypeComboBox.addItem("B_NEG");
+        bloodTypeComboBox.addItem("AB_POS");
+        bloodTypeComboBox.addItem("AB_NEG");
+        bloodTypeComboBox.addItem("O_POS");
+        bloodTypeComboBox.addItem("O_NEG");
     }//GEN-LAST:event_bloodTypeComboBoxActionPerformed
 
 

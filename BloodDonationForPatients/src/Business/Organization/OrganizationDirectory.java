@@ -52,20 +52,20 @@ public class OrganizationDirectory {
         return organization;
     }
     
-     public Organization createBoneMarrowOrganization(Organization.BoneMarrowBankType bmBankType, String realName){
+     public Organization createBloodDonationOrganization(Organization.BloodDonationBankType bmBankType, String realName){
         Organization organization = null;
-        if (bmBankType.getValue().equals(Organization.BoneMarrowBankType.BoneMarrowBank.getValue())){
-            organization = new Bone_Marrow_Bank_Organization();
+        if (bmBankType.getValue().equals(Organization.BloodDonationBankType.BloodDonationBank.getValue())){
+            organization = new Blood_Donation_Bank_Organization();
             organization.setRealName(realName);
             organizationList.add(organization);
         }
         return organization;
     }
      
-     public Organization createCancerCentreOrganization(Organization.BloodCancerCentreType cancerType, String realName){
+     public Organization createWorldCordBloodOrganization(Organization.WorldCordBloodCenterType cancerType, String realName){
         Organization organization = null;
-        if (cancerType.getValue().equals(Organization.BloodCancerCentreType.BloodCancerCentre.getValue())){
-            organization = new Leukemia_Centre_Organization();
+        if (cancerType.getValue().equals(Organization.WorldCordBloodCenterType.WorldCordBloodCenter.getValue())){
+            organization = new Blood_Centre_Organization();
             organization.setRealName(realName);
             organizationList.add(organization);
         }

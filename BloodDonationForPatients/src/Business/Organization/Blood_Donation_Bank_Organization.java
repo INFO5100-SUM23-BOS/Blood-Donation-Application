@@ -17,11 +17,11 @@ import java.util.HashMap;
  *
  * @author saiku
  */
-public class Bone_Marrow_Bank_Organization extends Organization{
+public class Blood_Donation_Bank_Organization extends Organization{
         HLACount inventory;
     
-    public Bone_Marrow_Bank_Organization() {
-        super(Organization.BoneMarrowBankType.BoneMarrowBank.getValue());
+    public Blood_Donation_Bank_Organization() {
+        super(Organization.BloodDonationBankType.BloodDonationBank.getValue());
         inventory = new HLACount();
         PersonHLA h = new PersonHLA();
         h.updateHLAlist("HLA_A,HLA_B");

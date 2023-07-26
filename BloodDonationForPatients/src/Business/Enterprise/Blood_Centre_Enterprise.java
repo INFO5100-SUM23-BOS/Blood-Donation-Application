@@ -12,10 +12,10 @@ import java.util.ArrayList;
  *
  * @author balumullamuri
  */
-public class Leukemia_Centre_Enterprise extends Enterprise {
+public class Blood_Centre_Enterprise extends Enterprise {
     
-    public Leukemia_Centre_Enterprise(String name){
-        super(name,EnterpriseType.BloodCancerCentre);
+    public Blood_Centre_Enterprise(String name){
+        super(name,EnterpriseType.WorldCordBloodCenter);
     }
     @Override
     public ArrayList<Role> getSupportedRole() {

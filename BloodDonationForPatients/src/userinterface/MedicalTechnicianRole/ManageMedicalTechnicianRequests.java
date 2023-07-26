@@ -11,7 +11,7 @@ import Business.EcoSystem;
 import Magic.Design.*;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
-import Business.Organization.Bone_Marrow_Bank_Organization;
+import Business.Organization.Blood_Donation_Bank_Organization;
 import Business.Organization.Organization;
 import Business.Organization.MedicalTechnicianOrganization;
 import Business.People.Donor;
@@ -463,7 +463,7 @@ public class ManageMedicalTechnicianRequests extends javax.swing.JPanel {
             org.getAllHLAs().add(PersonHLA.createHLA(String.valueOf(txtHLAList.getText())));
             PersonHLA h = new PersonHLA();
             h.updateHLAlist(txtHLAList.getText());
-            ((Bone_Marrow_Bank_Organization)org).getInventory().HLACountAdd(h);
+            ((Blood_Donation_Bank_Organization)org).getInventory().HLACountAdd(h);
           }
         catch( NullPointerException ex   )
           { System.out.println("");

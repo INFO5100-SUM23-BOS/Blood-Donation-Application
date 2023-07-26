@@ -9,7 +9,7 @@ import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
-import Business.Organization.Bone_Marrow_Bank_Organization;
+import Business.Organization.Blood_Donation_Bank_Organization;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Color;
@@ -37,13 +37,13 @@ public class BoneMarrowBankCoordinatorWorkAreaJPanel extends javax.swing.JPanel 
      */
     boolean a = true;
     private UserAccount userAccount;
-    private Bone_Marrow_Bank_Organization bmBankOrganization;
+    private Blood_Donation_Bank_Organization bmBankOrganization;
     private Enterprise enterprise;
     private EcoSystem system;
     private Network network;
     private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
     
-    public BoneMarrowBankCoordinatorWorkAreaJPanel(UserAccount account, Bone_Marrow_Bank_Organization bmBankOrganization, Enterprise enterprise, EcoSystem business, Network network) {
+    public BoneMarrowBankCoordinatorWorkAreaJPanel(UserAccount account, Blood_Donation_Bank_Organization bmBankOrganization, Enterprise enterprise, EcoSystem business, Network network) {
         initComponents();
         this.userAccount = account;
         this.bmBankOrganization = bmBankOrganization;

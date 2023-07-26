@@ -12,10 +12,10 @@ import java.util.ArrayList;
  *
  * @author balumullamuri
  */
-public class Bone_Marrow_Bank_Enterprise extends Enterprise {
+public class Blood_Donation_Bank_Enterprise extends Enterprise {
     
-    public Bone_Marrow_Bank_Enterprise(String name){
-        super(name,EnterpriseType.BoneMarrowBank);
+    public Blood_Donation_Bank_Enterprise(String name){
+        super(name,EnterpriseType.BloodDonationBank);
     }
     @Override
     public ArrayList<Role> getSupportedRole() {

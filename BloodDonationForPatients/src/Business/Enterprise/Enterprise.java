@@ -25,18 +25,17 @@ public abstract class Enterprise extends Organization{
         return organizationDirectory;
     }
     
-    public enum EnterpriseType{
+  public enum EnterpriseType {
         Hospital("Hospital"),
-        BoneMarrowBank("BoneMarrowBank"),
+        BloodDonationBank("BloodDonationBank"), // Changed from BoneMarrowBank to BloodDonationBank
         Legal("Legal"),
-        BloodCancerCentre("BloodCancerCentre"),
+        WorldCordBloodCenter("WorldCordBloodCenter"), // Changed from BloodCancerCentre to WorldCordBloodCenter
         HRSA("Government");
-        
         
         private String value;
         
-        private EnterpriseType(String value){
-            this.value=value;
+        private EnterpriseType(String value) {
+            this.value = value;
         }
         public String getValue() {
             return value;

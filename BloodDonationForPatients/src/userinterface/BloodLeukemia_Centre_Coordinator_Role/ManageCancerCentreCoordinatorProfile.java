@@ -5,7 +5,7 @@
  */
 package userinterface.BloodLeukemia_Centre_Coordinator_Role;
 import Business.Enterprise.Enterprise;
-import Business.Organization.Blood_Centre_Organization;
+import Business.Organization.Leukemia_Centre_Organization;
 import Business.Organization.GovernmentOrganization;
 import Business.UserAccount.UserAccount;
 import Magic.Design.MyJButton;
@@ -25,11 +25,11 @@ public class ManageCancerCentreCoordinatorProfile extends javax.swing.JPanel {
      private UserAccount userAccount;
      private Enterprise enterprise ;
      private GovernmentOrganization govtOrganization;
-     private Blood_Centre_Organization cancerCentreOrganization;
+     private Leukemia_Centre_Organization cancerCentreOrganization;
     
 
 
-    ManageCancerCentreCoordinatorProfile(UserAccount userAccount, Blood_Centre_Organization cancerCentreOrganization, Enterprise enterprise) {
+    ManageCancerCentreCoordinatorProfile(UserAccount userAccount, Leukemia_Centre_Organization cancerCentreOrganization, Enterprise enterprise) {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
          initComponents();
         this.userAccount = userAccount;

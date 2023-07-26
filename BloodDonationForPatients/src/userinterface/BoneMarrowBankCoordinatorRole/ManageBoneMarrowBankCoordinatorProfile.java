@@ -9,7 +9,7 @@ import userinterface.DoctorRole.*;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Organization.DoctorOrganization;
-import Business.Organization.Blood_Donation_Bank_Organization;
+import Business.Organization.Bone_Marrow_Bank_Organization;
 import Business.UserAccount.UserAccount;
 import Magic.Design.*;
 import java.util.Date;
@@ -23,9 +23,9 @@ public class ManageBoneMarrowBankCoordinatorProfile extends javax.swing.JPanel {
      
      private UserAccount userAccount;
      private Enterprise enterprise ;
-     private Blood_Donation_Bank_Organization bmBankOrganization;
+     private Bone_Marrow_Bank_Organization bmBankOrganization;
     
-    public ManageBoneMarrowBankCoordinatorProfile(UserAccount userAccount, Blood_Donation_Bank_Organization bmBankOrganization, Enterprise enterprise) {
+    public ManageBoneMarrowBankCoordinatorProfile(UserAccount userAccount, Bone_Marrow_Bank_Organization bmBankOrganization, Enterprise enterprise) {
         initComponents();
         this.userAccount = userAccount;
         this.enterprise = enterprise;

@@ -12,7 +12,7 @@ import Business.Employee.Employee;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
 import Business.Organization.Organization;
-import Business.Organization.Blood_Donation_Bank_Organization;
+import Business.Organization.Bone_Marrow_Bank_Organization;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.WorkRequest;
 import Magic.Design.*;
@@ -251,7 +251,7 @@ public class PatientConsentJPanel extends javax.swing.JPanel {
         }
         
         for (Organization organization : ent.getOrganizationDirectory().getOrganizationList()) {
-            if(organization instanceof Blood_Donation_Bank_Organization) {
+            if(organization instanceof Bone_Marrow_Bank_Organization) {
                 org = organization;
                 break;
             }

@@ -8,7 +8,7 @@ import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
 import Business.Organization.Organization;
-import Business.Organization.Blood_Donation_Bank_Organization;
+import Business.Organization.Bone_Marrow_Bank_Organization;
 import Business.UserAccount.UserAccount;
 
 import javax.swing.JPanel;
@@ -22,6 +22,6 @@ public class Bone_Marrow_Bank_CoordinatorRole extends Role {
     
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business, Network network) {
-        return new BoneMarrowBankCoordinatorWorkAreaJPanel(account, (Blood_Donation_Bank_Organization)organization, enterprise, business, network);
+        return new BoneMarrowBankCoordinatorWorkAreaJPanel(account, (Bone_Marrow_Bank_Organization)organization, enterprise, business, network);
     }
 }

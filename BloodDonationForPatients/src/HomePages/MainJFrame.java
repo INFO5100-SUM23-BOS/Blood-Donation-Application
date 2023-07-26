@@ -112,12 +112,6 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
-        userNameJTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                userNameJTextFieldActionPerformed(evt);
-            }
-        });
-
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Password");
@@ -350,10 +344,6 @@ public class MainJFrame extends javax.swing.JFrame {
         new DonorReceiverFramePage("receiver", system).show();
 //        imgHope.setVisible(false);
     }//GEN-LAST:event_patientRegistrationBtnActionPerformed
-
-    private void userNameJTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userNameJTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_userNameJTextFieldActionPerformed
 
     /**
      * @param args the command line arguments

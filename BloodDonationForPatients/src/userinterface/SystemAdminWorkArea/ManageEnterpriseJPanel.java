@@ -111,6 +111,12 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
 
         jPanel1.setBackground(new java.awt.Color(241, 250, 238));
 
+        enterpriseTypeJComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                enterpriseTypeJComboBoxActionPerformed(evt);
+            }
+        });
+
         txtName.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtName.setPreferredSize(new java.awt.Dimension(6, 30));
         txtName.addActionListener(new java.awt.event.ActionListener() {
@@ -478,6 +484,10 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         JOptionPane.showMessageDialog(null, new JLabel("<html><b>Network Name can not be found!</b></html>") , "Error", JOptionPane.ERROR_MESSAGE);
 
     }//GEN-LAST:event_btnDeleteActionPerformed
+
+    private void enterpriseTypeJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterpriseTypeJComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_enterpriseTypeJComboBoxActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -26,9 +26,9 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
-import static Business.Enterprise.Enterprise.EnterpriseType.BloodCancerCentre;
-import static Business.Enterprise.Enterprise.EnterpriseType.BoneMarrowBank;
 import Magic.Design.MyJButton;
+import static Business.Enterprise.Enterprise.EnterpriseType.BloodDonationBank;
+import static Business.Enterprise.Enterprise.EnterpriseType.WorldCordBloodCentre;
 
 
 public class ManageOrganizationJPanel extends javax.swing.JPanel {
@@ -64,7 +64,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
        // }
        
        System.out.println(enterprise.getEnterpriseType());
-       System.out.println(enterprise.getEnterpriseType().toString().equals(BoneMarrowBank.toString()));
+       System.out.println(enterprise.getEnterpriseType().toString().equals(BloodDonationBank.toString()));
        if(enterprise.getEnterpriseType().toString().equals(Legal.toString())){
         for(Organization.LegalType legalType: Organization.LegalType.values()){
             add = true;
@@ -79,7 +79,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         }
         }
        
-       else if(enterprise.getEnterpriseType().toString().equals(BoneMarrowBank.toString())){
+       else if(enterprise.getEnterpriseType().toString().equals(BloodDonationBank.toString())){
         for(Organization.BoneMarrowBankType bmType: Organization.BoneMarrowBankType.values()){
             add = true;
             System.out.println(bmType.getValue());
@@ -94,7 +94,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
             }
         }
         }
-       else if(enterprise.getEnterpriseType().toString().equals(BloodCancerCentre.toString())){
+       else if(enterprise.getEnterpriseType().toString().equals(WorldCordBloodCentre.toString())){
         for(Organization.BloodCancerCentreType cancerType: Organization.BloodCancerCentreType.values()){
             if (cancerType.getValue().equals(Organization.BloodCancerCentreType.BloodCancerCentre.getValue())){
                 organizationJComboBox.addItem(cancerType);
@@ -355,10 +355,10 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         else if(enterprise.getEnterpriseType().toString().equals(HRSA.toString())){
             directory.createGovernmentOrganization((GovernmentType)organizationJComboBox.getSelectedItem(), txtOrgRealName.getText());
         }
-        else if(enterprise.getEnterpriseType().toString().equals(BoneMarrowBank.toString())){
+        else if(enterprise.getEnterpriseType().toString().equals(BloodDonationBank.toString())){
             directory.createBoneMarrowOrganization((BoneMarrowBankType)organizationJComboBox.getSelectedItem(), txtOrgRealName.getText());
         }
-        else if(enterprise.getEnterpriseType().toString().equals(BloodCancerCentre.toString())){
+        else if(enterprise.getEnterpriseType().toString().equals(WorldCordBloodCentre.toString())){
             directory.createCancerCentreOrganization((BloodCancerCentreType)organizationJComboBox.getSelectedItem(), txtOrgRealName.getText());
         }
         else{

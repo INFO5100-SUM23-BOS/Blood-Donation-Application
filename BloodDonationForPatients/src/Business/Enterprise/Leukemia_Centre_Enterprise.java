@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class Leukemia_Centre_Enterprise extends Enterprise {
     
     public Leukemia_Centre_Enterprise(String name){
-        super(name,EnterpriseType.BloodCancerCentre);
+        super(name,EnterpriseType.WorldCordBloodCentre);
     }
     @Override
     public ArrayList<Role> getSupportedRole() {

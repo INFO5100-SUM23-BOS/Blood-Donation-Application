@@ -43,11 +43,11 @@ public class Enterprise_Directory {
             enterprise=new HRSA_Enterprise(name);
             enterpriseList.add(enterprise);
         }
-        else if(type==Enterprise.EnterpriseType.BoneMarrowBank){
+        else if(type==Enterprise.EnterpriseType.BloodDonationBank){
             enterprise=new Bone_Marrow_Bank_Enterprise(name);
             enterpriseList.add(enterprise);
         }
-        else if(type==Enterprise.EnterpriseType.BloodCancerCentre){
+        else if(type==Enterprise.EnterpriseType.WorldCordBloodCentre){
             enterprise=new Leukemia_Centre_Enterprise(name);
             enterpriseList.add(enterprise);
         }

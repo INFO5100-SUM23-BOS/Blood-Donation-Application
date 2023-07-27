@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class Bone_Marrow_Bank_Enterprise extends Enterprise {
     
     public Bone_Marrow_Bank_Enterprise(String name){
-        super(name,EnterpriseType.BoneMarrowBank);
+        super(name,EnterpriseType.BloodDonationBank);
     }
     @Override
     public ArrayList<Role> getSupportedRole() {

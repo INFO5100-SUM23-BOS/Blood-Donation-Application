@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package userinterface.BloodLeukemia_Centre_Coordinator_Role;
+package userinterface.WorldCordBlood_Centre_Coordinator_Role;
 
 import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
@@ -116,9 +116,7 @@ public class PatientStatusJPanel extends javax.swing.JPanel {
         });
         patientTable.setFocusable(false);
         patientTable.setGridColor(new java.awt.Color(0, 0, 0));
-        patientTable.setIntercellSpacing(new java.awt.Dimension(0, 0));
         patientTable.setRowHeight(30);
-        patientTable.setShowVerticalLines(false);
         jScrollPane1.setViewportView(patientTable);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 150, 730, 190));
@@ -167,9 +165,7 @@ public class PatientStatusJPanel extends javax.swing.JPanel {
         });
         patientTable1.setFocusable(false);
         patientTable1.setGridColor(new java.awt.Color(0, 0, 0));
-        patientTable1.setIntercellSpacing(new java.awt.Dimension(0, 0));
         patientTable1.setRowHeight(30);
-        patientTable1.setShowVerticalLines(false);
         jScrollPane2.setViewportView(patientTable1);
 
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 410, 730, 210));

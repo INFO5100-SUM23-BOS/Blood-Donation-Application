@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package userinterface.BoneMarrowBankCoordinatorRole;
+package userinterface.BloodDonationBankCoordinatorRole;
 
 import userinterface.DoctorRole.*;
 import Business.EcoSystem;
@@ -15,7 +15,7 @@ import Magic.Design.*;
 import java.util.Date;
 import Magic.Design.MyJLabel;
 
-public class ManageBoneMarrowBankCoordinatorProfile extends javax.swing.JPanel {
+public class ManageBloodDonationBankCoordinatorProfile extends javax.swing.JPanel {
 
     /**
      * Creates new form ManageDoctorProfile
@@ -25,7 +25,7 @@ public class ManageBoneMarrowBankCoordinatorProfile extends javax.swing.JPanel {
      private Enterprise enterprise ;
      private Bone_Marrow_Bank_Organization bmBankOrganization;
     
-    public ManageBoneMarrowBankCoordinatorProfile(UserAccount userAccount, Bone_Marrow_Bank_Organization bmBankOrganization, Enterprise enterprise) {
+    public ManageBloodDonationBankCoordinatorProfile(UserAccount userAccount, Bone_Marrow_Bank_Organization bmBankOrganization, Enterprise enterprise) {
         initComponents();
         this.userAccount = userAccount;
         this.enterprise = enterprise;

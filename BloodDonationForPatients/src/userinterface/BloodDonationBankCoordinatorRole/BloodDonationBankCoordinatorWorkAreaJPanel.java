@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package userinterface.Bone_Marrow_Bank_CoordinatorRole;
+package userinterface.BloodDonationBankCoordinatorRole;
 
 import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
@@ -22,7 +22,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 import static javax.swing.SwingUtilities.getWindowAncestor;
-import userinterface.BoneMarrowBankCoordinatorRole.ManageBoneMarrowBankCoordinatorProfile;
+import userinterface.BloodDonationBankCoordinatorRole.ManageBloodDonationBankCoordinatorProfile;
 
 /**
  *
@@ -30,7 +30,7 @@ import userinterface.BoneMarrowBankCoordinatorRole.ManageBoneMarrowBankCoordinat
  */
 
 
-public class BoneMarrowBankCoordinatorWorkAreaJPanel extends javax.swing.JPanel {
+public class BloodDonationBankCoordinatorWorkAreaJPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form BoneMarrowBankCoordinatorWorkAreaJPanel
@@ -43,7 +43,7 @@ public class BoneMarrowBankCoordinatorWorkAreaJPanel extends javax.swing.JPanel 
     private Network network;
     private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
     
-    public BoneMarrowBankCoordinatorWorkAreaJPanel(UserAccount account, Bone_Marrow_Bank_Organization bmBankOrganization, Enterprise enterprise, EcoSystem business, Network network) {
+    public BloodDonationBankCoordinatorWorkAreaJPanel(UserAccount account, Bone_Marrow_Bank_Organization bmBankOrganization, Enterprise enterprise, EcoSystem business, Network network) {
         initComponents();
         this.userAccount = account;
         this.bmBankOrganization = bmBankOrganization;
@@ -124,7 +124,7 @@ public class BoneMarrowBankCoordinatorWorkAreaJPanel extends javax.swing.JPanel 
 
     private void BtnProfileMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnProfileMouseClicked
         // TODO add your handling code here:
-        ManageBoneMarrowBankCoordinatorProfile managebmBankProfile = new ManageBoneMarrowBankCoordinatorProfile(userAccount,bmBankOrganization,enterprise);
+        ManageBloodDonationBankCoordinatorProfile managebmBankProfile = new ManageBloodDonationBankCoordinatorProfile(userAccount,bmBankOrganization,enterprise);
         userProcessContainer.add("ManageBoneMarrowBankCoordinatorProfile",managebmBankProfile);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
@@ -132,7 +132,7 @@ public class BoneMarrowBankCoordinatorWorkAreaJPanel extends javax.swing.JPanel 
 
     private void BtnManageRequestsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnManageRequestsMouseClicked
         // TODO add your handling code here:
-        BoneMarrowRequestJPanel bmBankRequestJPanel = new BoneMarrowRequestJPanel( userAccount,  bmBankOrganization, enterprise, network, system);
+        BloodDonationRequestJPanel bmBankRequestJPanel = new BloodDonationRequestJPanel( userAccount,  bmBankOrganization, enterprise, network, system);
         userProcessContainer.add("BoneMarrowRequestJPanel",bmBankRequestJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer); 

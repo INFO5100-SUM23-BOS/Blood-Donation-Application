@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package userinterface.BloodLeukemia_Centre_Coordinator_Role;
+package userinterface.WorldCordBlood_Centre_Coordinator_Role;
 
 import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
@@ -131,7 +131,6 @@ public class VolunteerReceiverRequestJPanel extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(1150, 720));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        buttonReject.setBackground(new java.awt.Color(255, 255, 255));
         buttonReject.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         buttonReject.setText("Reject");
         buttonReject.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -143,7 +142,6 @@ public class VolunteerReceiverRequestJPanel extends javax.swing.JPanel {
         });
         add(buttonReject, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 350, 100, 40));
 
-        buttonApprove.setBackground(new java.awt.Color(255, 255, 255));
         buttonApprove.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         buttonApprove.setText("Approve");
         buttonApprove.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -303,9 +301,7 @@ public class VolunteerReceiverRequestJPanel extends javax.swing.JPanel {
         });
         requestTable.setFocusable(false);
         requestTable.setGridColor(new java.awt.Color(0, 0, 0));
-        requestTable.setIntercellSpacing(new java.awt.Dimension(0, 0));
         requestTable.setRowHeight(30);
-        requestTable.setShowVerticalLines(false);
         requestTable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 requestTableMousePressed(evt);

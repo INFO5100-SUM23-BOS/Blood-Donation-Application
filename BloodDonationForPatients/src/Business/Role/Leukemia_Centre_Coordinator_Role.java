@@ -12,7 +12,7 @@ import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 
 import javax.swing.JPanel;
-import userinterface.BloodLeukemia_Centre_Coordinator_Role.Leukemia_Centre_Coordinator_WorkAreaJPanel;
+import userinterface.WorldCordBlood_Centre_Coordinator_Role.WorldCordBlood_Centre_Coordinator_WorkAreaJPanel;
 
 /**
  *
@@ -22,6 +22,6 @@ public class Leukemia_Centre_Coordinator_Role extends Role {
     
      @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business, Network network) {
-        return new Leukemia_Centre_Coordinator_WorkAreaJPanel(account, (Leukemia_Centre_Organization) organization, enterprise, business, network);
+        return new WorldCordBlood_Centre_Coordinator_WorkAreaJPanel(account, (Leukemia_Centre_Organization) organization, enterprise, business, network);
     }
 }

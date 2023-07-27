@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package userinterface.BloodLeukemia_Centre_Coordinator_Role;
+package userinterface.WorldCordBlood_Centre_Coordinator_Role;
 
 import static java.time.Clock.system;
 import javax.swing.JFrame;
@@ -37,7 +37,7 @@ import static javax.swing.SwingUtilities.getWindowAncestor;
  *
  * @author nitin
  */
-public class Leukemia_Centre_Coordinator_WorkAreaJPanel extends javax.swing.JPanel {
+public class WorldCordBlood_Centre_Coordinator_WorkAreaJPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form Leukemia_Centre_Coordinator_WorkAreaJPanel
@@ -53,7 +53,7 @@ public class Leukemia_Centre_Coordinator_WorkAreaJPanel extends javax.swing.JPan
     private Network network;
     
     
-    public Leukemia_Centre_Coordinator_WorkAreaJPanel(UserAccount account,Leukemia_Centre_Organization cancerCentreOrganization, Enterprise enterprise, EcoSystem system, Network network) {
+    public WorldCordBlood_Centre_Coordinator_WorkAreaJPanel(UserAccount account,Leukemia_Centre_Organization cancerCentreOrganization, Enterprise enterprise, EcoSystem system, Network network) {
         initComponents();
         this.system = system;
         this.userAccount = account;
@@ -198,7 +198,7 @@ public class Leukemia_Centre_Coordinator_WorkAreaJPanel extends javax.swing.JPan
 
     private void btnProfileMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProfileMouseClicked
         // TODO add your handling code here:
-        ManageCancerCentreCoordinatorProfile manageCancerCoordinatorWorkAreaJPanel = new ManageCancerCentreCoordinatorProfile(userAccount,cancerCentreOrganization,enterprise);
+        ManageWorldCordBloodCentreCoordinatorProfile manageCancerCoordinatorWorkAreaJPanel = new ManageWorldCordBloodCentreCoordinatorProfile(userAccount,cancerCentreOrganization,enterprise);
         userProcessContainer.add("ManageCancerCentreCoordinatorProfile",manageCancerCoordinatorWorkAreaJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);

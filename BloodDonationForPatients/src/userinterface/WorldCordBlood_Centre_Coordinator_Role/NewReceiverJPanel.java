@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package userinterface.BloodLeukemia_Centre_Coordinator_Role;
+package userinterface.WorldCordBlood_Centre_Coordinator_Role;
 
 import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
@@ -197,7 +197,6 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         jLabel13.setText("City");
         add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 530, -1, -1));
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jButton1.setText("Submit");
         jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -294,7 +293,6 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         jLabel10.setText("Cancer diagnosed date");
         add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 560, -1, -1));
 
-        btnAddPhoto.setBackground(new java.awt.Color(255, 255, 255));
         btnAddPhoto.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         btnAddPhoto.setText("Add photo");
         btnAddPhoto.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -308,13 +306,11 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         buttonYes.setBackground(new java.awt.Color(0, 0, 0));
         buttonYes.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         buttonYes.setText("Yes");
-        buttonYes.setOpaque(false);
         add(buttonYes, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 500, -1, -1));
 
         buttonNo.setBackground(new java.awt.Color(0, 0, 0));
         buttonNo.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         buttonNo.setText("No");
-        buttonNo.setOpaque(false);
         add(buttonNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 500, -1, -1));
 
         dobDateField.setBackground(new java.awt.Color(255, 255, 255));
@@ -379,7 +375,6 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         lblProfilePicture.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
         add(lblProfilePicture, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 120, 130, 130));
 
-        jButton2.setBackground(new java.awt.Color(255, 255, 255));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jButton2.setText("New Form");
         jButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -414,7 +409,6 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         });
         add(hlaTypesText, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 320, 170, -1));
 
-        btnBack.setBackground(new java.awt.Color(255, 255, 255));
         btnBack.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         btnBack.setText("Back");
         btnBack.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));

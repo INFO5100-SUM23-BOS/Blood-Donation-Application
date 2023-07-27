@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package userinterface.Bone_Marrow_Bank_CoordinatorRole;
+package userinterface.BloodDonationBankCoordinatorRole;
 
 import Business.HLA.PersonHLA;
 import Business.DB4OUtil.DB4OUtil;
@@ -29,7 +29,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author balumullamuri
  */
-public class BoneMarrowRequestJPanel extends javax.swing.JPanel {
+public class BloodDonationRequestJPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form BoneMarrowRequestJPanel
@@ -41,7 +41,7 @@ public class BoneMarrowRequestJPanel extends javax.swing.JPanel {
     private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
     private EcoSystem system;
     
-    public BoneMarrowRequestJPanel(UserAccount userAccount, Bone_Marrow_Bank_Organization bmBankOrganization, Enterprise enterprise, Network network, EcoSystem system) {
+    public BloodDonationRequestJPanel(UserAccount userAccount, Bone_Marrow_Bank_Organization bmBankOrganization, Enterprise enterprise, Network network, EcoSystem system) {
         initComponents();
         this.userAccount = userAccount;
         this.marroworganization = bmBankOrganization;
@@ -109,7 +109,6 @@ public class BoneMarrowRequestJPanel extends javax.swing.JPanel {
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 300, -1, -1));
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(376, 247, -1, -1));
 
-        btnApprove.setBackground(new java.awt.Color(255, 255, 255));
         btnApprove.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         btnApprove.setText("Approve Request");
         btnApprove.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -120,7 +119,6 @@ public class BoneMarrowRequestJPanel extends javax.swing.JPanel {
         });
         add(btnApprove, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 530, 210, 40));
 
-        btnOnHold.setBackground(new java.awt.Color(255, 255, 255));
         btnOnHold.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         btnOnHold.setText("Hold Request");
         btnOnHold.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -149,9 +147,7 @@ public class BoneMarrowRequestJPanel extends javax.swing.JPanel {
             }
         });
         tblBoneMarrowCoordinator.setGridColor(new java.awt.Color(0, 0, 0));
-        tblBoneMarrowCoordinator.setIntercellSpacing(new java.awt.Dimension(0, 0));
         tblBoneMarrowCoordinator.setRowHeight(30);
-        tblBoneMarrowCoordinator.setShowVerticalLines(false);
         tblBoneMarrowCoordinator.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tblBoneMarrowCoordinatorMouseClicked(evt);

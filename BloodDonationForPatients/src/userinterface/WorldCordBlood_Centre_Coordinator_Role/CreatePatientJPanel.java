@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package userinterface.BloodLeukemia_Centre_Coordinator_Role;
+package userinterface.WorldCordBlood_Centre_Coordinator_Role;
 
 import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
@@ -158,7 +158,6 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         emailTextField.setEnabled(false);
         add(emailTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 420, 212, -1));
 
-        btnCreateReceiver.setBackground(new java.awt.Color(255, 255, 255));
         btnCreateReceiver.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         btnCreateReceiver.setText("Create Patient");
         btnCreateReceiver.setBorder(new javax.swing.border.MatteBorder(null));
@@ -191,9 +190,7 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         });
         tblPatient.setFocusable(false);
         tblPatient.setGridColor(new java.awt.Color(0, 0, 0));
-        tblPatient.setIntercellSpacing(new java.awt.Dimension(0, 0));
         tblPatient.setRowHeight(30);
-        tblPatient.setShowVerticalLines(false);
         tblPatient.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 tblPatientMousePressed(evt);
@@ -233,9 +230,7 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         });
         tblRequest.setFocusable(false);
         tblRequest.setGridColor(new java.awt.Color(0, 0, 0));
-        tblRequest.setIntercellSpacing(new java.awt.Dimension(0, 0));
         tblRequest.setRowHeight(30);
-        tblRequest.setShowVerticalLines(false);
         jScrollPane2.setViewportView(tblRequest);
 
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 570, 900, 220));

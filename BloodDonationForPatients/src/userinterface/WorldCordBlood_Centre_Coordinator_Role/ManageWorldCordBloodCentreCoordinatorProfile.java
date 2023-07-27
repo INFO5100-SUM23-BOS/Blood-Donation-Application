@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package userinterface.BloodLeukemia_Centre_Coordinator_Role;
+package userinterface.WorldCordBlood_Centre_Coordinator_Role;
 import Business.Enterprise.Enterprise;
 import Business.Organization.Leukemia_Centre_Organization;
 import Business.Organization.GovernmentOrganization;
@@ -18,7 +18,7 @@ import java.util.Date;
  *
  * @author nitin
  */
-public class ManageCancerCentreCoordinatorProfile extends javax.swing.JPanel {
+public class ManageWorldCordBloodCentreCoordinatorProfile extends javax.swing.JPanel {
 
   
 
@@ -29,7 +29,7 @@ public class ManageCancerCentreCoordinatorProfile extends javax.swing.JPanel {
     
 
 
-    ManageCancerCentreCoordinatorProfile(UserAccount userAccount, Leukemia_Centre_Organization cancerCentreOrganization, Enterprise enterprise) {
+    ManageWorldCordBloodCentreCoordinatorProfile(UserAccount userAccount, Leukemia_Centre_Organization cancerCentreOrganization, Enterprise enterprise) {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
          initComponents();
         this.userAccount = userAccount;

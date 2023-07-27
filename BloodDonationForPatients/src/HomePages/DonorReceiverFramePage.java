@@ -10,7 +10,7 @@ import Business.People.DonorRequestDirectory;
 import java.awt.CardLayout;
 import java.awt.Dimension;
 import java.awt.Toolkit;
-import userinterface.BloodLeukemia_Centre_Coordinator_Role.NewReceiverJPanel;
+import userinterface.WorldCordBlood_Centre_Coordinator_Role.NewReceiverJPanel;
 import userinterface.GovernmentCoordinatorRole.NewDonorJPanel;
 
 

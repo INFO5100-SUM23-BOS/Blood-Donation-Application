@@ -657,7 +657,7 @@ JOptionPane.showMessageDialog(null, new JLabel("<html><b>Email ID must be in cor
             try {
                 // TODO:
 //                donorRequest.getHLA().updateHLAlist(bloodTypesTextField.getText());
-                donorRequest.getHLA().updateHLAlist(String.valueOf(bloodTypeComboBox.getSelectedItem()));
+                donorRequest.getHLA().updateBloodTypelist(String.valueOf(bloodTypeComboBox.getSelectedItem()));
             }
             catch (Exception e) {
                 JOptionPane.showMessageDialog(null, new JLabel(  "<html><b>Patient's HLA Type can only be one of these HLA_A,HLA_B,HLA_C,HLA_DR,HLA_DBQ1</b></html>"));

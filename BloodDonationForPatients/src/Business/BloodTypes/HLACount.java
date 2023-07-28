@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Business.HLA;
+package Business.BloodTypes;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -20,24 +20,24 @@ public class HLACount {
         HLAComboCounts = new HashMap<>();
     }
     
-    public void HLACountAdd(PersonHLA hla) {
-        ArrayList<String> hlaValues = hla.getHlaValuesList();
+    public void HLACountAdd(PersonBloodType hla) {
+        ArrayList<String> hlaValues = hla.getBloodTypeValuesList();
         Collections.sort(hlaValues);
         String hlaCombo = String.join(", ", hlaValues);
         this.HLAComboCounts.putIfAbsent(hlaCombo, 0);
         this.HLAComboCounts.put(hlaCombo, this.HLAComboCounts.get(hlaCombo) + 1);
     }
     
-    public void HLACountAdd(PersonHLA hla, Integer i) {
-        ArrayList<String> hlaValues = hla.getHlaValuesList();
+    public void HLACountAdd(PersonBloodType hla, Integer i) {
+        ArrayList<String> hlaValues = hla.getBloodTypeValuesList();
         Collections.sort(hlaValues);
         String hlaCombo = String.join(", ", hlaValues);
         this.HLAComboCounts.putIfAbsent(hlaCombo, 0);
         this.HLAComboCounts.put(hlaCombo, this.HLAComboCounts.get(hlaCombo) + i);
     }
     
-    public void HLACountSubstract(PersonHLA hla) {
-        ArrayList<String> hlaValues = hla.getHlaValuesList();
+    public void HLACountSubstract(PersonBloodType hla) {
+        ArrayList<String> hlaValues = hla.getBloodTypeValuesList();
         Collections.sort(hlaValues);
         String hlaCombo = String.join(", ", hlaValues);
 //        this.HLAComboCounts.putIfAbsent(hlaCombo, 0);

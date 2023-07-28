@@ -4,7 +4,7 @@
  */
 package Business.People;
 
-import Business.HLA.PersonHLA;
+import Business.BloodTypes.PersonBloodType;
 import java.util.Date;
 
 /**
@@ -18,7 +18,7 @@ public class DonorRequest {
     private Date dob;
     private int age;
     private String gender;
-    private PersonHLA hla;
+    private PersonBloodType hla;
     private String streetAddress;
     private String city;
     private String state;
@@ -36,7 +36,7 @@ public class DonorRequest {
     private byte[] dP;
     
     public DonorRequest() {
-        this.hla = new PersonHLA();
+        this.hla = new PersonBloodType();
     }
 
     public byte[] getdP() {
@@ -70,8 +70,8 @@ public class DonorRequest {
     public void setAge(int age) {        this.age = age;    }
     public String getGender() {        return gender;    }
     public void setGender(String gender) {        this.gender = gender;    }
-    public PersonHLA getHLA() {        return hla;    }
-    public void setHLA(PersonHLA hla) {        this.hla = hla;    }
+    public PersonBloodType getHLA() {        return hla;    }
+    public void setHLA(PersonBloodType hla) {        this.hla = hla;    }
     public String getStreetAddress() {        return streetAddress;    }
     public void setStreetAddress(String streetAddress) {        this.streetAddress = streetAddress;    }
     public String getCity() {        return city;    }
@@ -106,11 +106,11 @@ public class DonorRequest {
         return this.cancerDiagnosedDate;
     }
 
-    public PersonHLA getHla() {
+    public PersonBloodType getHla() {
         return hla;
     }
 
-    public void setHla(PersonHLA hla) {
+    public void setHla(PersonBloodType hla) {
         this.hla = hla;
     }
 

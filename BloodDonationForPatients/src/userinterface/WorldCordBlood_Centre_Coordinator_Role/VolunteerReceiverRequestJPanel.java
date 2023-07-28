@@ -364,7 +364,7 @@ public class VolunteerReceiverRequestJPanel extends javax.swing.JPanel {
         Patient patient = new Patient();
         
         try {
-            patient.getHLA().updateHLAlist(hlaText.getText());
+            patient.getHLA().updateBloodTypelist(hlaText.getText());
         }
         catch (Exception e) {
             JOptionPane.showMessageDialog(null, new JLabel(  "<html><b>Patient's HLA Type can only be one of these HLA_A,HLA_B,HLA_C,HLA_DR,HLA_DBQ1</b></html>"));
@@ -586,7 +586,7 @@ public class VolunteerReceiverRequestJPanel extends javax.swing.JPanel {
             diagnosedDateChooser.setDate(patientRequest.getCancerDiagnosedDate());
             ageText.setText(String.valueOf(patientRequest.getAge()));
             genderText.setText(patientRequest.getGender());
-            hlaText.setText(String.join(", ", (Iterable<String>) patientRequest.getHla().getHlaValuesList()));
+            hlaText.setText(String.join(", ", (Iterable<String>) patientRequest.getHla().getBloodTypeValuesList()));
             streetText.setText(patientRequest.getStreetAddress());
             cityText.setText(patientRequest.getCity());
             stateText.setText(patientRequest.getState());

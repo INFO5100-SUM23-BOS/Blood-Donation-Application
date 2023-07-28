@@ -5,7 +5,7 @@
  */
 package userinterface.MedicalTechnicianRole;
 
-import Business.HLA.PersonHLA;
+import Business.BloodTypes.PersonBloodType;
 import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
 import Magic.Design.*;
@@ -94,7 +94,7 @@ public class ManageMedicalTechnicianRequests extends javax.swing.JPanel {
             row[1] = request.getDonor();
             row[2] = request.getDonor().getName();
             //row[3] = request.getDonor().getContact();
-            row[3] = String.join(", ",request.getDonor().getHLA().getHlaValuesList());
+            row[3] = String.join(", ",request.getDonor().getHLA().getBloodTypeValuesList());
             row[4] = request.getUserAccount().getUsername();
             row[5] = request.getStatus();
              
@@ -460,9 +460,9 @@ public class ManageMedicalTechnicianRequests extends javax.swing.JPanel {
         WorkRequest request = (WorkRequest)tblMedTechDonors.getValueAt(selectedRow, 0);
         
         try {
-            org.getAllHLAs().add(PersonHLA.createHLA(String.valueOf(txtHLAList.getText())));
-            PersonHLA h = new PersonHLA();
-            h.updateHLAlist(txtHLAList.getText());
+            org.getAllHLAs().add(PersonBloodType.createHLA(String.valueOf(txtHLAList.getText())));
+            PersonBloodType h = new PersonBloodType();
+            h.updateBloodTypelist(txtHLAList.getText());
             ((Bone_Marrow_Bank_Organization)org).getInventory().HLACountAdd(h);
           }
         catch( NullPointerException ex   )

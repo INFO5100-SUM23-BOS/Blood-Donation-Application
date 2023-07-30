@@ -177,7 +177,7 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
 
             },
             new String [] {
-                "UID", "Name", "Email", "Cancer Diagnosed Date", "HLA Types"
+                "UID", "Name", "Email", "Blood Transfusion Date", "Blood Type"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -201,8 +201,8 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 890, 210));
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabel1.setText("List Of Cancer Patients In The Network Area Of The Coordinator");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 100, -1, -1));
+        jLabel1.setText("List Of Patients Which Requires Blood In The Network Area Of The Coordinator");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -253,7 +253,7 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         chkEmergency.setText("Emergency");
         chkEmergency.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         chkEmergency.setEnabled(false);
-        add(chkEmergency, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 470, -1, -1));
+        add(chkEmergency, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 470, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel6.setText("Name");
@@ -265,12 +265,17 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         add(nameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 380, 212, -1));
 
         jLabel8.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabel8.setText("HLA List");
+        jLabel8.setText("Blood Type");
         add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 420, -1, -1));
 
         HLATypesTextField.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         HLATypesTextField.setForeground(new java.awt.Color(255, 255, 255));
         HLATypesTextField.setEnabled(false);
+        HLATypesTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HLATypesTextFieldActionPerformed(evt);
+            }
+        });
         add(HLATypesTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 420, 210, -1));
     }// </editor-fold>//GEN-END:initComponents
 
@@ -385,6 +390,10 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
 
         }
     }//GEN-LAST:event_tblPatientMousePressed
+
+    private void HLATypesTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HLATypesTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_HLATypesTextFieldActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

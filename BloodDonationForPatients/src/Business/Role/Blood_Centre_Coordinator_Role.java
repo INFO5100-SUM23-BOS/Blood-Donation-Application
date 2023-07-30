@@ -18,7 +18,7 @@ import userinterface.WorldCordBlood_Centre_Coordinator_Role.WorldCordBlood_Centr
  *
  * @author balumullamuri
  */
-public class Leukemia_Centre_Coordinator_Role extends Role {
+public class Blood_Centre_Coordinator_Role extends Role {
     
      @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business, Network network) {

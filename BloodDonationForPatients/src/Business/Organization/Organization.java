@@ -5,7 +5,7 @@
  */
 package Business.Organization;
 
-import Business.HLA.PersonHLA;
+import Business.BloodTypes.PersonBloodType;
 import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
 import Business.Employee.EmployeeDirectory;
@@ -28,7 +28,7 @@ public abstract class Organization {
     private UserAccountDirectory userAccountDirectory;
     
     private static int counter=0;
-    private ArrayList<PersonHLA> allHLAs;
+    private ArrayList<PersonBloodType> allHLAs;
     private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
     
     
@@ -111,7 +111,7 @@ public abstract class Organization {
         System.out.println("initialise work queue");
         employeeDirectory = new EmployeeDirectory();
         userAccountDirectory = new UserAccountDirectory();
-        allHLAs = new ArrayList<PersonHLA>();
+        allHLAs = new ArrayList<PersonBloodType>();
         organizationID = counter;
         ++counter;
     }
@@ -146,15 +146,15 @@ public abstract class Organization {
         this.workQueue = workQueue;
     }
 
-    public ArrayList<PersonHLA> getAllHLAs() {
+    public ArrayList<PersonBloodType> getAllHLAs() {
         return allHLAs;
     }
 
-    public void setAllHLAsList(ArrayList<PersonHLA> allHLAs) {
+    public void setAllHLAsList(ArrayList<PersonBloodType> allHLAs) {
         this.allHLAs = allHLAs;
     }
     
-    public void addHLA(PersonHLA hla) {
+    public void addHLA(PersonBloodType hla) {
         this.allHLAs.add(hla);
     }
 

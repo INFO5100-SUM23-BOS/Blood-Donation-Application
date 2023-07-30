@@ -5,7 +5,7 @@
  */
 package userinterface.BloodDonationBankCoordinatorRole;
 
-import Business.HLA.PersonHLA;
+import Business.BloodTypes.PersonBloodType;
 import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
@@ -69,7 +69,7 @@ public class BloodDonationRequestJPanel extends javax.swing.JPanel {
             row[1] = request.getPatient();
             row[2] = request.getPatient().getName();
             row[3] = request.getPatient().getEmailID();
-            row[4] = String.join(", ",request.getPatient().getHLA().getHlaValuesList());
+            row[4] = String.join(", ",request.getPatient().getHLA().getBloodTypeValuesList());
             row[5] = request.getStatus();
              
             model.addRow(row);

@@ -18,7 +18,7 @@ import userinterface.BloodDonationBankCoordinatorRole.BloodDonationBankCoordinat
  *
  * @author balumullamuri
  */
-public class Bone_Marrow_Bank_CoordinatorRole extends Role {
+public class Blood_Bank_CoordinatorRole extends Role {
     
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business, Network network) {

@@ -115,7 +115,6 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         contactText.setEnabled(false);
         genderJComboBox.setEnabled(false);
         hlaTypesText.setEnabled(false);
-        diagnosedDateChooser.setEnabled(false);
         streetText.setEnabled(false);
         cityText.setEnabled(false);
         stateJComboBox.setEnabled(false);
@@ -168,7 +167,6 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         jLabel20 = new javax.swing.JLabel();
         stateJComboBox = new javax.swing.JComboBox();
         genderJComboBox = new javax.swing.JComboBox();
-        diagnosedDateChooser = new com.toedter.calendar.JDateChooser();
         lblProfilePicture = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
@@ -178,6 +176,8 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         hlaTypesText = new javax.swing.JTextField();
         btnBack = new javax.swing.JButton();
+        jLabel21 = new javax.swing.JLabel();
+        hlaTypesText1 = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(255, 153, 153));
         setMinimumSize(new java.awt.Dimension(1350, 718));
@@ -279,18 +279,17 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 320, -1, -1));
 
         jLabel19.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jLabel19.setText("Was your cancer diagnosis confirmed by a medical practitioner?");
-        add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 450, -1, 30));
+        jLabel19.setText("\"If yes, please provide brief details of the medical condition.\"     ");
+        add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 540, -1, 30));
 
         jLabel9.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabel9.setText("HLA Types");
+        jLabel9.setText("Blood Type");
         add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 320, -1, -1));
 
         streetText.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         add(streetText, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 450, 210, -1));
 
         jLabel10.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabel10.setText("Cancer diagnosed date");
         add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 560, -1, -1));
 
         btnAddPhoto.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
@@ -366,10 +365,6 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         });
         add(genderJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 320, 180, -1));
 
-        diagnosedDateChooser.setBackground(new java.awt.Color(255, 255, 255));
-        diagnosedDateChooser.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        add(diagnosedDateChooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 560, 190, -1));
-
         lblProfilePicture.setBackground(new java.awt.Color(0, 0, 0));
         lblProfilePicture.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 255, 204)));
         lblProfilePicture.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
@@ -387,15 +382,15 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 380, 980, 10));
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabel1.setText("Cancer Status");
+        jLabel1.setText("Patient Status");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 400, 150, -1));
 
         jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
         add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 380, 30, 250));
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabel2.setText("BIO Details");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 110, 110, -1));
+        jLabel2.setText("Patient Details");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 110, 160, -1));
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel4.setText("Address Details");
@@ -407,7 +402,7 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
                 hlaTypesTextActionPerformed(evt);
             }
         });
-        add(hlaTypesText, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 320, 170, -1));
+        add(hlaTypesText, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 580, 290, -1));
 
         btnBack.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         btnBack.setText("Back");
@@ -418,6 +413,18 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
             }
         });
         add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 680, 110, 40));
+
+        jLabel21.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel21.setText("Do you have any Medical Conditions that Hospital Needs to be aware of? ");
+        add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 460, -1, 30));
+
+        hlaTypesText1.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        hlaTypesText1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hlaTypesText1ActionPerformed(evt);
+            }
+        });
+        add(hlaTypesText1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 320, 170, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -469,10 +476,7 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
             streetText.setBorder(BorderFactory.createLineBorder(Color.RED));
             streetText.setForeground(Color.red);
         }
-         if (diagnosedDateChooser.getDate() == null ) {
-            diagnosedDateChooser.setBorder(BorderFactory.createLineBorder(Color.RED));
-            diagnosedDateChooser.setForeground(Color.red);
-        }
+     
         if (dobDateField.getDate() == null ) {
             dobDateField.setBorder(BorderFactory.createLineBorder(Color.RED));
             dobDateField.setForeground(Color.red);
@@ -487,7 +491,6 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         //
         if (    nameText.getText().isEmpty() || emailText.getText().isEmpty() || cityText.getText().isEmpty() ||contactText.getText().isEmpty() ||
                 zipText.getText().isEmpty() || streetText.getText().isEmpty() || uidText.getText().isEmpty() ||
-                dobDateField.getDate() == null || diagnosedDateChooser.getDate() == null || ageText.getText().isEmpty() ||
                 String.valueOf(genderJComboBox.getSelectedItem()).equals("") || 
                 String.valueOf(hlaTypesText.getText()).equals("") || 
                 String.valueOf(stateJComboBox.getSelectedItem()).equals("") ||
@@ -576,7 +579,6 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         patientrequest.setReceiverID(uidText.getText()); //UID, receiverID  
         patientrequest.setName(nameText.getText()); // Name
         patientrequest.setDob(dobDateField.getDate()); // DOB 
-        patientrequest.setCancerDiagnosedDate(diagnosedDateChooser.getDate()); // cancerDiagnosedDate            
         patientrequest.setAge(Integer.parseInt(ageText.getText())); // Age
         patientrequest.setGender((String)genderJComboBox.getSelectedItem()); // gender
         
@@ -708,7 +710,6 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         contactText.setEnabled(true);
         genderJComboBox.setEnabled(true);
         hlaTypesText.setEnabled(true);
-        diagnosedDateChooser.setEnabled(true);
         streetText.setEnabled(true);
         cityText.setEnabled(true);
         stateJComboBox.setEnabled(true);
@@ -733,7 +734,6 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         
 
         dobDateField.setCalendar(null);
-        diagnosedDateChooser.setCalendar(null);
        
         // ButtonGroup radioGroup1 = new ButtonGroup();       
         lblProfilePicture.removeAll();
@@ -776,6 +776,10 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         NewReceiverJPanel.super.setVisible(false);
     }//GEN-LAST:event_btnBackActionPerformed
 
+    private void hlaTypesText1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hlaTypesText1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_hlaTypesText1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField ageText;
@@ -785,11 +789,11 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
     private javax.swing.JRadioButton buttonYes;
     private javax.swing.JTextField cityText;
     private javax.swing.JTextField contactText;
-    private com.toedter.calendar.JDateChooser diagnosedDateChooser;
     private com.toedter.calendar.JDateChooser dobDateField;
     private javax.swing.JTextField emailText;
     private javax.swing.JComboBox genderJComboBox;
     private javax.swing.JTextField hlaTypesText;
+    private javax.swing.JTextField hlaTypesText1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
@@ -803,6 +807,7 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

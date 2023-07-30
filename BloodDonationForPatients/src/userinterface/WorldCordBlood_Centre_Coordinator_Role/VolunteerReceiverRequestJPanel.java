@@ -119,7 +119,6 @@ public class VolunteerReceiverRequestJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         lblProfilePicture = new javax.swing.JLabel();
         dobDateField = new com.toedter.calendar.JDateChooser();
-        diagnosedDateChooser = new com.toedter.calendar.JDateChooser();
         jLabel2 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
@@ -207,14 +206,13 @@ public class VolunteerReceiverRequestJPanel extends javax.swing.JPanel {
         add(genderText, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 430, 180, -1));
 
         jLabel10.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabel10.setText("HLA Types");
+        jLabel10.setText("Blood Type");
         add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 430, -1, -1));
 
         hlaText.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         add(hlaText, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 430, 190, -1));
 
         jLabel11.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabel11.setText("Covid diagnosed date");
         add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 620, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
@@ -246,8 +244,8 @@ public class VolunteerReceiverRequestJPanel extends javax.swing.JPanel {
         add(zipText, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 630, 180, -1));
 
         jLabel19.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabel19.setText("Was your disease confirmed by Medical Practitioner?");
-        add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 550, -1, -1));
+        jLabel19.setText("\"Confirmed by a medical practitioner: Do you meet the minimum hematocrit level for blood donation?\"     ");
+        add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 550, -1, -1));
 
         jPanel3.setBackground(new java.awt.Color(102, 102, 102));
         jPanel3.setPreferredSize(new java.awt.Dimension(926, 70));
@@ -278,7 +276,7 @@ public class VolunteerReceiverRequestJPanel extends javax.swing.JPanel {
         add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1580, -1));
 
         labConfirmationText.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        add(labConfirmationText, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 580, 210, -1));
+        add(labConfirmationText, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 580, 210, -1));
 
         requestTable.setBackground(new java.awt.Color(0, 0, 0));
         requestTable.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
@@ -326,21 +324,16 @@ public class VolunteerReceiverRequestJPanel extends javax.swing.JPanel {
         dobDateField.setForeground(new java.awt.Color(255, 255, 255));
         add(dobDateField, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 350, 180, -1));
 
-        diagnosedDateChooser.setBackground(new java.awt.Color(0, 0, 0));
-        diagnosedDateChooser.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        diagnosedDateChooser.setForeground(new java.awt.Color(255, 255, 255));
-        add(diagnosedDateChooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 620, 170, -1));
-
         jLabel2.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel2.setText("Status");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 510, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 510, -1, -1));
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
         add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 470, 20, 200));
         add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 470, 860, -1));
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 22)); // NOI18N
-        jLabel4.setText("Cancer History Details");
+        jLabel4.setText("Patient History Details");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 470, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 22)); // NOI18N
@@ -540,7 +533,6 @@ public class VolunteerReceiverRequestJPanel extends javax.swing.JPanel {
     private javax.swing.JButton buttonReject;
     private javax.swing.JTextField cityText;
     private javax.swing.JTextField contactText;
-    private com.toedter.calendar.JDateChooser diagnosedDateChooser;
     private com.toedter.calendar.JDateChooser dobDateField;
     private javax.swing.JTextField emailText;
     private javax.swing.JTextField genderText;
@@ -583,7 +575,6 @@ public class VolunteerReceiverRequestJPanel extends javax.swing.JPanel {
             uidText.setText(patientRequest.getReceiverID());
             nameText.setText(patientRequest.getName());
             dobDateField.setDate(patientRequest.getDob());
-            diagnosedDateChooser.setDate(patientRequest.getCancerDiagnosedDate());
             ageText.setText(String.valueOf(patientRequest.getAge()));
             genderText.setText(patientRequest.getGender());
             hlaText.setText(String.join(", ", (Iterable<String>) patientRequest.getHla().getHlaValuesList()));
@@ -624,7 +615,6 @@ public class VolunteerReceiverRequestJPanel extends javax.swing.JPanel {
             emailText.setEditable(false);
             statusText.setEditable(false);
             labConfirmationText.setEditable(false);     
-            diagnosedDateChooser.setEnabled(false);
             dobDateField.setEnabled(false);
     }
     

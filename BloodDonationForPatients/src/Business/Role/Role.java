@@ -23,7 +23,7 @@ public abstract class Role {
         GovernmentCoordinator("GovernmentCoordinator"),
         LegalOfficer("LegalOfficer"),
         MedicalTechnician("MedTech"),
-        BoneMarrowBankCoordinator("BoneMarrowBankCoordinator"),
+        BloodBankCoordinator("BloodBankCoordinator"),
         SystemCoordinator("SystemCoordinator");
         
         private String value;

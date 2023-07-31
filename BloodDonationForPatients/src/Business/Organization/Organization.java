@@ -48,12 +48,12 @@ public abstract class Organization {
         }
     }
     
-     public enum BoneMarrowBankType {
+     public enum BloodBankType {
          
-        BoneMarrowBank("BoneMarrow Bank Coordinator Organization");
+        BloodDonationBank("BoneMarrow Bank Coordinator Organization");
         private String value;
 
-        private BoneMarrowBankType(String value) {
+        private BloodBankType(String value) {
             this.value = value;
         }
 

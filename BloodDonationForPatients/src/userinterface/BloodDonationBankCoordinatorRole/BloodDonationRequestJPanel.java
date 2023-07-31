@@ -12,7 +12,7 @@ import Business.Enterprise.Enterprise;
 import Business.Network.Network;
 import Magic.Design.*;
 import Business.Organization.Organization;
-import Business.Organization.Bone_Marrow_Bank_Organization;
+import Business.Organization.Blood_Donation_Bank_Organization;
 import Business.Organization.SystemCoordinatorOrganization;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.WorkRequest;
@@ -35,13 +35,13 @@ public class BloodDonationRequestJPanel extends javax.swing.JPanel {
      * Creates new form BoneMarrowRequestJPanel
      */
     private UserAccount userAccount;
-    private Bone_Marrow_Bank_Organization marroworganization;
+    private Blood_Donation_Bank_Organization marroworganization;
     private Enterprise enterprise;
     private Network network;
     private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
     private EcoSystem system;
     
-    public BloodDonationRequestJPanel(UserAccount userAccount, Bone_Marrow_Bank_Organization bmBankOrganization, Enterprise enterprise, Network network, EcoSystem system) {
+    public BloodDonationRequestJPanel(UserAccount userAccount, Blood_Donation_Bank_Organization bmBankOrganization, Enterprise enterprise, Network network, EcoSystem system) {
         initComponents();
         this.userAccount = userAccount;
         this.marroworganization = bmBankOrganization;

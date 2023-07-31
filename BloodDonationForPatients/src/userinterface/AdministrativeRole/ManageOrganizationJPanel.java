@@ -15,7 +15,7 @@ import Business.Organization.Organization;
 import Business.Organization.Organization.BloodCancerCentreType;
 import Business.Organization.Organization.GovernmentType;
 import Business.Organization.Organization.LegalType;
-import Business.Organization.Organization.BoneMarrowBankType;
+import Business.Organization.Organization.BloodBankType;
 import Business.Organization.Organization.Type;
 import Business.Organization.OrganizationDirectory;
 import Magic.Design.MyTableFormat;
@@ -80,11 +80,11 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         }
        
        else if(enterprise.getEnterpriseType().toString().equals(BloodDonationBank.toString())){
-        for(Organization.BoneMarrowBankType bmType: Organization.BoneMarrowBankType.values()){
+        for(Organization.BloodBankType bmType: Organization.BloodBankType.values()){
             add = true;
             System.out.println(bmType.getValue());
-            System.out.println(Organization.BoneMarrowBankType.BoneMarrowBank.getValue());
-            if (bmType.getValue().equals(Organization.BoneMarrowBankType.BoneMarrowBank.getValue())){
+            System.out.println(Organization.BloodBankType.BloodDonationBank.getValue());
+            if (bmType.getValue().equals(Organization.BloodBankType.BloodDonationBank.getValue())){
                 for (Organization organization : directory.getOrganizationList()) {
                     if(organization.getName().equals(bmType.getValue()))
                         add = false;
@@ -356,7 +356,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
             directory.createGovernmentOrganization((GovernmentType)organizationJComboBox.getSelectedItem(), txtOrgRealName.getText());
         }
         else if(enterprise.getEnterpriseType().toString().equals(BloodDonationBank.toString())){
-            directory.createBoneMarrowOrganization((BoneMarrowBankType)organizationJComboBox.getSelectedItem(), txtOrgRealName.getText());
+            directory.createBoneMarrowOrganization((BloodBankType)organizationJComboBox.getSelectedItem(), txtOrgRealName.getText());
         }
         else if(enterprise.getEnterpriseType().toString().equals(WorldCordBloodCentre.toString())){
             directory.createCancerCentreOrganization((BloodCancerCentreType)organizationJComboBox.getSelectedItem(), txtOrgRealName.getText());

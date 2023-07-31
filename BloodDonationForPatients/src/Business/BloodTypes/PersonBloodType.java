@@ -22,11 +22,6 @@ public class PersonBloodType {
     }
     
     public enum BloodType{
-//        HLA_A("HLA_A"),
-//        HLA_B("HLA_B"),
-//        HLA_C("HLA_C"),
-//        HLA_DR("HLA_DR"),
-//        HLA_DBQ1("HLA_DBQ1"),
         A_POS("A+"),
         A_NEG("A-"),
         B_POS("B+"),
@@ -151,7 +146,7 @@ public class PersonBloodType {
         
         for(BloodType t : this.getBloodTypeList()) {
             if(t.getValue().equals(bloodType.getValue())) {
-                System.out.println("HLAType already in patient's HLA List");
+                System.out.println("");
                 return;
             }
         }

@@ -9,7 +9,7 @@ import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
-import Business.Organization.Bone_Marrow_Bank_Organization;
+import Business.Organization.Blood_Donation_Bank_Organization;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Color;
@@ -37,13 +37,13 @@ public class BloodDonationBankCoordinatorWorkAreaJPanel extends javax.swing.JPan
      */
     boolean a = true;
     private UserAccount userAccount;
-    private Bone_Marrow_Bank_Organization bmBankOrganization;
+    private Blood_Donation_Bank_Organization bmBankOrganization;
     private Enterprise enterprise;
     private EcoSystem system;
     private Network network;
     private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
     
-    public BloodDonationBankCoordinatorWorkAreaJPanel(UserAccount account, Bone_Marrow_Bank_Organization bmBankOrganization, Enterprise enterprise, EcoSystem business, Network network) {
+    public BloodDonationBankCoordinatorWorkAreaJPanel(UserAccount account, Blood_Donation_Bank_Organization bmBankOrganization, Enterprise enterprise, EcoSystem business, Network network) {
         initComponents();
         this.userAccount = account;
         this.bmBankOrganization = bmBankOrganization;
@@ -125,7 +125,7 @@ public class BloodDonationBankCoordinatorWorkAreaJPanel extends javax.swing.JPan
     private void BtnProfileMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnProfileMouseClicked
         // TODO add your handling code here:
         ManageBloodDonationBankCoordinatorProfile managebmBankProfile = new ManageBloodDonationBankCoordinatorProfile(userAccount,bmBankOrganization,enterprise);
-        userProcessContainer.add("ManageBoneMarrowBankCoordinatorProfile",managebmBankProfile);
+        userProcessContainer.add("ManageBloodDonationBankCoordinatorProfile",managebmBankProfile);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_BtnProfileMouseClicked
@@ -133,7 +133,7 @@ public class BloodDonationBankCoordinatorWorkAreaJPanel extends javax.swing.JPan
     private void BtnManageRequestsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnManageRequestsMouseClicked
         // TODO add your handling code here:
         BloodDonationRequestJPanel bmBankRequestJPanel = new BloodDonationRequestJPanel( userAccount,  bmBankOrganization, enterprise, network, system);
-        userProcessContainer.add("BoneMarrowRequestJPanel",bmBankRequestJPanel);
+        userProcessContainer.add("BloodDonationRequestJPanel",bmBankRequestJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer); 
     }//GEN-LAST:event_BtnManageRequestsMouseClicked

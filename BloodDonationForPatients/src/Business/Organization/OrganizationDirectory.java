@@ -52,10 +52,10 @@ public class OrganizationDirectory {
         return organization;
     }
     
-     public Organization createBoneMarrowOrganization(Organization.BoneMarrowBankType bmBankType, String realName){
+     public Organization createBoneMarrowOrganization(Organization.BloodBankType bmBankType, String realName){
         Organization organization = null;
-        if (bmBankType.getValue().equals(Organization.BoneMarrowBankType.BoneMarrowBank.getValue())){
-            organization = new Bone_Marrow_Bank_Organization();
+        if (bmBankType.getValue().equals(Organization.BloodBankType.BloodDonationBank.getValue())){
+            organization = new Blood_Donation_Bank_Organization();
             organization.setRealName(realName);
             organizationList.add(organization);
         }

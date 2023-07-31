@@ -120,6 +120,11 @@ public class ManageWorldCordBloodCentreCoordinatorProfile extends javax.swing.JP
         add(txtState, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, 146, -1));
 
         txtSpecialization.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        txtSpecialization.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSpecializationActionPerformed(evt);
+            }
+        });
         add(txtSpecialization, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 270, 146, -1));
 
         txtDOB.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -155,6 +160,10 @@ public class ManageWorldCordBloodCentreCoordinatorProfile extends javax.swing.JP
     private void txtDOBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDOBActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDOBActionPerformed
+
+    private void txtSpecializationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSpecializationActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSpecializationActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

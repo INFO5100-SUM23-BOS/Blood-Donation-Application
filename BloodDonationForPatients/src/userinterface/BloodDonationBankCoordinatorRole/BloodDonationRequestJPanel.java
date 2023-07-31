@@ -105,7 +105,7 @@ public class BloodDonationRequestJPanel extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel1.setText("List of BoneMarrow Requests");
+        jLabel1.setText("List of Blood Transfusion Requests");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 300, -1, -1));
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(376, 247, -1, -1));
 
@@ -135,7 +135,7 @@ public class BloodDonationRequestJPanel extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Request Number", "Patient ID", "Patient Name", "Email ID", "HLA", "Status"
+                "Request Number", "Patient ID", "Patient Name", "Email ID", "Blood Group", "Status"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -165,7 +165,7 @@ public class BloodDonationRequestJPanel extends javax.swing.JPanel {
         jLabel25.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel25.setForeground(new java.awt.Color(255, 255, 255));
         jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel25.setText("Bone Marrow Bank");
+        jLabel25.setText("Blood Donation Bank");
         jPanel3.add(jLabel25);
 
         add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1570, -1));
@@ -176,7 +176,7 @@ public class BloodDonationRequestJPanel extends javax.swing.JPanel {
 
             },
             new String [] {
-                "HLA Combination", "Count"
+                "Blood Types", "Count"
             }
         ) {
             Class[] types = new Class [] {
@@ -203,7 +203,7 @@ public class BloodDonationRequestJPanel extends javax.swing.JPanel {
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 900, 170));
 
         jLabel6.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel6.setText("Bone Marrow Inventory");
+        jLabel6.setText("Blood Bank Inventory");
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 80, 330, 30));
     }// </editor-fold>//GEN-END:initComponents
 

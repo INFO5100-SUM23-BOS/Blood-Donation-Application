@@ -206,7 +206,7 @@ public class VolunteerReceiverRequestJPanel extends javax.swing.JPanel {
         add(genderText, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 430, 180, -1));
 
         jLabel10.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabel10.setText("Blood Type");
+        jLabel10.setText("Blood Group");
         add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 430, -1, -1));
 
         hlaText.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
@@ -338,7 +338,7 @@ public class VolunteerReceiverRequestJPanel extends javax.swing.JPanel {
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 22)); // NOI18N
         jLabel5.setText("Location Details");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 470, -1, -1));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 480, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonApproveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonApproveActionPerformed

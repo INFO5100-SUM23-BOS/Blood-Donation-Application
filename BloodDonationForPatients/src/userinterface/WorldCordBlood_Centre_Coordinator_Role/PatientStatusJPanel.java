@@ -171,7 +171,7 @@ public class PatientStatusJPanel extends javax.swing.JPanel {
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 410, 730, 210));
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel2.setText("Patients In Need Of Cancer Treatment");
+        jLabel2.setText("Patients In Need Of Blood Transfusion");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 100, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 

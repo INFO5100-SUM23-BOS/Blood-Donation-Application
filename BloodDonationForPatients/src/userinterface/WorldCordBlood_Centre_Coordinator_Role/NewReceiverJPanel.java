@@ -283,7 +283,7 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 540, -1, 30));
 
         jLabel9.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabel9.setText("Blood Type");
+        jLabel9.setText("Blood Group");
         add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 320, -1, -1));
 
         streetText.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N

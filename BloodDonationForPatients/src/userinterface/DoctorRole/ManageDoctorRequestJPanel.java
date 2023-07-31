@@ -135,10 +135,9 @@ public class ManageDoctorRequestJPanel extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("List of Patients in need of Cancer Treatment");
+        jLabel1.setText("List of Patients in need of Blood Transfusion");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, 560, -1));
 
-        btnAssignToMe.setBackground(new java.awt.Color(255, 255, 255));
         btnAssignToMe.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         btnAssignToMe.setText("Assign To Me");
         btnAssignToMe.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -149,7 +148,6 @@ public class ManageDoctorRequestJPanel extends javax.swing.JPanel {
         });
         add(btnAssignToMe, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 270, 140, 30));
 
-        btnTreatmentDone.setBackground(new java.awt.Color(255, 255, 255));
         btnTreatmentDone.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         btnTreatmentDone.setText("Treatment Done");
         btnTreatmentDone.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -180,9 +178,7 @@ public class ManageDoctorRequestJPanel extends javax.swing.JPanel {
             }
         });
         tblDoctorOrganisation.setGridColor(new java.awt.Color(0, 0, 0));
-        tblDoctorOrganisation.setIntercellSpacing(new java.awt.Dimension(0, 0));
         tblDoctorOrganisation.setRowHeight(30);
-        tblDoctorOrganisation.setShowVerticalLines(false);
         jScrollPane4.setViewportView(tblDoctorOrganisation);
 
         add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 910, 140));
@@ -207,9 +203,7 @@ public class ManageDoctorRequestJPanel extends javax.swing.JPanel {
             }
         });
         tblDoctor.setGridColor(new java.awt.Color(0, 0, 0));
-        tblDoctor.setIntercellSpacing(new java.awt.Dimension(0, 0));
         tblDoctor.setRowHeight(30);
-        tblDoctor.setShowVerticalLines(false);
         jScrollPane5.setViewportView(tblDoctor);
 
         add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 910, 180));

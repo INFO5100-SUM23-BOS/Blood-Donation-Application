@@ -124,14 +124,13 @@ public class PatientListJPanel extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel1.setText("Patients In Need For Cancer Treatment (BoneMarrow Recievers)");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, -1, -1));
+        jLabel1.setText("Patients in need of Blood Transfusion");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 80, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel2.setText("Assign the Patient to a Hospital");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 300, -1, -1));
 
-        btnAssign.setBackground(new java.awt.Color(255, 255, 255));
         btnAssign.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         btnAssign.setText("Assign");
         btnAssign.setBorder(new javax.swing.border.MatteBorder(null));
@@ -162,9 +161,7 @@ public class PatientListJPanel extends javax.swing.JPanel {
             }
         });
         tblHospital.setGridColor(new java.awt.Color(0, 0, 0));
-        tblHospital.setIntercellSpacing(new java.awt.Dimension(0, 0));
         tblHospital.setRowHeight(30);
-        tblHospital.setShowVerticalLines(false);
         jScrollPane2.setViewportView(tblHospital);
 
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 340, 810, 150));
@@ -189,9 +186,7 @@ public class PatientListJPanel extends javax.swing.JPanel {
             }
         });
         tblAssignment.setGridColor(new java.awt.Color(0, 0, 0));
-        tblAssignment.setIntercellSpacing(new java.awt.Dimension(0, 0));
         tblAssignment.setRowHeight(30);
-        tblAssignment.setShowVerticalLines(false);
         jScrollPane4.setViewportView(tblAssignment);
 
         add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 900, 170));

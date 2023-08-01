@@ -16,7 +16,7 @@ import java.util.ArrayList;
  */
 public class Leukemia_Centre_Organization extends Organization {
      public Leukemia_Centre_Organization() {
-        super(Organization.BloodCancerCentreType.BloodCancerCentre.getValue());
+        super(Organization.BloodCentreType.BloodCentre.getValue());
     }
     
     @Override

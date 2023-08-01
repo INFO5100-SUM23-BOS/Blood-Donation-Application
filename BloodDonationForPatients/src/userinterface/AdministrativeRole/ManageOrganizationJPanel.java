@@ -12,7 +12,7 @@ import Magic.Design.MyJTextField;
 import static Business.Enterprise.Enterprise.EnterpriseType.HRSA;
 import static Business.Enterprise.Enterprise.EnterpriseType.Legal;
 import Business.Organization.Organization;
-import Business.Organization.Organization.BloodCancerCentreType;
+import Business.Organization.Organization.BloodCentreType;
 import Business.Organization.Organization.GovernmentType;
 import Business.Organization.Organization.LegalType;
 import Business.Organization.Organization.BloodBankType;
@@ -95,8 +95,8 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         }
         }
        else if(enterprise.getEnterpriseType().toString().equals(WorldCordBloodCentre.toString())){
-        for(Organization.BloodCancerCentreType cancerType: Organization.BloodCancerCentreType.values()){
-            if (cancerType.getValue().equals(Organization.BloodCancerCentreType.BloodCancerCentre.getValue())){
+        for(Organization.BloodCentreType cancerType: Organization.BloodCentreType.values()){
+            if (cancerType.getValue().equals(Organization.BloodCentreType.BloodCentre.getValue())){
                 organizationJComboBox.addItem(cancerType);
             }
         }
@@ -359,7 +359,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
             directory.createBoneMarrowOrganization((BloodBankType)organizationJComboBox.getSelectedItem(), txtOrgRealName.getText());
         }
         else if(enterprise.getEnterpriseType().toString().equals(WorldCordBloodCentre.toString())){
-            directory.createCancerCentreOrganization((BloodCancerCentreType)organizationJComboBox.getSelectedItem(), txtOrgRealName.getText());
+            directory.createCancerCentreOrganization((BloodCentreType)organizationJComboBox.getSelectedItem(), txtOrgRealName.getText());
         }
         else{
             

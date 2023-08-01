@@ -62,9 +62,9 @@ public class OrganizationDirectory {
         return organization;
     }
      
-     public Organization createCancerCentreOrganization(Organization.BloodCancerCentreType cancerType, String realName){
+     public Organization createCancerCentreOrganization(Organization.BloodCentreType cancerType, String realName){
         Organization organization = null;
-        if (cancerType.getValue().equals(Organization.BloodCancerCentreType.BloodCancerCentre.getValue())){
+        if (cancerType.getValue().equals(Organization.BloodCentreType.BloodCentre.getValue())){
             organization = new Leukemia_Centre_Organization();
             organization.setRealName(realName);
             organizationList.add(organization);

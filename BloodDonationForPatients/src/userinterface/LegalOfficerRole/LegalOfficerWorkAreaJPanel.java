@@ -88,7 +88,6 @@ public class LegalOfficerWorkAreaJPanel extends javax.swing.JPanel {
         Header = new javax.swing.JPanel();
         BtnProfile = new javax.swing.JLabel();
         BtnManageRequests = new javax.swing.JLabel();
-        BtnConsent = new javax.swing.JLabel();
         userProcessContainer = new javax.swing.JPanel();
 
         setPreferredSize(new java.awt.Dimension(800, 500));
@@ -122,32 +121,12 @@ public class LegalOfficerWorkAreaJPanel extends javax.swing.JPanel {
         });
         Header.add(BtnManageRequests);
 
-        BtnConsent.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        BtnConsent.setForeground(new java.awt.Color(255, 255, 255));
-        BtnConsent.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        BtnConsent.setText("Check Acceptance Status");
-        BtnConsent.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        BtnConsent.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BtnConsentMouseClicked(evt);
-            }
-        });
-        Header.add(BtnConsent);
-
         add(Header, java.awt.BorderLayout.PAGE_START);
 
         userProcessContainer.setBackground(new java.awt.Color(255, 153, 153));
         userProcessContainer.setLayout(new java.awt.CardLayout());
         add(userProcessContainer, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void BtnConsentMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnConsentMouseClicked
-        // TODO add your handling code here:
-        PatientConsentJPanel patientConsentJPanel = new PatientConsentJPanel(system, userAccount, network);
-        userProcessContainer.add("PatientConsentJPanel",patientConsentJPanel);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
-    }//GEN-LAST:event_BtnConsentMouseClicked
 
     private void BtnManageRequestsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnManageRequestsMouseClicked
         // TODO add your handling code here:
@@ -167,7 +146,6 @@ public class LegalOfficerWorkAreaJPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel BtnConsent;
     private javax.swing.JLabel BtnManageRequests;
     private javax.swing.JLabel BtnProfile;
     private javax.swing.JPanel Header;

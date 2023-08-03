@@ -124,7 +124,6 @@ public class ManageLegalOfficerRequestJPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 153, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnAssign.setBackground(new java.awt.Color(255, 255, 255));
         btnAssign.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         btnAssign.setText("Assign to me");
         btnAssign.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -155,9 +154,6 @@ public class ManageLegalOfficerRequestJPanel extends javax.swing.JPanel {
             }
         });
         tblLegalOrganisation.setGridColor(new java.awt.Color(0, 0, 0));
-        tblLegalOrganisation.setIntercellSpacing(new java.awt.Dimension(0, 0));
-        tblLegalOrganisation.setRowHeight(30);
-        tblLegalOrganisation.setShowVerticalLines(false);
         jScrollPane2.setViewportView(tblLegalOrganisation);
 
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 990, 190));
@@ -182,9 +178,6 @@ public class ManageLegalOfficerRequestJPanel extends javax.swing.JPanel {
             }
         });
         tblLegalOfficer.setGridColor(new java.awt.Color(0, 0, 0));
-        tblLegalOfficer.setIntercellSpacing(new java.awt.Dimension(0, 0));
-        tblLegalOfficer.setRowHeight(30);
-        tblLegalOfficer.setShowVerticalLines(false);
         jScrollPane4.setViewportView(tblLegalOfficer);
 
         add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 340, 980, 160));
@@ -232,7 +225,6 @@ public class ManageLegalOfficerRequestJPanel extends javax.swing.JPanel {
         jLabel5.setText("Message:");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 510, -1, -1));
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jButton1.setText("Send Mail");
         jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -244,7 +236,6 @@ public class ManageLegalOfficerRequestJPanel extends javax.swing.JPanel {
         add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 600, 110, 40));
 
         toTextField.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        toTextField.setText("nitin.redde@gmail.com");
         toTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 toTextFieldActionPerformed(evt);
@@ -253,7 +244,6 @@ public class ManageLegalOfficerRequestJPanel extends javax.swing.JPanel {
         add(toTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 510, 320, -1));
 
         fromTextField.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        fromTextField.setText("nitin.redde@gmail.com");
         fromTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fromTextFieldActionPerformed(evt);
@@ -262,7 +252,6 @@ public class ManageLegalOfficerRequestJPanel extends javax.swing.JPanel {
         add(fromTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 550, 320, -1));
 
         subjectTextField.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        subjectTextField.setText("Approval Form for Organ Donation");
         subjectTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 subjectTextFieldActionPerformed(evt);
@@ -273,7 +262,6 @@ public class ManageLegalOfficerRequestJPanel extends javax.swing.JPanel {
         messageTextField.setColumns(20);
         messageTextField.setFont(new java.awt.Font("Arial", 1, 15)); // NOI18N
         messageTextField.setRows(5);
-        messageTextField.setText("Hello,\n\nIf you are still in need of Organ Transplant of Bone Marrow, please go through this mail \nand sign the required consent form. So that we can proceed forward with treatment\n\nThanks and Regards,\nLegal Operations Officer");
         jScrollPane1.setViewportView(messageTextField);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 510, 330, 130));

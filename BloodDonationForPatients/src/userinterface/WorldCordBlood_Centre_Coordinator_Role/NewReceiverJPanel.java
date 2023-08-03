@@ -73,13 +73,20 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         }
   
      private void populateStateComboBox(){
-      stateJComboBox.addItem("California");
-      stateJComboBox.addItem("Massachusetts");
-      stateJComboBox.addItem("Georgia");
-      stateJComboBox.addItem("Arizona");
-      stateJComboBox.addItem("Texas");
-      stateJComboBox.addItem("Florida");
-      stateJComboBox.addItem("Illinois");
+      // Add all states to the JComboBox using a loop
+        String[] states = {
+            "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware",
+            "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky",
+            "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri",
+            "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina",
+            "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina",
+            "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia",
+            "Wisconsin", "Wyoming"
+        };
+        
+        for (String state : states) {
+            stateJComboBox.addItem(state);
+        }
       }
       public static boolean phoneNumberValidator(String contact) {
         Pattern pattern;
@@ -121,7 +128,6 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         zipText.setEnabled(false);
         buttonYes.setEnabled(false);
         buttonNo.setEnabled(false);
-        btnAddPhoto.setEnabled(false);
     }
       public boolean isAlpha(String name) {
         return name.matches("[a-zA-Z]+");
@@ -158,7 +164,6 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         jLabel9 = new javax.swing.JLabel();
         streetText = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
-        btnAddPhoto = new javax.swing.JButton();
         buttonYes = new javax.swing.JRadioButton();
         buttonNo = new javax.swing.JRadioButton();
         dobDateField = new com.toedter.calendar.JDateChooser();
@@ -167,7 +172,6 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         jLabel20 = new javax.swing.JLabel();
         stateJComboBox = new javax.swing.JComboBox();
         genderJComboBox = new javax.swing.JComboBox();
-        lblProfilePicture = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel1 = new javax.swing.JLabel();
@@ -292,16 +296,6 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         jLabel10.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 560, -1, -1));
 
-        btnAddPhoto.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        btnAddPhoto.setText("Add photo");
-        btnAddPhoto.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnAddPhoto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddPhotoActionPerformed(evt);
-            }
-        });
-        add(btnAddPhoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 270, 120, -1));
-
         buttonYes.setBackground(new java.awt.Color(0, 0, 0));
         buttonYes.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         buttonYes.setText("Yes");
@@ -365,11 +359,6 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         });
         add(genderJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 320, 180, -1));
 
-        lblProfilePicture.setBackground(new java.awt.Color(0, 0, 0));
-        lblProfilePicture.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 255, 204)));
-        lblProfilePicture.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
-        add(lblProfilePicture, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 120, 130, 130));
-
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jButton2.setText("New Form");
         jButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -430,12 +419,6 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         PatientRequest patientrequest = new PatientRequest();//system.getPatientRequestDirectory().addPatientRequest();
-        if ( lblProfilePicture == null ){
-            lblProfilePicture.setBorder(BorderFactory.createLineBorder(Color.RED));
-            lblProfilePicture.setForeground(Color.red);
-            btnAddPhoto.setBorder(BorderFactory.createLineBorder(Color.RED));
-            btnAddPhoto.setForeground(Color.red);       
-        }
         if ( stateJComboBox.getSelectedItem().equals("") ){
             stateJComboBox.setBorder(BorderFactory.createLineBorder(Color.RED));
             stateJComboBox.setForeground(Color.red);
@@ -493,8 +476,7 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
                 zipText.getText().isEmpty() || streetText.getText().isEmpty() || uidText.getText().isEmpty() ||
                 String.valueOf(genderJComboBox.getSelectedItem()).equals("") || 
                 String.valueOf(hlaTypesText.getText()).equals("") || 
-                String.valueOf(stateJComboBox.getSelectedItem()).equals("") ||
-                lblProfilePicture == null
+                String.valueOf(stateJComboBox.getSelectedItem()).equals("")
                 )
                 
             { 
@@ -612,17 +594,6 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
        }}
         
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    
-    public ImageIcon ResizeImage(String ImagePath)
-    {
-        ImageIcon MyImage = new ImageIcon(ImagePath);
-        Image img = MyImage.getImage();
-        Image newImg = img.getScaledInstance(lblProfilePicture.getWidth(), lblProfilePicture.getHeight(), Image.SCALE_SMOOTH);
-        ImageIcon image = new ImageIcon(newImg);
-        return image;
-    }
-    
     
      private ImageIcon setPicture(String carImageLocation, JLabel carImage){
 
@@ -664,41 +635,8 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         
     }//GEN-LAST:event_ageTextMouseClicked
 
-    private void btnAddPhotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddPhotoActionPerformed
-        // TODO add your handling code here:
-        
-       JFileChooser file = new JFileChooser();
-          file.setCurrentDirectory(new File(System.getProperty("user.dir")));
-          //filter the files
-          FileNameExtensionFilter filter = new FileNameExtensionFilter("*.Images", "jpg","gif","png");
-          file.addChoosableFileFilter(filter);
-          int result = file.showSaveDialog(null);
-           //if the user click on save in Jfilechooser
-          if(result == JFileChooser.APPROVE_OPTION){
-              File selectedFile = file.getSelectedFile();
-              tempdP = new byte[(int) selectedFile.length()]; 
-                FileInputStream fis;
-             try {
-                 fis = new FileInputStream(selectedFile);
-                 fis.read(tempdP);
-                 fis.close();
-             } catch (IOException ex) {
-                 Logger.getLogger(NewDonorJPanel.class.getName()).log(Level.SEVERE, null, ex);
-             }             
-              lblProfilePicture.setIcon(ResizeImage(selectedFile.getAbsolutePath()));
-              lblProfilePicture.setIcon(setPicture(selectedFile.getAbsolutePath(),lblProfilePicture));
-          }
-
-          else if(result == JFileChooser.CANCEL_OPTION){
-              System.out.println("No File Select");
-          }
-        
-        
-    }//GEN-LAST:event_btnAddPhotoActionPerformed
-
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        lblProfilePicture.setIcon(null);
         radioGroup1.clearSelection();
        // buttonYes.setSelected(false);
        // buttonYes.resetKeyboardActions();
@@ -716,7 +654,6 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         zipText.setEnabled(true);
         buttonYes.setEnabled(true);
         buttonNo.setEnabled(true);
-        btnAddPhoto.setEnabled(true);
       
 
         uidText.setText("");
@@ -735,8 +672,6 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
 
         dobDateField.setCalendar(null);
        
-        // ButtonGroup radioGroup1 = new ButtonGroup();       
-        lblProfilePicture.removeAll();
     
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -783,7 +718,6 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField ageText;
-    private javax.swing.JButton btnAddPhoto;
     private javax.swing.JButton btnBack;
     private javax.swing.JRadioButton buttonNo;
     private javax.swing.JRadioButton buttonYes;
@@ -818,7 +752,6 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JLabel lblProfilePicture;
     private javax.swing.JTextField nameText;
     private javax.swing.JComboBox stateJComboBox;
     private javax.swing.JTextField streetText;

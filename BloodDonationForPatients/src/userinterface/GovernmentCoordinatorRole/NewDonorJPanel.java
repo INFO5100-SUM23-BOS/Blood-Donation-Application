@@ -101,13 +101,21 @@ public class NewDonorJPanel extends javax.swing.JPanel {
         }
   
   private void populateStateComboBox(){
-           stateJComboBox.addItem("California");
-           stateJComboBox.addItem("Massachusetts");
-           stateJComboBox.addItem("Georgia");
-           stateJComboBox.addItem("Arizona");
-           stateJComboBox.addItem("Texas");
-           stateJComboBox.addItem("Florida");
-           stateJComboBox.addItem("Illinois");
+      // Add all states to the JComboBox using a loop
+        String[] states = {
+            "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware",
+            "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky",
+            "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri",
+            "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina",
+            "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina",
+            "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia",
+            "Wisconsin", "Wyoming"
+        };
+        
+        for (String state : states) {
+            stateJComboBox.addItem(state);
+        }
+        
       }
     public static boolean phoneNumberValidator(String contact) {
         Pattern pattern;
@@ -160,7 +168,6 @@ public class NewDonorJPanel extends javax.swing.JPanel {
         btnNoQ3.setEnabled(false);
         btnYesQ4.setEnabled(false);
         btnNoQ4.setEnabled(false);
-        addPhotoButton.setEnabled(false);
     
     
     }
@@ -194,7 +201,6 @@ public class NewDonorJPanel extends javax.swing.JPanel {
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         btnSubmit = new javax.swing.JButton();
-        addPhotoButton = new javax.swing.JButton();
         btnYesQ2 = new javax.swing.JRadioButton();
         btnNoQ2 = new javax.swing.JRadioButton();
         btnNoQ1 = new javax.swing.JRadioButton();
@@ -203,7 +209,6 @@ public class NewDonorJPanel extends javax.swing.JPanel {
         btnYesQ3 = new javax.swing.JRadioButton();
         btnNoQ4 = new javax.swing.JRadioButton();
         btnYesQ4 = new javax.swing.JRadioButton();
-        lblProfilePicture = new javax.swing.JLabel();
         dobDateField = new com.toedter.calendar.JDateChooser();
         jButton2 = new javax.swing.JButton();
         stateJComboBox = new javax.swing.JComboBox();
@@ -351,16 +356,6 @@ public class NewDonorJPanel extends javax.swing.JPanel {
         });
         add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 700, 110, 40));
 
-        addPhotoButton.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        addPhotoButton.setText("Add photo");
-        addPhotoButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        addPhotoButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addPhotoButtonActionPerformed(evt);
-            }
-        });
-        add(addPhotoButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 320, 120, 40));
-
         btnYesQ2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btnYesQ2.setText("Yes");
         add(btnYesQ2, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 540, -1, -1));
@@ -392,10 +387,6 @@ public class NewDonorJPanel extends javax.swing.JPanel {
         btnYesQ4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btnYesQ4.setText("Yes");
         add(btnYesQ4, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 660, -1, -1));
-
-        lblProfilePicture.setBackground(new java.awt.Color(0, 0, 0));
-        lblProfilePicture.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 255, 204)));
-        add(lblProfilePicture, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 170, 130, 130));
 
         dobDateField.setBackground(new java.awt.Color(255, 255, 255));
         dobDateField.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -517,12 +508,6 @@ public class NewDonorJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         DonorRequest donorRequest = new DonorRequest();
         Date currentDate = new Date(); 
-         if ( lblProfilePicture == null ){
-            lblProfilePicture.setBorder(BorderFactory.createLineBorder(Color.RED));
-            lblProfilePicture.setForeground(Color.red);
-            addPhotoButton.setBorder(BorderFactory.createLineBorder(Color.RED));
-            addPhotoButton.setForeground(Color.red);       
-        }
         if ( stateJComboBox.getSelectedItem().equals("") ){
             stateJComboBox.setBorder(BorderFactory.createLineBorder(Color.RED));
             stateJComboBox.setForeground(Color.red);
@@ -726,52 +711,8 @@ JOptionPane.showMessageDialog(null, new JLabel("<html><b>Email ID must be in cor
         btnSubmit.setEnabled(false);
     }//GEN-LAST:event_btnSubmitActionPerformed
 
-    private void addPhotoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPhotoButtonActionPerformed
-        // TODO add your handling code here:
-       /* JFileChooser chooser1 = new JFileChooser();
-        chooser1.showOpenDialog(null);
-        File f = chooser1.getSelectedFile();
-        String filename = f.getAbsolutePath();
-        photoTextField.setText(filename);
-        Image getAbsolutePath = null;
-        ImageIcon icon = new ImageIcon(filename);
-        Image image = icon.getImage().getScaledInstance(jLabel23.getWidth(), jLabel23.getHeight(), Image.SCALE_SMOOTH);
-        jLabel23.setIcon(icon);*/
-       
-       
-       JFileChooser file = new JFileChooser();
-          file.setCurrentDirectory(new File(System.getProperty("user.dir")));
-          //filter the files
-          FileNameExtensionFilter filter = new FileNameExtensionFilter("*.Images", "jpg","gif","png");
-          file.addChoosableFileFilter(filter);
-          int result = file.showSaveDialog(null);
-           //if the user click on save in Jfilechooser
-          if(result == JFileChooser.APPROVE_OPTION){
-              File selectedFile = file.getSelectedFile();
-              tempdP = new byte[(int) selectedFile.length()]; 
-                FileInputStream fis;
-             try {
-                 fis = new FileInputStream(selectedFile);
-                 fis.read(tempdP);
-                 fis.close();
-             } catch (IOException ex) {
-                 Logger.getLogger(NewDonorJPanel.class.getName()).log(Level.SEVERE, null, ex);
-             }             
-              lblProfilePicture.setIcon(ResizeImage(selectedFile.getAbsolutePath()));
-              lblProfilePicture.setIcon(setPicture(selectedFile.getAbsolutePath(),lblProfilePicture));
-          }
-
-          else if(result == JFileChooser.CANCEL_OPTION){
-             // System.out.println("No File Select");
-          }
-       
-          
-       
-    }//GEN-LAST:event_addPhotoButtonActionPerformed
-
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        lblProfilePicture.setIcon(null);
+        // TODO add your handling code here
         radioGroup1.clearSelection();
         radioGroup2.clearSelection();
         radioGroup3.clearSelection();
@@ -797,7 +738,6 @@ JOptionPane.showMessageDialog(null, new JLabel("<html><b>Email ID must be in cor
         btnNoQ3.setEnabled(true);
         btnYesQ4.setEnabled(true);
         btnNoQ4.setEnabled(true);
-        addPhotoButton.setEnabled(true);
         
         uidText.setText("");
         nameText.setText("");
@@ -823,8 +763,6 @@ JOptionPane.showMessageDialog(null, new JLabel("<html><b>Email ID must be in cor
         btnNoQ3.setSelected(false);
         btnYesQ4.setSelected(false);
         btnNoQ4.setSelected(false);
-        
-        lblProfilePicture.removeAll();
         
         btnSubmit.setEnabled(true);
             
@@ -922,15 +860,6 @@ JOptionPane.showMessageDialog(null, new JLabel("<html><b>Email ID must be in cor
  //       System.out.println(dob.getYear());
     //    ageText.setText((String.valueOf(new Date().getYear()-dob.getYear())));
     }//GEN-LAST:event_dobDateFieldMouseExited
-
-    public ImageIcon ResizeImage(String ImagePath)
-    {
-        ImageIcon MyImage = new ImageIcon(ImagePath);
-        Image img = MyImage.getImage();
-        Image newImg = img.getScaledInstance(lblProfilePicture.getWidth(), lblProfilePicture.getHeight(), Image.SCALE_SMOOTH);
-        ImageIcon image = new ImageIcon(newImg);
-        return image;
-    }
     
      private ImageIcon setPicture(String carImageLocation, JLabel carImage){
 
@@ -993,7 +922,6 @@ JOptionPane.showMessageDialog(null, new JLabel("<html><b>Email ID must be in cor
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton addPhotoButton;
     private javax.swing.JTextField ageText;
     private javax.swing.JComboBox<String> bloodTypeComboBox;
     private javax.swing.JButton btnBack;
@@ -1036,7 +964,6 @@ JOptionPane.showMessageDialog(null, new JLabel("<html><b>Email ID must be in cor
     private javax.swing.JPanel jPanel3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JLabel lblProfilePicture;
     private javax.swing.JTextField nameText;
     private javax.swing.JComboBox stateJComboBox;
     private javax.swing.JTextField streetText;

@@ -19,7 +19,7 @@ public class DonorReceiverFramePage extends javax.swing.JFrame {
     /**
      * Creates new form DonorReceiverFramePage
      */
-    
+    //Changes for the vs code 
     
     public DonorReceiverFramePage(String type, EcoSystem system) {
         initComponents();

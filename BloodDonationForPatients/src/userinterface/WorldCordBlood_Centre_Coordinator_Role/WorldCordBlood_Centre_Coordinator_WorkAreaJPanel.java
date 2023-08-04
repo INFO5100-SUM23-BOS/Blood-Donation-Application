@@ -1,7 +1,7 @@
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * and open the template in the editor
  */
 package userinterface.WorldCordBlood_Centre_Coordinator_Role;
 
@@ -17,6 +17,7 @@ import Business.EcoSystem;
 import userinterface.DoctorRole.*;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
+import Business.Organization.Blood_Donation_Bank_Organization;
 import Business.Organization.Leukemia_Centre_Organization;
 import Business.Organization.DoctorOrganization;
 import Business.Organization.Organization;
@@ -40,12 +41,12 @@ import static javax.swing.SwingUtilities.getWindowAncestor;
 public class WorldCordBlood_Centre_Coordinator_WorkAreaJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form Leukemia_Centre_Coordinator_WorkAreaJPanel
+     * Creates new form WorldCordBlood_Centre_Coordinator_WorkAreaJPanel
      * 
      */
     boolean a = true;
     private UserAccount userAccount;
-    Leukemia_Centre_Organization cancerCentreOrganization;
+    Blood_Donation_Bank_Organization bloodBankOrganization;
     Enterprise enterprise;
     EcoSystem system;
     PatientDirectory patientDirectory;
@@ -53,11 +54,11 @@ public class WorldCordBlood_Centre_Coordinator_WorkAreaJPanel extends javax.swin
     private Network network;
     
     
-    public WorldCordBlood_Centre_Coordinator_WorkAreaJPanel(UserAccount account,Leukemia_Centre_Organization cancerCentreOrganization, Enterprise enterprise, EcoSystem system, Network network) {
+    public WorldCordBlood_Centre_Coordinator_WorkAreaJPanel(UserAccount account,Blood_Donation_Bank_Organization bloodBankOrganization, Enterprise enterprise, EcoSystem system, Network network) {
         initComponents();
         this.system = system;
         this.userAccount = account;
-        this.cancerCentreOrganization = cancerCentreOrganization;
+        this.bloodBankOrganization = bloodBankOrganization;
         this.enterprise = enterprise;
         this.network = network;
     }
@@ -198,7 +199,7 @@ public class WorldCordBlood_Centre_Coordinator_WorkAreaJPanel extends javax.swin
 
     private void btnProfileMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProfileMouseClicked
         // TODO add your handling code here:
-        ManageWorldCordBloodCentreCoordinatorProfile manageCancerCoordinatorWorkAreaJPanel = new ManageWorldCordBloodCentreCoordinatorProfile(userAccount,cancerCentreOrganization,enterprise);
+        ManageWorldCordBloodCentreCoordinatorProfile manageCancerCoordinatorWorkAreaJPanel = new ManageWorldCordBloodCentreCoordinatorProfile(userAccount,bloodBankOrganization,enterprise);
         userProcessContainer.add("ManageCancerCentreCoordinatorProfile",manageCancerCoordinatorWorkAreaJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);

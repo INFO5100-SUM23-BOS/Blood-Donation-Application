@@ -15,6 +15,7 @@ import java.util.Map;
  * @author j.videlefsky
  */
 public class PersonBloodType {
+//    private String bloodType;
     private ArrayList<BloodType> bloodTypeList = new ArrayList();
     // eligible donors and recipients attributes
     private ArrayList<BloodType> eligibleDonors;
@@ -23,6 +24,9 @@ public class PersonBloodType {
     public PersonBloodType() {
         bloodTypeList = new ArrayList<>();
     }
+//    public PersonBloodType(String bloodType) {
+//        this.bloodType = bloodType;
+//    }
     
     public enum BloodType{
         A_POS("A+"),
@@ -106,14 +110,6 @@ public class PersonBloodType {
             System.out.println(e);
             this.bloodTypeList.add(BloodType.valueOf(bloodTypeList));
         }
-//        return this;
-//        return this;
-//        return this;
-//        return this;
-//        return this;
-//        return this;
-//        return this;
-//        return this;
     }
     
     public void removeBloodType(BloodType bloodType) {

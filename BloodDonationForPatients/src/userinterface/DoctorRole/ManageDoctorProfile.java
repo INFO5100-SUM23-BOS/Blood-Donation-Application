@@ -45,7 +45,6 @@ public class ManageDoctorProfile extends javax.swing.JPanel {
         txtContact.setText(String.valueOf(userAccount.getEmployee().getContactNumber()));
         txtDOB.setText(String.valueOf(userAccount.getEmployee().getDateOfBirth()));
         txtName.setText(userAccount.getEmployee().getName());
-        txtSpecialization.setText(userAccount.getEmployee().getSpecialization());
         txtState.setText(userAccount.getEmployee().getState());
         
         
@@ -67,13 +66,11 @@ public class ManageDoctorProfile extends javax.swing.JPanel {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
         txtName = new javax.swing.JTextField();
         txtContact = new javax.swing.JTextField();
         txtAddress = new javax.swing.JTextField();
         txtCity = new javax.swing.JTextField();
         txtState = new javax.swing.JTextField();
-        txtSpecialization = new javax.swing.JTextField();
         txtDOB = new javax.swing.JTextField();
         jLabel25 = new javax.swing.JLabel();
         btnSave = new javax.swing.JButton();
@@ -103,9 +100,6 @@ public class ManageDoctorProfile extends javax.swing.JPanel {
         jLabel7.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel7.setText("DOB:");
 
-        jLabel8.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel8.setText("Specialization:");
-
         txtName.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
 
         txtContact.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -115,8 +109,6 @@ public class ManageDoctorProfile extends javax.swing.JPanel {
         txtCity.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
 
         txtState.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-
-        txtSpecialization.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
 
         txtDOB.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
 
@@ -145,9 +137,6 @@ public class ManageDoctorProfile extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(54, 54, 54)
-                        .addComponent(jLabel8))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(54, 54, 54)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel7)
                             .addComponent(jLabel6)
@@ -164,8 +153,7 @@ public class ManageDoctorProfile extends javax.swing.JPanel {
                             .addComponent(txtCity, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtState, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtDOB, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(comboGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtSpecialization, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(comboGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(151, 151, 151)
                         .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -206,11 +194,7 @@ public class ManageDoctorProfile extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(txtDOB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(txtSpecialization, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
+                .addGap(73, 73, 73)
                 .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(56, Short.MAX_VALUE))
         );
@@ -224,7 +208,6 @@ public class ManageDoctorProfile extends javax.swing.JPanel {
         userAccount.getEmployee().setGender((String) comboGender.getSelectedItem());
         userAccount.getEmployee().setAddress(txtAddress.getText());
         userAccount.getEmployee().setState(txtCity.getText());
-        userAccount.getEmployee().setSpecialization(txtSpecialization.getText());
         
         
     }//GEN-LAST:event_btnSaveActionPerformed
@@ -241,13 +224,11 @@ public class ManageDoctorProfile extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JTextField txtAddress;
     private javax.swing.JTextField txtCity;
     private javax.swing.JTextField txtContact;
     private javax.swing.JTextField txtDOB;
     private javax.swing.JTextField txtName;
-    private javax.swing.JTextField txtSpecialization;
     private javax.swing.JTextField txtState;
     // End of variables declaration//GEN-END:variables
 }

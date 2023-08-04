@@ -18,7 +18,7 @@ public class DonorRequest {
     private Date dob;
     private int age;
     private String gender;
-    private PersonBloodType hla;
+    private PersonBloodType bloodType;
     private String streetAddress;
     private String city;
     private String state;
@@ -26,17 +26,16 @@ public class DonorRequest {
     private long contact;
     private String emailID;
     private String status;
-    private Date  cancerDiagnosedDate;
     private Date  lastDonationDate;
-    private boolean brainInjury;
-    private boolean diabitiesBP;
-    private boolean breathingProb;
-    private boolean chronicPains;
+    private boolean chronicConditions;
+    private boolean currentlyUnwell;
+    private boolean selfDrugUse;
+    private boolean contagiousDiseases;
     private String imagePath;
     private byte[] dP;
     
     public DonorRequest() {
-        this.hla = new PersonBloodType();
+        this.bloodType = new PersonBloodType();
     }
 
     public byte[] getdP() {
@@ -70,8 +69,8 @@ public class DonorRequest {
     public void setAge(int age) {        this.age = age;    }
     public String getGender() {        return gender;    }
     public void setGender(String gender) {        this.gender = gender;    }
-    public PersonBloodType getHLA() {        return hla;    }
-    public void setHLA(PersonBloodType hla) {        this.hla = hla;    }
+    public PersonBloodType getHLA() {        return bloodType;    }
+    public void setHLA(PersonBloodType hla) {        this.bloodType = hla;    }
     public String getStreetAddress() {        return streetAddress;    }
     public void setStreetAddress(String streetAddress) {        this.streetAddress = streetAddress;    }
     public String getCity() {        return city;    }
@@ -86,40 +85,32 @@ public class DonorRequest {
     public void setStatus(String status) {        this.status = status;}
     public Date getLastDonationDate() {        return lastDonationDate;}
     public void setLastDonationDate(Date lastDonationDate) {        this.lastDonationDate = lastDonationDate;    }
-    public boolean isBrainInjury() {        return brainInjury;}
-    public void setBrainInjury(boolean brainInjury) {        this.brainInjury = brainInjury;    }
-    public boolean isDiabitiesBP() {        return diabitiesBP;    }
-    public void setDiabitiesBP(boolean diabitiesBP) {        this.diabitiesBP = diabitiesBP;    }
-    public boolean isBreathingProb() {return breathingProb;}
-    public void setBreathingProb(boolean breathingProb) {        this.breathingProb = breathingProb;    }
+    public boolean isChronicConditions() {        return chronicConditions;}
+    public void setChronicConditions(boolean chronicConditions) {        this.chronicConditions = chronicConditions;    }
+    public boolean isCurrentlyUnwell() {        return currentlyUnwell;    }
+    public void setCurrentlyUnwell(boolean currentlyUnwell) {        this.currentlyUnwell = currentlyUnwell;    }
+    public boolean isSelfDrugUse() {return selfDrugUse;}
+    public void setSelfDrugUse(boolean selfDrugUse) {        this.selfDrugUse = selfDrugUse;    }
           
     @Override
     public String toString() {
         return donorID;
     }
 
-    public void setCancerDiagnosedDate(Date date) {
-        this.cancerDiagnosedDate = date;
+    public PersonBloodType getBloodType() {
+        return bloodType;
     }
 
-    public Date getCancerDiagnosedDate() {
-        return this.cancerDiagnosedDate;
+    public void setBloodType(PersonBloodType bloodType) {
+        this.bloodType = bloodType;
     }
 
-    public PersonBloodType getHla() {
-        return hla;
+    public boolean isContagiousDiseases() {
+        return contagiousDiseases;
     }
 
-    public void setHla(PersonBloodType hla) {
-        this.hla = hla;
-    }
-
-    public boolean isChronicPains() {
-        return chronicPains;
-    }
-
-    public void setChronicPains(boolean chronicPains) {
-        this.chronicPains = chronicPains;
+    public void setContagiousDiseases(boolean contagiousDiseases) {
+        this.contagiousDiseases = contagiousDiseases;
     }
     
 }

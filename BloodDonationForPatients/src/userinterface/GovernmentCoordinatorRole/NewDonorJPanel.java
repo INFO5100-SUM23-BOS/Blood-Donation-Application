@@ -315,7 +315,7 @@ public class NewDonorJPanel extends javax.swing.JPanel {
 
         jLabel17.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel17.setText("Email:");
-        add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 270, -1, -1));
+        add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 270, -1, -1));
 
         emailText.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         emailText.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -366,6 +366,11 @@ public class NewDonorJPanel extends javax.swing.JPanel {
 
         btnNoQ1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btnNoQ1.setText("No");
+        btnNoQ1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNoQ1ActionPerformed(evt);
+            }
+        });
         add(btnNoQ1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 480, -1, -1));
 
         btnYesQ1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -560,11 +565,11 @@ public class NewDonorJPanel extends javax.swing.JPanel {
             ageText.setBorder(BorderFactory.createLineBorder(Color.RED));
             ageText.setForeground(Color.red);
         }
-         if(btnNoQ1.isSelected() || 
-                 btnNoQ2.isSelected() ||
-                 btnNoQ3.isSelected() ||
-                 btnNoQ4.isSelected()) {
-             JOptionPane.showMessageDialog(null,new JLabel(  "<html>Based on the inputs, we could not accept your marrow!<br> Thanks for your interest to save the Humanity!</html>") , "Error", JOptionPane.ERROR_MESSAGE);
+         if(btnYesQ1.isSelected() || 
+                 btnYesQ2.isSelected() ||
+                 btnYesQ3.isSelected() ||
+                 btnYesQ4.isSelected()) {
+             JOptionPane.showMessageDialog(null,new JLabel(  "You are currently not an eligible blood donor.") , "Error", JOptionPane.ERROR_MESSAGE);
              return ;
          }
        //
@@ -645,7 +650,7 @@ JOptionPane.showMessageDialog(null, new JLabel("<html><b>Email ID must be in cor
                 donorRequest.getHLA().updateBloodTypelist(String.valueOf(bloodTypeComboBox.getSelectedItem()));
             }
             catch (Exception e) {
-                JOptionPane.showMessageDialog(null, new JLabel(  "<html><b>Patient's HLA Type can only be one of these HLA_A,HLA_B,HLA_C,HLA_DR,HLA_DBQ1</b></html>"));
+                JOptionPane.showMessageDialog(null, new JLabel(  "<html><b>Blood type doesn't exist</b></html>"));
                 return;
             }
 
@@ -676,31 +681,31 @@ JOptionPane.showMessageDialog(null, new JLabel("<html><b>Email ID must be in cor
         }
         
         if(btnYesQ1.isSelected())
-        {donorRequest.setBrainInjury(true); //  labConfirmation
+        {donorRequest.setChronicConditions(true); //  labConfirmation
         }
         else if(btnNoQ1.isSelected())
-        {donorRequest.setBrainInjury(false); //  labConfirmation
+        {donorRequest.setChronicConditions(false); //  labConfirmation
         }
         
         if(btnYesQ2.isSelected())
-        {donorRequest.setBreathingProb(true); //  symptoms
+        {donorRequest.setSelfDrugUse(true); //  symptoms
         }
         else if(btnNoQ2.isSelected())
-        {donorRequest.setBreathingProb(false); //  symptoms
+        {donorRequest.setSelfDrugUse(false); //  symptoms
         }
         
         if(btnYesQ3.isSelected())
-        {donorRequest.setDiabitiesBP(true); //  symptoms
+        {donorRequest.setCurrentlyUnwell(true); //  symptoms
         }
         else if(btnNoQ3.isSelected())
-        {donorRequest.setDiabitiesBP(false); //  symptoms
+        {donorRequest.setCurrentlyUnwell(false); //  symptoms
         }
         
         if(btnYesQ4.isSelected())
-        {donorRequest.setChronicPains(true); //  followUpTest
+        {donorRequest.setContagiousDiseases(true); //  followUpTest
         }
         else if(btnNoQ4.isSelected())
-        {donorRequest.setChronicPains(false); //  followUpTest
+        {donorRequest.setContagiousDiseases(false); //  followUpTest
         }
         system.getDonorRequestDirectory().addDonorRequest(donorRequest); 
         JOptionPane.showMessageDialog(null, new JLabel("<html><b>Thank you for volunteering to save a life!</b></html>"));
@@ -919,6 +924,10 @@ JOptionPane.showMessageDialog(null, new JLabel("<html><b>Email ID must be in cor
         bloodTypeComboBox.addItem("O_POS");
         bloodTypeComboBox.addItem("O_NEG");
     }//GEN-LAST:event_bloodTypeComboBoxActionPerformed
+
+    private void btnNoQ1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNoQ1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnNoQ1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

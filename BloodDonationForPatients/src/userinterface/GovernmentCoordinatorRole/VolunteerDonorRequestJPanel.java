@@ -455,10 +455,10 @@ public class VolunteerDonorRequestJPanel extends javax.swing.JPanel {
             emailText.setText(donorRequest.getEmailID());
             statusText.setText(donorRequest.getStatus());
 
-            txtBrainInjury.setText(String.valueOf(donorRequest.isBrainInjury()));
-            txtBreathingProb.setText(String.valueOf(donorRequest.isBreathingProb()));
-            txtDiabitiesBP.setText(String.valueOf(donorRequest.isDiabitiesBP()));
-            txtChronicPains.setText(String.valueOf(donorRequest.isChronicPains()));
+            txtBrainInjury.setText(String.valueOf(donorRequest.isChronicConditions()));
+            txtBreathingProb.setText(String.valueOf(donorRequest.isSelfDrugUse()));
+            txtDiabitiesBP.setText(String.valueOf(donorRequest.isCurrentlyUnwell()));
+            txtChronicPains.setText(String.valueOf(donorRequest.isContagiousDiseases()));
 
             if(donorRequest.getdP() !=null){
                 //Working line

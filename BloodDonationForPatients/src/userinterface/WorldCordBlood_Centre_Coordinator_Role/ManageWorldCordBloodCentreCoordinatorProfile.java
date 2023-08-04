@@ -5,7 +5,7 @@
  */
 package userinterface.WorldCordBlood_Centre_Coordinator_Role;
 import Business.Enterprise.Enterprise;
-import Business.Organization.Leukemia_Centre_Organization;
+import Business.Organization.Blood_Donation_Bank_Organization;
 import Business.Organization.GovernmentOrganization;
 import Business.UserAccount.UserAccount;
 import Magic.Design.MyJButton;
@@ -25,16 +25,16 @@ public class ManageWorldCordBloodCentreCoordinatorProfile extends javax.swing.JP
      private UserAccount userAccount;
      private Enterprise enterprise ;
      private GovernmentOrganization govtOrganization;
-     private Leukemia_Centre_Organization cancerCentreOrganization;
+     private Blood_Donation_Bank_Organization bloodBankOrganization;
     
 
 
-    ManageWorldCordBloodCentreCoordinatorProfile(UserAccount userAccount, Leukemia_Centre_Organization cancerCentreOrganization, Enterprise enterprise) {
+    ManageWorldCordBloodCentreCoordinatorProfile(UserAccount userAccount, Blood_Donation_Bank_Organization bloodBankOrganization, Enterprise enterprise) {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
          initComponents();
         this.userAccount = userAccount;
         this.enterprise = enterprise;
-        this.cancerCentreOrganization = cancerCentreOrganization;
+        this.bloodBankOrganization = bloodBankOrganization;
     }
 
   
@@ -55,13 +55,11 @@ public class ManageWorldCordBloodCentreCoordinatorProfile extends javax.swing.JP
         jLabel6 = new javax.swing.JLabel();
         comboGender = new javax.swing.JComboBox();
         jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
         txtName = new javax.swing.JTextField();
         txtContact = new javax.swing.JTextField();
         txtAddress = new javax.swing.JTextField();
         txtCity = new javax.swing.JTextField();
         txtState = new javax.swing.JTextField();
-        txtSpecialization = new javax.swing.JTextField();
         txtDOB = new javax.swing.JTextField();
         btnSave = new javax.swing.JButton();
 
@@ -100,10 +98,6 @@ public class ManageWorldCordBloodCentreCoordinatorProfile extends javax.swing.JP
         jLabel7.setText("DOB:");
         add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 230, -1, -1));
 
-        jLabel8.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel8.setText("Specialization:");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 270, -1, -1));
-
         txtName.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 44, 146, -1));
 
@@ -118,14 +112,6 @@ public class ManageWorldCordBloodCentreCoordinatorProfile extends javax.swing.JP
 
         txtState.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         add(txtState, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, 146, -1));
-
-        txtSpecialization.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        txtSpecialization.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtSpecializationActionPerformed(evt);
-            }
-        });
-        add(txtSpecialization, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 270, 146, -1));
 
         txtDOB.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         txtDOB.addActionListener(new java.awt.event.ActionListener() {
@@ -153,17 +139,12 @@ public class ManageWorldCordBloodCentreCoordinatorProfile extends javax.swing.JP
         userAccount.getEmployee().setGender((String) comboGender.getSelectedItem());
         userAccount.getEmployee().setAddress(txtAddress.getText());
         userAccount.getEmployee().setState(txtCity.getText());
-        userAccount.getEmployee().setSpecialization(txtSpecialization.getText());
 
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void txtDOBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDOBActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDOBActionPerformed
-
-    private void txtSpecializationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSpecializationActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtSpecializationActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -176,13 +157,11 @@ public class ManageWorldCordBloodCentreCoordinatorProfile extends javax.swing.JP
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JTextField txtAddress;
     private javax.swing.JTextField txtCity;
     private javax.swing.JTextField txtContact;
     private javax.swing.JTextField txtDOB;
     private javax.swing.JTextField txtName;
-    private javax.swing.JTextField txtSpecialization;
     private javax.swing.JTextField txtState;
     // End of variables declaration//GEN-END:variables
 }

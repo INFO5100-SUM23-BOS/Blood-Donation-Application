@@ -121,7 +121,7 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         emailText.setEnabled(false);
         contactText.setEnabled(false);
         genderJComboBox.setEnabled(false);
-        hlaTypesText.setEnabled(false);
+        hlaTypesText1.setEnabled(false);
         streetText.setEnabled(false);
         cityText.setEnabled(false);
         stateJComboBox.setEnabled(false);
@@ -427,9 +427,9 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
             genderJComboBox.setBorder(BorderFactory.createLineBorder(Color.RED));
             genderJComboBox.setForeground(Color.red);
         }
-        if ( hlaTypesText.getText().equals("") ){
-            hlaTypesText.setBorder(BorderFactory.createLineBorder(Color.RED));
-            hlaTypesText.setForeground(Color.red);
+        if ( hlaTypesText1.getText().equals("") ){
+            hlaTypesText1.setBorder(BorderFactory.createLineBorder(Color.RED));
+            hlaTypesText1.setForeground(Color.red);
         }
         if (nameText.getText().isEmpty()) {
             nameText.setBorder(BorderFactory.createLineBorder(Color.RED));
@@ -475,7 +475,7 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         if (    nameText.getText().isEmpty() || emailText.getText().isEmpty() || cityText.getText().isEmpty() ||contactText.getText().isEmpty() ||
                 zipText.getText().isEmpty() || streetText.getText().isEmpty() || uidText.getText().isEmpty() ||
                 String.valueOf(genderJComboBox.getSelectedItem()).equals("") || 
-                String.valueOf(hlaTypesText.getText()).equals("") || 
+                String.valueOf(hlaTypesText1.getText()).equals("") || 
                 String.valueOf(stateJComboBox.getSelectedItem()).equals("")
                 )
                 
@@ -544,7 +544,7 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         
        else{
             try {
-                patientrequest.getHla().updateBloodTypelist(hlaTypesText.getText());
+                patientrequest.getHla().updateBloodTypelist(hlaTypesText1.getText());
             }
             catch (Exception e) {
                 JOptionPane.showMessageDialog(null, new JLabel(  "<html><b>Patient's HLA Type can only be one of these HLA_A,HLA_B,HLA_C,HLA_DR,HLA_DBQ1</b></html>"));
@@ -647,7 +647,7 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         emailText.setEnabled(true);
         contactText.setEnabled(true);
         genderJComboBox.setEnabled(true);
-        hlaTypesText.setEnabled(true);
+        hlaTypesText1.setEnabled(true);
         streetText.setEnabled(true);
         cityText.setEnabled(true);
         stateJComboBox.setEnabled(true);
@@ -664,7 +664,7 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         streetText.setText("");
         cityText.setText("");
         zipText.setText("");
-        hlaTypesText.setText("");
+        hlaTypesText1.setText("");
 
         genderJComboBox.setSelectedItem("");
         stateJComboBox.setSelectedItem("");

@@ -210,6 +210,11 @@ public class VolunteerReceiverRequestJPanel extends javax.swing.JPanel {
         add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 430, -1, -1));
 
         hlaText.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        hlaText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hlaTextActionPerformed(evt);
+            }
+        });
         add(hlaText, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 430, 190, -1));
 
         jLabel11.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
@@ -357,10 +362,10 @@ public class VolunteerReceiverRequestJPanel extends javax.swing.JPanel {
         Patient patient = new Patient();
         
         try {
-            patient.getHLA().updateBloodTypelist(hlaText.getText());
+
+           // patient.getHLA().updateBloodTypelist(hlaText.getText());
         }
         catch (Exception e) {
-            JOptionPane.showMessageDialog(null, new JLabel(  "<html><b>Patient's HLA Type can only be one of these HLA_A,HLA_B,HLA_C,HLA_DR,HLA_DBQ1</b></html>"));
             return;
         }
         
@@ -525,6 +530,10 @@ public class VolunteerReceiverRequestJPanel extends javax.swing.JPanel {
             
         }
     }//GEN-LAST:event_requestTableMousePressed
+
+    private void hlaTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hlaTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_hlaTextActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

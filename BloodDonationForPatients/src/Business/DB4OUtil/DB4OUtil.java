@@ -83,7 +83,7 @@ public class DB4OUtil {
             System.out.println("size==0");
         }
         else{
-            system = systems.get(systems.size() - 1);
+            system = systems.get(systems.size()-1);
              System.out.println("size not 0");
         }
         conn.close();

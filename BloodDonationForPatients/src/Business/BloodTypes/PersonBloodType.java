@@ -28,34 +28,40 @@ public class PersonBloodType {
 //        this.bloodType = bloodType;
 //    }
     
-    public enum BloodType{
-        A_POS("A+"),
-        A_NEG("A-"),
-        B_POS("B+"),
-        B_NEG("B-"),
-        AB_POS("AB+"),
-        AB_NEG("AB-"),
-        O_POS("O+"),
-        O_NEG("O-");
-        
-        // Create empty eligible donors and recipients
-//        eligibleDonors = new ArrayList<BloodType bloodType>();
-//        eligibleRecipients = new ArrayList<BloodType bloodType>();
-        
-        private String value;
-        private BloodType(String value){
-            this.value = value;
-        }
+public enum BloodType {
+    A_POS("A+"),
+    A_NEG("A-"),
+    B_POS("B+"),
+    B_NEG("B-"),
+    AB_POS("AB+"),
+    AB_NEG("AB-"),
+    O_POS("O+"),
+    O_NEG("O-");
 
-        public String getValue() {
-            return value;
-        }
+    private String value;
 
-        @Override
-        public String toString() {
-            return value;
-        }
+    private BloodType(String value) {
+        this.value = value;
     }
+
+    public String getValue() {
+        return value;
+    }
+
+    @Override
+    public String toString() {
+        return value;
+    }
+       public static BloodType fromValue(String value) {
+        for (BloodType bloodType : values()) {
+            if (bloodType.value.equals(value)) {
+                return bloodType;
+            }
+        }
+        throw new IllegalArgumentException("No enum constant for value: " + value);
+    }
+}
+
     
     // Add donor and recipient types
     public void addDonorType(BloodType bloodType){

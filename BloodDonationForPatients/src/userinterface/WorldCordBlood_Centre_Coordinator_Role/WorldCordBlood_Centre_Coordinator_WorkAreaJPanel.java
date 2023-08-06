@@ -46,7 +46,7 @@ public class WorldCordBlood_Centre_Coordinator_WorkAreaJPanel extends javax.swin
      */
     boolean a = true;
     private UserAccount userAccount;
-    Blood_Donation_Bank_Organization bloodBankOrganization;
+    Leukemia_Centre_Organization bloodBankOrganization;
     Enterprise enterprise;
     EcoSystem system;
     PatientDirectory patientDirectory;
@@ -54,7 +54,7 @@ public class WorldCordBlood_Centre_Coordinator_WorkAreaJPanel extends javax.swin
     private Network network;
     
     
-    public WorldCordBlood_Centre_Coordinator_WorkAreaJPanel(UserAccount account,Blood_Donation_Bank_Organization bloodBankOrganization, Enterprise enterprise, EcoSystem system, Network network) {
+    public WorldCordBlood_Centre_Coordinator_WorkAreaJPanel(UserAccount account,Leukemia_Centre_Organization bloodBankOrganization, Enterprise enterprise, EcoSystem system, Network network) {
         initComponents();
         this.system = system;
         this.userAccount = account;

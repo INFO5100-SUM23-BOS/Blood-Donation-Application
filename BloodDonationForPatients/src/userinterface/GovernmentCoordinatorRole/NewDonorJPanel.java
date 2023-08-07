@@ -915,14 +915,14 @@ JOptionPane.showMessageDialog(null, new JLabel("<html><b>Email ID must be in cor
     }
 
     private void populatebloodTypeComboBox() {
-        bloodTypeComboBox.addItem("A_POS");
-        bloodTypeComboBox.addItem("A_NEG");
-        bloodTypeComboBox.addItem("B_POS");
-        bloodTypeComboBox.addItem("B_NEG");
-        bloodTypeComboBox.addItem("AB_POS");
-        bloodTypeComboBox.addItem("AB_NEG");
-        bloodTypeComboBox.addItem("O_POS");
-        bloodTypeComboBox.addItem("O_NEG");
+        bloodTypeComboBox.addItem("AP");
+        bloodTypeComboBox.addItem("AN");
+        bloodTypeComboBox.addItem("BP");
+        bloodTypeComboBox.addItem("BN");
+        bloodTypeComboBox.addItem("ABP");
+        bloodTypeComboBox.addItem("ABN");
+        bloodTypeComboBox.addItem("OP");
+        bloodTypeComboBox.addItem("ON");
     }//GEN-LAST:event_bloodTypeComboBoxActionPerformed
 
     private void btnNoQ1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNoQ1ActionPerformed

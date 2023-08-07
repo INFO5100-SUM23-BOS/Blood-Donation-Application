@@ -60,7 +60,7 @@ public enum BloodType {
         }
         throw new IllegalArgumentException("No enum constant for value: " + value);
     }
-}
+    }
 
     
     // Add donor and recipient types

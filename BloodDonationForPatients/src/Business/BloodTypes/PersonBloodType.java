@@ -29,14 +29,14 @@ public class PersonBloodType {
 //    }
     
 public enum BloodType {
-    A_POS("A+"),
-    A_NEG("A-"),
-    B_POS("B+"),
-    B_NEG("B-"),
-    AB_POS("AB+"),
-    AB_NEG("AB-"),
-    O_POS("O+"),
-    O_NEG("O-");
+    AP("AP"),
+    AN("AN"),
+    BP("BP"),
+    BN("BN"),
+    ABP("ABP"),
+    ABN("ABN"),
+    OP("OP"),
+    ON("ON");
 
     private String value;
 

@@ -547,7 +547,7 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
                 patientrequest.getHla().updateBloodTypelist(hlaTypesText1.getText());
             }
             catch (Exception e) {
-                JOptionPane.showMessageDialog(null, new JLabel(  "<html><b>Patient's HLA Type can only be one of these HLA_A,HLA_B,HLA_C,HLA_DR,HLA_DBQ1</b></html>"));
+                JOptionPane.showMessageDialog(null, new JLabel(  "<html><b>Patient's Blodd Type can only be one of these AN,AP,BP,BN,ABP,ABN,OP,ON where N-Negative, P-Positive.</b></html>"));
                 return;
             }
             

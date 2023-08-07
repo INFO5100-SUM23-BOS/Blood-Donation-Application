@@ -363,9 +363,11 @@ public class VolunteerReceiverRequestJPanel extends javax.swing.JPanel {
         
         try {
 
-           // patient.getHLA().updateBloodTypelist(hlaText.getText());
+            patient.getHLA().updateBloodTypelist(hlaText.getText());
         }
         catch (Exception e) {
+                            JOptionPane.showMessageDialog(null, new JLabel("<html><b>Please check the patients blood group. It Should be AN,AP,BP,BN,ABP,ABN,OP,ON where N-Negative, P-Positive.</b></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
+
             return;
         }
         

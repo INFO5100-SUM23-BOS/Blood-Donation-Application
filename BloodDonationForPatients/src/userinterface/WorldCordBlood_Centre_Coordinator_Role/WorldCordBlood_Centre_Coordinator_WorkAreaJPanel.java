@@ -99,6 +99,8 @@ public class WorldCordBlood_Centre_Coordinator_WorkAreaJPanel extends javax.swin
         btnManageRequests = new javax.swing.JLabel();
         btnReceiveRequests = new javax.swing.JLabel();
         btnPatientStatus = new javax.swing.JLabel();
+        btnManageInventory = new javax.swing.JLabel();
+        btnPrepareOrder = new javax.swing.JLabel();
         userProcessContainer = new javax.swing.JPanel();
 
         setPreferredSize(new java.awt.Dimension(800, 500));
@@ -127,7 +129,7 @@ public class WorldCordBlood_Centre_Coordinator_WorkAreaJPanel extends javax.swin
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -137,7 +139,7 @@ public class WorldCordBlood_Centre_Coordinator_WorkAreaJPanel extends javax.swin
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        Header.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 130, -1));
+        Header.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 90, -1));
 
         jPanel3.setBackground(new java.awt.Color(102, 102, 102));
 
@@ -158,14 +160,14 @@ public class WorldCordBlood_Centre_Coordinator_WorkAreaJPanel extends javax.swin
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btnManageRequests, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(btnManageRequests, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        Header.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 160, 50));
+        Header.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 110, 50));
 
         btnReceiveRequests.setBackground(new java.awt.Color(31, 31, 31));
         btnReceiveRequests.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -177,7 +179,7 @@ public class WorldCordBlood_Centre_Coordinator_WorkAreaJPanel extends javax.swin
                 btnReceiveRequestsMouseClicked(evt);
             }
         });
-        Header.add(btnReceiveRequests, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 0, -1, 50));
+        Header.add(btnReceiveRequests, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 0, -1, 50));
 
         btnPatientStatus.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btnPatientStatus.setForeground(new java.awt.Color(255, 255, 255));
@@ -188,7 +190,29 @@ public class WorldCordBlood_Centre_Coordinator_WorkAreaJPanel extends javax.swin
                 btnPatientStatusMouseClicked(evt);
             }
         });
-        Header.add(btnPatientStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 0, 170, 45));
+        Header.add(btnPatientStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 0, 170, 45));
+
+        btnManageInventory.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btnManageInventory.setForeground(new java.awt.Color(255, 255, 255));
+        btnManageInventory.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnManageInventory.setText("Manage Inventory");
+        btnManageInventory.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnManageInventoryMouseClicked(evt);
+            }
+        });
+        Header.add(btnManageInventory, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 0, 170, 45));
+
+        btnPrepareOrder.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btnPrepareOrder.setForeground(new java.awt.Color(255, 255, 255));
+        btnPrepareOrder.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnPrepareOrder.setText("Prepare Order");
+        btnPrepareOrder.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnPrepareOrderMouseClicked(evt);
+            }
+        });
+        Header.add(btnPrepareOrder, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 0, 120, 45));
 
         add(Header, java.awt.BorderLayout.PAGE_START);
 
@@ -233,11 +257,29 @@ public class WorldCordBlood_Centre_Coordinator_WorkAreaJPanel extends javax.swin
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnReceiveRequestsMouseClicked
 
+    private void btnManageInventoryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnManageInventoryMouseClicked
+        // TODO add your handling code here:
+//        ManageInventoryJPanel panel = new ManageInventoryJPanel(system, userAccount, network);
+//        userProcessContainer.add("ManageInventoryJPanel", panel);
+//        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+//        layout.next(userProcessContainer);
+    }//GEN-LAST:event_btnManageInventoryMouseClicked
+
+    private void btnPrepareOrderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPrepareOrderMouseClicked
+        // TODO add your handling code here:
+//        PrepareOrderJPanel panel = new PrepareOrderJPanel(system, userAccount, network);
+//        userProcessContainer.add("PrepareOrderJPanel", panel);
+//        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+//        layout.next(userProcessContainer);
+    }//GEN-LAST:event_btnPrepareOrderMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Header;
+    private javax.swing.JLabel btnManageInventory;
     private javax.swing.JLabel btnManageRequests;
     private javax.swing.JLabel btnPatientStatus;
+    private javax.swing.JLabel btnPrepareOrder;
     private javax.swing.JLabel btnProfile;
     private javax.swing.JLabel btnReceiveRequests;
     private javax.swing.JPanel jPanel2;

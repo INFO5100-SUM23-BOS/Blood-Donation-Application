@@ -64,6 +64,8 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
 
         populateGenderComboBox();
         populateStateComboBox();
+        populatebloodTypeComboBox();
+    
     }
 
     private void populateGenderComboBox() {
@@ -130,7 +132,8 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         genderJComboBox.setEnabled(false);
         genderJComboBox1.setEnabled(false);
 
-        hlaTypesText1.setEnabled(false);
+//        bloodType.setEnabled(false);
+        bloodTypeComboBox.setEnabled(false);
         streetText.setEnabled(false);
         cityText.setEnabled(false);
         stateJComboBox.setEnabled(false);
@@ -190,10 +193,10 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         hlaTypesText = new javax.swing.JTextField();
         btnBack = new javax.swing.JButton();
         jLabel21 = new javax.swing.JLabel();
-        hlaTypesText1 = new javax.swing.JTextField();
         uidText = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         genderJComboBox1 = new javax.swing.JComboBox();
+        bloodTypeComboBox = new javax.swing.JComboBox<>();
 
         setBackground(new java.awt.Color(255, 153, 153));
         setMinimumSize(new java.awt.Dimension(1350, 718));
@@ -416,14 +419,6 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         jLabel21.setText("Do you have any Medical Conditions that Hospital Needs to be aware of? ");
         add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 460, -1, 30));
 
-        hlaTypesText1.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        hlaTypesText1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                hlaTypesText1ActionPerformed(evt);
-            }
-        });
-        add(hlaTypesText1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 320, 170, -1));
-
         uidText.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         add(uidText, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 170, 170, -1));
 
@@ -439,6 +434,14 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
             }
         });
         add(genderJComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 100, 170, -1));
+
+        bloodTypeComboBox.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        bloodTypeComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bloodTypeComboBoxActionPerformed(evt);
+            }
+        });
+        add(bloodTypeComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 320, 180, 40));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -452,9 +455,13 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
             genderJComboBox.setBorder(BorderFactory.createLineBorder(Color.RED));
             genderJComboBox.setForeground(Color.red);
         }
-        if (hlaTypesText1.getText().equals("")) {
-            hlaTypesText1.setBorder(BorderFactory.createLineBorder(Color.RED));
-            hlaTypesText1.setForeground(Color.red);
+//        if (bloodType.getText().equals("")) {
+//            bloodType.setBorder(BorderFactory.createLineBorder(Color.RED));
+//            bloodType.setForeground(Color.red);
+//        }
+        if (bloodTypeComboBox.getSelectedItem().equals("")) {
+            bloodTypeComboBox.setBorder(BorderFactory.createLineBorder(Color.RED));
+            bloodTypeComboBox.setForeground(Color.red);
         }
         if (nameText.getText().isEmpty()) {
             nameText.setBorder(BorderFactory.createLineBorder(Color.RED));
@@ -500,7 +507,8 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
                 || zipText.getText().isEmpty() || streetText.getText().isEmpty() || uidText.getText().isEmpty()
                 || String.valueOf(genderJComboBox.getSelectedItem()).equals("")
                 || String.valueOf(genderJComboBox1.getSelectedItem()).equals("")
-                || String.valueOf(hlaTypesText1.getText()).equals("")
+//                || String.valueOf(bloodType.getText()).equals("")
+                || String.valueOf(bloodTypeComboBox.getSelectedItem()).equals("")
                 || String.valueOf(stateJComboBox.getSelectedItem()).equals("")) {
             JOptionPane.showMessageDialog(null, new JLabel("<html><b>All fields are mandatory!</b></html>"), "Error", JOptionPane.ERROR_MESSAGE);
             return;
@@ -550,7 +558,8 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         //
         else {
             try {
-                patientrequest.getHla().updateBloodTypelist(hlaTypesText1.getText());
+//                patientrequest.getHla().updateBloodTypelist(bloodType.getText());
+                patientrequest.getHla().updateBloodTypelist(String.valueOf(bloodTypeComboBox.getSelectedItem()));
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, new JLabel("<html><b>Patient's Blodd Type can only be one of these AN,AP,BP,BN,ABP,ABN,OP,ON where N-Negative, P-Positive.</b></html>"));
                 return;
@@ -648,7 +657,8 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         genderJComboBox.setEnabled(true);
         genderJComboBox1.setEnabled(true);
 
-        hlaTypesText1.setEnabled(true);
+//        bloodType.setEnabled(true);
+        bloodTypeComboBox.setEnabled(true);
         streetText.setEnabled(true);
         cityText.setEnabled(true);
         stateJComboBox.setEnabled(true);
@@ -664,7 +674,8 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         streetText.setText("");
         cityText.setText("");
         zipText.setText("");
-        hlaTypesText1.setText("");
+//        bloodType.setText("");
+        bloodTypeComboBox.setSelectedItem("");
 
         genderJComboBox.setSelectedItem("");
         genderJComboBox1.setSelectedItem("");
@@ -708,17 +719,29 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         NewReceiverJPanel.super.setVisible(false);
     }//GEN-LAST:event_btnBackActionPerformed
 
-    private void hlaTypesText1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hlaTypesText1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_hlaTypesText1ActionPerformed
-
     private void genderJComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_genderJComboBox1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_genderJComboBox1ActionPerformed
 
+    private void bloodTypeComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bloodTypeComboBoxActionPerformed
+        // TODO add your handling code here:
+        }
+
+        private void populatebloodTypeComboBox() {
+            bloodTypeComboBox.addItem("AP");
+            bloodTypeComboBox.addItem("AN");
+            bloodTypeComboBox.addItem("BP");
+            bloodTypeComboBox.addItem("BN");
+            bloodTypeComboBox.addItem("ABP");
+            bloodTypeComboBox.addItem("ABN");
+            bloodTypeComboBox.addItem("OP");
+            bloodTypeComboBox.addItem("ON");
+    }//GEN-LAST:event_bloodTypeComboBoxActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField ageText;
+    private javax.swing.JComboBox<String> bloodTypeComboBox;
     private javax.swing.JButton btnBack;
     private javax.swing.JRadioButton buttonNo;
     private javax.swing.JRadioButton buttonYes;
@@ -729,7 +752,6 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
     private javax.swing.JComboBox genderJComboBox;
     private javax.swing.JComboBox genderJComboBox1;
     private javax.swing.JTextField hlaTypesText;
-    private javax.swing.JTextField hlaTypesText1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;

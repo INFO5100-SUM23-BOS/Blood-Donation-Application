@@ -53,27 +53,30 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
     private boolean emailValid;
     private int yesno;
     private ButtonGroup radioGroup1;
-    
+
     public NewReceiverJPanel(EcoSystem system) {
         initComponents();
         this.system = system;
         this.radioGroup1 = new ButtonGroup();
-       // ButtonGroup radioGroup1 = new ButtonGroup();
+        // ButtonGroup radioGroup1 = new ButtonGroup();
         radioGroup1.add(buttonYes);
         radioGroup1.add(buttonNo);
-        
+
         populateGenderComboBox();
-        populateStateComboBox();        
+        populateStateComboBox();
     }
-  
-    private void populateGenderComboBox(){
-      genderJComboBox.addItem("Male");
-      genderJComboBox.addItem("Female");
-      genderJComboBox.addItem("Other");
-        }
-  
-     private void populateStateComboBox(){
-      // Add all states to the JComboBox using a loop
+
+    private void populateGenderComboBox() {
+        genderJComboBox.addItem("Male");
+        genderJComboBox.addItem("Female");
+        genderJComboBox.addItem("Other");
+        genderJComboBox1.addItem("Individual");
+        genderJComboBox1.addItem("Organization");
+
+    }
+
+    private void populateStateComboBox() {
+        // Add all states to the JComboBox using a loop
         String[] states = {
             "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware",
             "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky",
@@ -83,19 +86,21 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
             "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia",
             "Wisconsin", "Wyoming"
         };
-        
+
         for (String state : states) {
             stateJComboBox.addItem(state);
         }
-      }
-      public static boolean phoneNumberValidator(String contact) {
+    }
+
+    public static boolean phoneNumberValidator(String contact) {
         Pattern pattern;
         Matcher matcher;
         String PHONE_PATTERN = "^[0-9]{10}$";
         pattern = Pattern.compile(PHONE_PATTERN);
         matcher = pattern.matcher(contact);
         return matcher.matches();
-        }
+    }
+
     public static boolean zipCodeValidator(String zip) {
         Pattern pattern;
         Matcher matcher;
@@ -103,7 +108,8 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         pattern = Pattern.compile(zip_pattern);
         matcher = pattern.matcher(zip);
         return matcher.matches();
-        } 
+    }
+
     public static boolean emailValidator(String email) {
         Pattern pattern;
         Matcher matcher;
@@ -111,9 +117,10 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         pattern = Pattern.compile(EMAIL_PATTERN);
         matcher = pattern.matcher(email);
         return matcher.matches();
-        }
-    private void disableAllButton(){
-    
+    }
+
+    private void disableAllButton() {
+
         uidText.setEnabled(false);
         nameText.setEnabled(false);
         dobDateField.setEnabled(false);
@@ -121,6 +128,8 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         emailText.setEnabled(false);
         contactText.setEnabled(false);
         genderJComboBox.setEnabled(false);
+        genderJComboBox1.setEnabled(false);
+
         hlaTypesText1.setEnabled(false);
         streetText.setEnabled(false);
         cityText.setEnabled(false);
@@ -129,9 +138,10 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         buttonYes.setEnabled(false);
         buttonNo.setEnabled(false);
     }
-      public boolean isAlpha(String name) {
+
+    public boolean isAlpha(String name) {
         return name.matches("[a-zA-Z]+");
-        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -152,7 +162,6 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         jLabel15 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         zipText = new javax.swing.JTextField();
-        uidText = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         contactText = new javax.swing.JTextField();
@@ -182,6 +191,9 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         btnBack = new javax.swing.JButton();
         jLabel21 = new javax.swing.JLabel();
         hlaTypesText1 = new javax.swing.JTextField();
+        uidText = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        genderJComboBox1 = new javax.swing.JComboBox();
 
         setBackground(new java.awt.Color(255, 153, 153));
         setMinimumSize(new java.awt.Dimension(1350, 718));
@@ -231,14 +243,11 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 570, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabel5.setText("UID");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 170, -1, -1));
+        jLabel5.setText("Request Form For");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 100, -1, -1));
 
         zipText.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         add(zipText, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 570, 210, -1));
-
-        uidText.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        add(uidText, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 170, 170, -1));
 
         jLabel16.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel16.setText("Contact Number");
@@ -379,7 +388,7 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel2.setText("Patient Details");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 110, 160, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 160, -1));
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel4.setText("Address Details");
@@ -414,20 +423,36 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
             }
         });
         add(hlaTypesText1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 320, 170, -1));
+
+        uidText.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        add(uidText, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 170, 170, -1));
+
+        jLabel7.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        jLabel7.setText("UID");
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 170, -1, -1));
+
+        genderJComboBox1.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        genderJComboBox1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        genderJComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                genderJComboBox1ActionPerformed(evt);
+            }
+        });
+        add(genderJComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 100, 170, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         PatientRequest patientrequest = new PatientRequest();//system.getPatientRequestDirectory().addPatientRequest();
-        if ( stateJComboBox.getSelectedItem().equals("") ){
+        if (stateJComboBox.getSelectedItem().equals("")) {
             stateJComboBox.setBorder(BorderFactory.createLineBorder(Color.RED));
             stateJComboBox.setForeground(Color.red);
         }
-        if ( genderJComboBox.getSelectedItem().equals("") ){
+        if (genderJComboBox.getSelectedItem().equals("")) {
             genderJComboBox.setBorder(BorderFactory.createLineBorder(Color.RED));
             genderJComboBox.setForeground(Color.red);
         }
-        if ( hlaTypesText1.getText().equals("") ){
+        if (hlaTypesText1.getText().equals("")) {
             hlaTypesText1.setBorder(BorderFactory.createLineBorder(Color.RED));
             hlaTypesText1.setForeground(Color.red);
         }
@@ -438,7 +463,7 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         if (uidText.getText().isEmpty()) {
             uidText.setBorder(BorderFactory.createLineBorder(Color.RED));
             uidText.setForeground(Color.red);
-        }        
+        }
         if (emailText.getText().isEmpty()) {
             emailText.setBorder(BorderFactory.createLineBorder(Color.RED));
             emailText.setForeground(Color.red);
@@ -459,154 +484,128 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
             streetText.setBorder(BorderFactory.createLineBorder(Color.RED));
             streetText.setForeground(Color.red);
         }
-     
-        if (dobDateField.getDate() == null ) {
+
+        if (dobDateField.getDate() == null) {
             dobDateField.setBorder(BorderFactory.createLineBorder(Color.RED));
             dobDateField.setForeground(Color.red);
         }
-         if (ageText.getText().isEmpty()) {
+        if (ageText.getText().isEmpty()) {
             ageText.setBorder(BorderFactory.createLineBorder(Color.RED));
             ageText.setForeground(Color.red);
         }
-        
-         
+
         //
         //
-        if (    nameText.getText().isEmpty() || emailText.getText().isEmpty() || cityText.getText().isEmpty() ||contactText.getText().isEmpty() ||
-                zipText.getText().isEmpty() || streetText.getText().isEmpty() || uidText.getText().isEmpty() ||
-                String.valueOf(genderJComboBox.getSelectedItem()).equals("") || 
-                String.valueOf(hlaTypesText1.getText()).equals("") || 
-                String.valueOf(stateJComboBox.getSelectedItem()).equals("")
-                )
-                
-            { 
-                JOptionPane.showMessageDialog(null,new JLabel(  "<html><b>All fields are mandatory!</b></html>") , "Error", JOptionPane.ERROR_MESSAGE);
-             return ;
-        //    JOptionPane.showMessageDialog(null, "All fields are mandatory!", "Error", JOptionPane.ERROR_MESSAGE);
-          //   return ;
-            }
-         
-       else if(  !buttonNo.isSelected()  &&  !buttonYes.isSelected())
-        {
-            JOptionPane.showMessageDialog(null,new JLabel(  "<html><b>All fields are mandatory!</b></html>") , "Error", JOptionPane.ERROR_MESSAGE);
-             return ;
-        //JOptionPane.showMessageDialog(null, "All fields are mandatory!", "Error", JOptionPane.ERROR_MESSAGE);
-        
-        }
-        
-       else   if ( !phoneNumberValidator(contactText.getText())   ){
-           contactText.setBorder(BorderFactory.createLineBorder(Color.RED));
-            contactText.setForeground(Color.red);
-            JOptionPane.showMessageDialog(null, new JLabel("<html><b>Contact Number should be 10 digit!</b></html>") , "Error", JOptionPane.ERROR_MESSAGE);
-           // return;
-           //JOptionPane.showMessageDialog(null, "Contact number should be 10 digit" , "Error", JOptionPane.ERROR_MESSAGE);
+        if (nameText.getText().isEmpty() || emailText.getText().isEmpty() || cityText.getText().isEmpty() || contactText.getText().isEmpty()
+                || zipText.getText().isEmpty() || streetText.getText().isEmpty() || uidText.getText().isEmpty()
+                || String.valueOf(genderJComboBox.getSelectedItem()).equals("")
+                || String.valueOf(genderJComboBox1.getSelectedItem()).equals("")
+                || String.valueOf(hlaTypesText1.getText()).equals("")
+                || String.valueOf(stateJComboBox.getSelectedItem()).equals("")) {
+            JOptionPane.showMessageDialog(null, new JLabel("<html><b>All fields are mandatory!</b></html>"), "Error", JOptionPane.ERROR_MESSAGE);
             return;
-        }
-       
-        else   if (  !zipCodeValidator(zipText.getText()) ){
+            //    JOptionPane.showMessageDialog(null, "All fields are mandatory!", "Error", JOptionPane.ERROR_MESSAGE);
+            //   return ;
+        } else if (!buttonNo.isSelected() && !buttonYes.isSelected()) {
+            JOptionPane.showMessageDialog(null, new JLabel("<html><b>All fields are mandatory!</b></html>"), "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+            //JOptionPane.showMessageDialog(null, "All fields are mandatory!", "Error", JOptionPane.ERROR_MESSAGE);
+
+        } else if (!phoneNumberValidator(contactText.getText())) {
+            contactText.setBorder(BorderFactory.createLineBorder(Color.RED));
+            contactText.setForeground(Color.red);
+            JOptionPane.showMessageDialog(null, new JLabel("<html><b>Contact Number should be 10 digit!</b></html>"), "Error", JOptionPane.ERROR_MESSAGE);
+            // return;
+            //JOptionPane.showMessageDialog(null, "Contact number should be 10 digit" , "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        } else if (!zipCodeValidator(zipText.getText())) {
             zipText.setBorder(BorderFactory.createLineBorder(Color.RED));
             zipText.setForeground(Color.red);
-            JOptionPane.showMessageDialog(null, new JLabel("<html><b>Zip should be 5 digit!</b></html>") , "Error", JOptionPane.ERROR_MESSAGE);
-           return;
-           //JOptionPane.showMessageDialog(null, "Zip should be 5 digit" , "Error", JOptionPane.ERROR_MESSAGE);
-           // return;
-        }
-        
-        else if (!isAlpha(nameText.getText()))
-        {
-         nameText.setBorder(BorderFactory.createLineBorder(Color.RED));
+            JOptionPane.showMessageDialog(null, new JLabel("<html><b>Zip should be 5 digit!</b></html>"), "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+            //JOptionPane.showMessageDialog(null, "Zip should be 5 digit" , "Error", JOptionPane.ERROR_MESSAGE);
+            // return;
+        } else if (!isAlpha(nameText.getText())) {
+            nameText.setBorder(BorderFactory.createLineBorder(Color.RED));
             nameText.setForeground(Color.red);
-            JOptionPane.showMessageDialog(null, new JLabel("<html><b>Name must contain only alphabets</b>!</html>") , "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, new JLabel("<html><b>Name must contain only alphabets</b>!</html>"), "Error", JOptionPane.ERROR_MESSAGE);
             return;
             //JOptionPane.showMessageDialog(null, "Name must contain only alphabets." , "Error", JOptionPane.ERROR_MESSAGE);
             //return;
-        }
-        else if (!isAlpha(cityText.getText()))
-        {
-         cityText.setBorder(BorderFactory.createLineBorder(Color.RED));
+        } else if (!isAlpha(cityText.getText())) {
+            cityText.setBorder(BorderFactory.createLineBorder(Color.RED));
             cityText.setForeground(Color.red);
-            JOptionPane.showMessageDialog(null, new JLabel("<html><b>Name of the City must contain only alphabets!</b></html>") , "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, new JLabel("<html><b>Name of the City must contain only alphabets!</b></html>"), "Error", JOptionPane.ERROR_MESSAGE);
             return;
             //JOptionPane.showMessageDialog(null, "City name must contain only alphabets." , "Error", JOptionPane.ERROR_MESSAGE);
             //return;
-        }
-       
-        else   if ( !emailValidator(emailText.getText()) ){
+        } else if (!emailValidator(emailText.getText())) {
             emailText.setBorder(BorderFactory.createLineBorder(Color.RED));
             emailText.setForeground(Color.red);
-            JOptionPane.showMessageDialog(null, new JLabel("<html><b>Email ID must be in correct format!</b></html>") , "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, new JLabel("<html><b>Email ID must be in correct format!</b></html>"), "Error", JOptionPane.ERROR_MESSAGE);
 //           JOptionPane.showMessageDialog(null, "Email ID must be in correct format!" , "Error", JOptionPane.ERROR_MESSAGE);
-           return;
-        } 
+            return;
+        } //
         //
         //
-        //
-        
-       else{
+        else {
             try {
                 patientrequest.getHla().updateBloodTypelist(hlaTypesText1.getText());
-            }
-            catch (Exception e) {
-                JOptionPane.showMessageDialog(null, new JLabel(  "<html><b>Patient's Blodd Type can only be one of these AN,AP,BP,BN,ABP,ABN,OP,ON where N-Negative, P-Positive.</b></html>"));
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, new JLabel("<html><b>Patient's Blodd Type can only be one of these AN,AP,BP,BN,ABP,ABN,OP,ON where N-Negative, P-Positive.</b></html>"));
                 return;
             }
-            
-            int n = JOptionPane.showConfirmDialog(null,new JLabel("<html><b>Would you like to submit the form?</b></html>"),
-                    "CONFIRMATION REQUIRED",JOptionPane.YES_NO_OPTION);
 
-            if(n == 0)
-            { 
-        
-        
-        patientrequest.setReceiverID(uidText.getText()); //UID, receiverID  
-        patientrequest.setName(nameText.getText()); // Name
-        patientrequest.setDob(dobDateField.getDate()); // DOB 
-        patientrequest.setAge(Integer.parseInt(ageText.getText())); // Age
-        patientrequest.setGender((String)genderJComboBox.getSelectedItem()); // gender
-        
+            int n = JOptionPane.showConfirmDialog(null, new JLabel("<html><b>Would you like to submit the form?</b></html>"),
+                    "CONFIRMATION REQUIRED", JOptionPane.YES_NO_OPTION);
+
+            if (n == 0) {
+
+                patientrequest.setReceiverID(uidText.getText()); //UID, receiverID  
+                patientrequest.setName(nameText.getText()); // Name
+                patientrequest.setDob(dobDateField.getDate()); // DOB 
+                patientrequest.setAge(Integer.parseInt(ageText.getText())); // Age
+                patientrequest.setGender((String) genderJComboBox.getSelectedItem()); // gender
+
 //        patientrequest.getHla().updateHLAlist((String) hlaTypesText.getText()); // HLAType
-        patientrequest.setStreetAddress(streetText.getText()); // streetAddress
-        patientrequest.setCity(cityText.getText()); // city
-        patientrequest.setState((String) stateJComboBox.getSelectedItem()); // state
-        patientrequest.setZipCode(Integer.parseInt(zipText.getText())); // zipCode
-        patientrequest.setContact(Long.parseLong(contactText.getText())); // contact
-        patientrequest.setEmailID(emailText.getText()); // emailID
-        patientrequest.setStatus("New Request"); // status
-        patientrequest.setdP(tempdP);
-        
-        system.getPatientRequestDirectory().addPatientRequest(patientrequest);
-        
-        
-        if(buttonYes.isSelected())
-        {patientrequest.setLabConfirmation(true); //  labConfirmation
+                patientrequest.setStreetAddress(streetText.getText()); // streetAddress
+                patientrequest.setCity(cityText.getText()); // city
+                patientrequest.setState((String) stateJComboBox.getSelectedItem()); // state
+                patientrequest.setZipCode(Integer.parseInt(zipText.getText())); // zipCode
+                patientrequest.setContact(Long.parseLong(contactText.getText())); // contact
+                patientrequest.setEmailID(emailText.getText()); // emailID
+                patientrequest.setStatus("New Request"); // status
+                patientrequest.setdP(tempdP);
+
+                system.getPatientRequestDirectory().addPatientRequest(patientrequest);
+
+                if (buttonYes.isSelected()) {
+                    patientrequest.setLabConfirmation(true); //  labConfirmation
+                } else if (buttonNo.isSelected()) {
+                    patientrequest.setLabConfirmation(false); //  labConfirmation
+                }
+
+                JOptionPane.showMessageDialog(null, new JLabel("<html><b>Thank you for registering! We will soon get back to you. <br>Take Care!!</b></html>"));
+
+                dB4OUtil.storeSystem(system);
+                disableAllButton();
+            }
         }
-        else if(buttonNo.isSelected())
-        {patientrequest.setLabConfirmation(false); //  labConfirmation
-        }
-     
-        JOptionPane.showMessageDialog(null, new JLabel("<html><b>Thank you for registering! We will soon get back to you. <br>Take Care!!</b></html>"));
-        
-        
-        
-        
-        dB4OUtil.storeSystem(system);
-        disableAllButton();
-       }}
-        
+
     }//GEN-LAST:event_jButton1ActionPerformed
-    
-     private ImageIcon setPicture(String carImageLocation, JLabel carImage){
+
+    private ImageIcon setPicture(String carImageLocation, JLabel carImage) {
 
         ImageIcon imageCar;
         imageCar = new ImageIcon(carImageLocation);
         Image picCar = imageCar.getImage();
         Image resizedImage = picCar.getScaledInstance(carImage.getWidth(), carImage.getHeight(), Image.SCALE_SMOOTH);
         ImageIcon selectedCarPicture = new ImageIcon(resizedImage);
-        
-        return selectedCarPicture;  
-}
-    
-    
+
+        return selectedCarPicture;
+    }
+
+
     private void contactTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contactTextActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_contactTextActionPerformed
@@ -621,25 +620,25 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
 
     private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
         // TODO add your handling code here:
-         Date dob = dobDateField.getDate();
+        Date dob = dobDateField.getDate();
         System.out.println(dob.getYear());
-        ageText.setText((String.valueOf(new Date().getYear()-dob.getYear())));
-        
+        ageText.setText((String.valueOf(new Date().getYear() - dob.getYear())));
+
     }//GEN-LAST:event_formMouseClicked
 
     private void ageTextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ageTextMouseClicked
         // TODO add your handling code here:
         Date dob = dobDateField.getDate();
         System.out.println(dob.getYear());
-        ageText.setText((String.valueOf(new Date().getYear()-dob.getYear())));
-        
+        ageText.setText((String.valueOf(new Date().getYear() - dob.getYear())));
+
     }//GEN-LAST:event_ageTextMouseClicked
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         radioGroup1.clearSelection();
-       // buttonYes.setSelected(false);
-       // buttonYes.resetKeyboardActions();
+        // buttonYes.setSelected(false);
+        // buttonYes.resetKeyboardActions();
         uidText.setEnabled(true);
         nameText.setEnabled(true);
         dobDateField.setEnabled(true);
@@ -647,6 +646,8 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         emailText.setEnabled(true);
         contactText.setEnabled(true);
         genderJComboBox.setEnabled(true);
+        genderJComboBox1.setEnabled(true);
+
         hlaTypesText1.setEnabled(true);
         streetText.setEnabled(true);
         cityText.setEnabled(true);
@@ -654,7 +655,6 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         zipText.setEnabled(true);
         buttonYes.setEnabled(true);
         buttonNo.setEnabled(true);
-      
 
         uidText.setText("");
         nameText.setText("");
@@ -667,18 +667,19 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         hlaTypesText1.setText("");
 
         genderJComboBox.setSelectedItem("");
+        genderJComboBox1.setSelectedItem("");
+
         stateJComboBox.setSelectedItem("");
-        
 
         dobDateField.setCalendar(null);
-       
-    
+
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void uEmailKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_uEmailKeyTyped
         // TODO add your handling code here:
-        
-         if (!emailValidator(emailText.getText())) {
+
+        if (!emailValidator(emailText.getText())) {
             emailValid = false;
         } else {
             emailText.setBorder(BorderFactory.createLineBorder(Color.BLACK));
@@ -692,12 +693,8 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
             tick.setRepeats(false);
             tick.start();
         }
-        
-        
-        
-        
-        
-        
+
+
     }//GEN-LAST:event_uEmailKeyTyped
 
     private void hlaTypesTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hlaTypesTextActionPerformed
@@ -715,6 +712,10 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_hlaTypesText1ActionPerformed
 
+    private void genderJComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_genderJComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_genderJComboBox1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField ageText;
@@ -726,6 +727,7 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
     private com.toedter.calendar.JDateChooser dobDateField;
     private javax.swing.JTextField emailText;
     private javax.swing.JComboBox genderJComboBox;
+    private javax.swing.JComboBox genderJComboBox1;
     private javax.swing.JTextField hlaTypesText;
     private javax.swing.JTextField hlaTypesText1;
     private javax.swing.JButton jButton1;
@@ -747,6 +749,7 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel3;

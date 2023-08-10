@@ -249,7 +249,7 @@
                   <SubComponents>
                     <Component class="javax.swing.JButton" name="donorSignUpBtn">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Register as Donor"/>
+                        <Property name="text" type="java.lang.String" value="Donate"/>
                         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                           <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
                             <MatteColorBorder/>
@@ -262,7 +262,7 @@
                     </Component>
                     <Component class="javax.swing.JButton" name="patientRegistrationBtn">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Register as Patient"/>
+                        <Property name="text" type="java.lang.String" value="Request"/>
                         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                           <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
                             <MatteColorBorder/>

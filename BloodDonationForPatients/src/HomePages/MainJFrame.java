@@ -124,7 +124,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
 
-        donorSignUpBtn.setText("Register as Donor");
+        donorSignUpBtn.setText("Donate");
         donorSignUpBtn.setBorder(new javax.swing.border.MatteBorder(null));
         donorSignUpBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -132,7 +132,7 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
-        patientRegistrationBtn.setText("Register as Patient");
+        patientRegistrationBtn.setText("Request");
         patientRegistrationBtn.setBorder(new javax.swing.border.MatteBorder(null));
         patientRegistrationBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

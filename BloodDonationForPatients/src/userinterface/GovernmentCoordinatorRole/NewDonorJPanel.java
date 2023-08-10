@@ -98,6 +98,8 @@ public class NewDonorJPanel extends javax.swing.JPanel {
            genderJComboBox.addItem("Male");
            genderJComboBox.addItem("Female");
            genderJComboBox.addItem("Other");
+            genderJComboBox1.addItem("Individual");
+        genderJComboBox1.addItem("Organization");
         }
   
   private void populateStateComboBox(){
@@ -154,6 +156,8 @@ public class NewDonorJPanel extends javax.swing.JPanel {
         emailText.setEnabled(false);
         contactText.setEnabled(false);
         genderJComboBox.setEnabled(false);
+                genderJComboBox1.setEnabled(false);
+
 //        bloodTypesTextField.setEnabled(false);
         bloodTypeComboBox.setEnabled(false);
         streetText.setEnabled(false);
@@ -222,6 +226,8 @@ public class NewDonorJPanel extends javax.swing.JPanel {
         jLabel24 = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
         bloodTypeComboBox = new javax.swing.JComboBox<>();
+        genderJComboBox1 = new javax.swing.JComboBox();
+        jLabel10 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 153, 153));
         addMouseListener(new java.awt.event.MouseAdapter() {
@@ -477,7 +483,7 @@ public class NewDonorJPanel extends javax.swing.JPanel {
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel2.setText("Donor Details");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 120, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, -1, -1));
 
         jLabel23.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel23.setText("Address Details");
@@ -507,6 +513,19 @@ public class NewDonorJPanel extends javax.swing.JPanel {
             }
         });
         add(bloodTypeComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 320, 180, 40));
+
+        genderJComboBox1.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        genderJComboBox1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        genderJComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                genderJComboBox1ActionPerformed(evt);
+            }
+        });
+        add(genderJComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 90, 170, -1));
+
+        jLabel10.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        jLabel10.setText("Request Form For");
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 90, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
@@ -583,6 +602,8 @@ public class NewDonorJPanel extends javax.swing.JPanel {
                 dobDateField.getDate() == null      || 
                 ageText.getText().isEmpty()         ||
                 String.valueOf(genderJComboBox.getSelectedItem()).equals("") || 
+                                String.valueOf(genderJComboBox1.getSelectedItem()).equals("") || 
+
 //                String.valueOf(bloodTypesTextField.getText()).equals("") || 
                 String.valueOf(bloodTypeComboBox.getSelectedItem()).equals("") || 
                 String.valueOf(stateJComboBox.getSelectedItem()).equals(""))
@@ -729,6 +750,8 @@ JOptionPane.showMessageDialog(null, new JLabel("<html><b>Email ID must be in cor
         emailText.setEnabled(true);
         contactText.setEnabled(true);
         genderJComboBox.setEnabled(true);
+                genderJComboBox1.setEnabled(true);
+
 //        bloodTypesTextField.setEnabled(true);
         bloodTypeComboBox.setEnabled(true);
         streetText.setEnabled(true);
@@ -755,6 +778,8 @@ JOptionPane.showMessageDialog(null, new JLabel("<html><b>Email ID must be in cor
 //        bloodTypesTextField.setText("");
         
         genderJComboBox.setSelectedItem("");
+                genderJComboBox1.setSelectedItem("");
+
         stateJComboBox.setSelectedItem("");
         bloodTypeComboBox.setSelectedItem("");
         
@@ -929,6 +954,10 @@ JOptionPane.showMessageDialog(null, new JLabel("<html><b>Email ID must be in cor
         // TODO add your handling code here:
     }//GEN-LAST:event_btnNoQ1ActionPerformed
 
+    private void genderJComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_genderJComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_genderJComboBox1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField ageText;
@@ -948,7 +977,9 @@ JOptionPane.showMessageDialog(null, new JLabel("<html><b>Email ID must be in cor
     private com.toedter.calendar.JDateChooser dobDateField;
     private javax.swing.JTextField emailText;
     private javax.swing.JComboBox genderJComboBox;
+    private javax.swing.JComboBox genderJComboBox1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;

@@ -159,15 +159,15 @@ public class WorldCordBlood_Centre_Coordinator_WorkAreaJPanel extends javax.swin
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnManageRequests, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(btnManageRequests)
+                .addContainerGap(14, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(btnManageRequests, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        Header.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 110, 50));
+        Header.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 100, 50));
 
         btnReceiveRequests.setBackground(new java.awt.Color(31, 31, 31));
         btnReceiveRequests.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -259,18 +259,18 @@ public class WorldCordBlood_Centre_Coordinator_WorkAreaJPanel extends javax.swin
 
     private void btnManageInventoryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnManageInventoryMouseClicked
         // TODO add your handling code here:
-//        ManageInventoryJPanel panel = new ManageInventoryJPanel(system, userAccount, network);
-//        userProcessContainer.add("ManageInventoryJPanel", panel);
-//        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-//        layout.next(userProcessContainer);
+        ManageInventoryJPanel panel = new ManageInventoryJPanel(system, userAccount, network);
+        userProcessContainer.add("ManageInventoryJPanel", panel);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
     }//GEN-LAST:event_btnManageInventoryMouseClicked
 
     private void btnPrepareOrderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPrepareOrderMouseClicked
         // TODO add your handling code here:
-//        PrepareOrderJPanel panel = new PrepareOrderJPanel(system, userAccount, network);
-//        userProcessContainer.add("PrepareOrderJPanel", panel);
-//        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-//        layout.next(userProcessContainer);
+        PrepareOrderJPanel panel = new PrepareOrderJPanel(system, userAccount, network);
+        userProcessContainer.add("PrepareOrderJPanel", panel);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
     }//GEN-LAST:event_btnPrepareOrderMouseClicked
 
 

@@ -78,7 +78,6 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         BtnManageNetwork = new javax.swing.JLabel();
         BtnManageEnterprise = new javax.swing.JLabel();
         BtnManageAuthentication = new javax.swing.JLabel();
-        lblStatistics = new javax.swing.JLabel();
         panelSysadminWorkContainer = new javax.swing.JPanel();
 
         setPreferredSize(new java.awt.Dimension(1150, 720));
@@ -124,18 +123,6 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         });
         Header.add(BtnManageAuthentication);
 
-        lblStatistics.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        lblStatistics.setForeground(new java.awt.Color(255, 255, 255));
-        lblStatistics.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblStatistics.setText("Statistics");
-        lblStatistics.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lblStatistics.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblStatisticsMouseClicked(evt);
-            }
-        });
-        Header.add(lblStatistics);
-
         add(Header, java.awt.BorderLayout.PAGE_START);
 
         panelSysadminWorkContainer.setBackground(new java.awt.Color(255, 153, 153));
@@ -166,14 +153,6 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         CardLayout layout = (CardLayout) panelSysadminWorkContainer.getLayout();
         layout.next(panelSysadminWorkContainer);
     }//GEN-LAST:event_BtnManageAuthenticationMouseClicked
-
-    private void lblStatisticsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblStatisticsMouseClicked
-// TODO add your handling code here:
-        StatisticsJPanel statistics = new StatisticsJPanel(panelSysadminWorkContainer,ecosystem);
-        panelSysadminWorkContainer.add("Statistics",statistics);
-        CardLayout layout = (CardLayout) panelSysadminWorkContainer.getLayout();
-        layout.next(panelSysadminWorkContainer);
-    }//GEN-LAST:event_lblStatisticsMouseClicked
       
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -181,7 +160,6 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel BtnManageEnterprise;
     private javax.swing.JLabel BtnManageNetwork;
     private javax.swing.JPanel Header;
-    private javax.swing.JLabel lblStatistics;
     private javax.swing.JPanel panelSysadminWorkContainer;
     // End of variables declaration//GEN-END:variables
 }

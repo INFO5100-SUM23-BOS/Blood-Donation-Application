@@ -26,7 +26,7 @@ public abstract class Enterprise extends Organization{
     }
     
     public enum EnterpriseType{
-        Hospital("Hospital"),
+        Laboratory("Laboratory"),
         BloodDonationBank("BloodDonationBank"),
         Legal("Legal"),
         WorldCordBloodCentre("WorldCordBloodCentre"),

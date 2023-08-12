@@ -14,8 +14,8 @@ import java.util.ArrayList;
  *
  * @author saiku
  */
-public class Leukemia_Centre_Organization extends Organization {
-     public Leukemia_Centre_Organization() {
+public class WorldCord_Centre_Organization extends Organization {
+     public WorldCord_Centre_Organization() {
         super(Organization.BloodCentreType.BloodCentre.getValue());
     }
     

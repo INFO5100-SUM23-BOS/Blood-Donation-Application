@@ -18,7 +18,7 @@ import userinterface.DoctorRole.*;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
 import Business.Organization.Blood_Donation_Bank_Organization;
-import Business.Organization.Leukemia_Centre_Organization;
+import Business.Organization.WorldCord_Centre_Organization;
 import Business.Organization.DoctorOrganization;
 import Business.Organization.Organization;
 import Business.People.PatientDirectory;
@@ -46,7 +46,7 @@ public class WorldCordBlood_Centre_Coordinator_WorkAreaJPanel extends javax.swin
      */
     boolean a = true;
     private UserAccount userAccount;
-    Leukemia_Centre_Organization bloodBankOrganization;
+    WorldCord_Centre_Organization bloodBankOrganization;
     Enterprise enterprise;
     EcoSystem system;
     PatientDirectory patientDirectory;
@@ -54,7 +54,7 @@ public class WorldCordBlood_Centre_Coordinator_WorkAreaJPanel extends javax.swin
     private Network network;
     
     
-    public WorldCordBlood_Centre_Coordinator_WorkAreaJPanel(UserAccount account,Leukemia_Centre_Organization bloodBankOrganization, Enterprise enterprise, EcoSystem system, Network network) {
+    public WorldCordBlood_Centre_Coordinator_WorkAreaJPanel(UserAccount account,WorldCord_Centre_Organization bloodBankOrganization, Enterprise enterprise, EcoSystem system, Network network) {
         initComponents();
         this.system = system;
         this.userAccount = account;

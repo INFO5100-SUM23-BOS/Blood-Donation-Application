@@ -111,6 +111,12 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
 
         jPanel1.setBackground(new java.awt.Color(241, 250, 238));
 
+        networkJComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                networkJComboBoxActionPerformed(evt);
+            }
+        });
+
         enterpriseTypeJComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 enterpriseTypeJComboBoxActionPerformed(evt);
@@ -488,6 +494,10 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
     private void enterpriseTypeJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterpriseTypeJComboBoxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_enterpriseTypeJComboBoxActionPerformed
+
+    private void networkJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_networkJComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_networkJComboBoxActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

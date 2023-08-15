@@ -48,7 +48,9 @@ public class MainJFrame extends javax.swing.JFrame {
         rightJPanel = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         loginJLabel = new javax.swing.JLabel();
-        imgHope = new javax.swing.JLabel();
+        donorSignUpBtn = new javax.swing.JButton();
+        patientRegistrationBtn = new javax.swing.JButton();
+        trackID = new javax.swing.JButton();
         leftJPanel = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         loginJButton = new javax.swing.JButton();
@@ -57,8 +59,6 @@ public class MainJFrame extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        donorSignUpBtn = new javax.swing.JButton();
-        patientRegistrationBtn = new javax.swing.JButton();
         logoutJButton = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
 
@@ -70,28 +70,62 @@ public class MainJFrame extends javax.swing.JFrame {
         rightJPanel.setAutoscrolls(true);
         rightJPanel.setLayout(new java.awt.CardLayout());
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(255, 153, 153));
         jPanel1.setMaximumSize(new java.awt.Dimension(1200, 1200));
+        jPanel1.setPreferredSize(new java.awt.Dimension(800, 800));
 
-        imgHope.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/blood-compatability_1200x800.jpg"))); // NOI18N
+        donorSignUpBtn.setText("Donate");
+        donorSignUpBtn.setBorder(new javax.swing.border.MatteBorder(null));
+        donorSignUpBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                donorSignUpBtnActionPerformed(evt);
+            }
+        });
+
+        patientRegistrationBtn.setText("Request");
+        patientRegistrationBtn.setBorder(new javax.swing.border.MatteBorder(null));
+        patientRegistrationBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                patientRegistrationBtnActionPerformed(evt);
+            }
+        });
+
+        trackID.setText("Track Your Status");
+        trackID.setBorder(new javax.swing.border.MatteBorder(null));
+        trackID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                trackIDActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(imgHope, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(36, 36, 36)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(143, 143, 143)
                 .addComponent(loginJLabel)
                 .addGap(480, 480, 480))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 505, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(patientRegistrationBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(donorSignUpBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(trackID, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(873, 873, 873))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(224, 224, 224)
+                .addGap(136, 136, 136)
+                .addComponent(donorSignUpBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(58, 58, 58)
                 .addComponent(loginJLabel)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(imgHope, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(patientRegistrationBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
+                .addComponent(trackID, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(460, Short.MAX_VALUE))
         );
 
         rightJPanel.add(jPanel1, "card2");
@@ -102,7 +136,7 @@ public class MainJFrame extends javax.swing.JFrame {
         leftJPanel.setPreferredSize(new java.awt.Dimension(1150, 720));
         leftJPanel.setLayout(new java.awt.CardLayout());
 
-        jPanel3.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel3.setBackground(new java.awt.Color(255, 153, 153));
         jPanel3.setAutoscrolls(true);
 
         loginJButton.setText("Login");
@@ -122,42 +156,22 @@ public class MainJFrame extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Username");
 
-        jPanel2.setBackground(new java.awt.Color(0, 0, 0));
-
-        donorSignUpBtn.setText("Donate");
-        donorSignUpBtn.setBorder(new javax.swing.border.MatteBorder(null));
-        donorSignUpBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                donorSignUpBtnActionPerformed(evt);
-            }
-        });
-
-        patientRegistrationBtn.setText("Request");
-        patientRegistrationBtn.setBorder(new javax.swing.border.MatteBorder(null));
-        patientRegistrationBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                patientRegistrationBtnActionPerformed(evt);
-            }
-        });
+        jPanel2.setBackground(new java.awt.Color(255, 153, 153));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(donorSignUpBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(patientRegistrationBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(donorSignUpBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(patientRegistrationBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(33, Short.MAX_VALUE))
+            .addGap(0, 134, Short.MAX_VALUE)
         );
 
+        logoutJButton.setBackground(new java.awt.Color(0, 0, 0));
         logoutJButton.setText("Logout");
+        logoutJButton.setToolTipText("");
         logoutJButton.setBorder(new javax.swing.border.MatteBorder(null));
         logoutJButton.setEnabled(false);
         logoutJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -180,16 +194,14 @@ public class MainJFrame extends javax.swing.JFrame {
             .addComponent(logoutJButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(passwordField)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(userNameJTextField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(passwordField)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(userNameJTextField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -210,7 +222,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addComponent(logoutJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(276, Short.MAX_VALUE))
+                .addContainerGap(288, Short.MAX_VALUE))
         );
 
         leftJPanel.add(jPanel3, "card2");
@@ -225,7 +237,6 @@ public class MainJFrame extends javax.swing.JFrame {
     private void loginJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginJButtonActionPerformed
         // Get user name
         String userName = userNameJTextField.getText();
-        imgHope.setVisible(false);
         // Get Password
         char[] passwordCharArray = passwordField.getPassword();
         String password = String.valueOf(passwordCharArray);
@@ -346,6 +357,10 @@ public class MainJFrame extends javax.swing.JFrame {
 //        imgHope.setVisible(false);
     }//GEN-LAST:event_patientRegistrationBtnActionPerformed
 
+    private void trackIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_trackIDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_trackIDActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -382,7 +397,6 @@ public class MainJFrame extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton donorSignUpBtn;
-    private javax.swing.JLabel imgHope;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -397,6 +411,7 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JPasswordField passwordField;
     private javax.swing.JButton patientRegistrationBtn;
     private javax.swing.JPanel rightJPanel;
+    private javax.swing.JButton trackID;
     private javax.swing.JTextField userNameJTextField;
     // End of variables declaration//GEN-END:variables
 }

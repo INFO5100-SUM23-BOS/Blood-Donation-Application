@@ -17,7 +17,7 @@ import java.util.Date;
 
 /**
  *
- * @author saiku
+ * @author maka
  */
 public class ManageSystemCoordinatorProfile extends javax.swing.JPanel {
 

@@ -72,21 +72,14 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         genderJComboBox.addItem("Male");
         genderJComboBox.addItem("Female");
         genderJComboBox.addItem("Other");
-        genderJComboBox1.addItem("Individual");
-        genderJComboBox1.addItem("Organization");
+      
 
     }
 
     private void populateStateComboBox() {
         // Add all states to the JComboBox using a loop
         String[] states = {
-            "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware",
-            "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky",
-            "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri",
-            "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina",
-            "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina",
-            "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia",
-            "Wisconsin", "Wyoming"
+            "Canada", "United States", "India", "Georgia", "South Africa"
         };
 
         for (String state : states) {
@@ -130,7 +123,6 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         emailText.setEnabled(false);
         contactText.setEnabled(false);
         genderJComboBox.setEnabled(false);
-        genderJComboBox1.setEnabled(false);
 
 //        bloodType.setEnabled(false);
         bloodTypeComboBox.setEnabled(false);
@@ -163,7 +155,6 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         nameText = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         zipText = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -191,12 +182,12 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         hlaTypesText = new javax.swing.JTextField();
-        btnBack = new javax.swing.JButton();
         jLabel21 = new javax.swing.JLabel();
         uidText = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        genderJComboBox1 = new javax.swing.JComboBox();
         bloodTypeComboBox = new javax.swing.JComboBox<>();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 153, 153));
         setMinimumSize(new java.awt.Dimension(1350, 718));
@@ -209,11 +200,11 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel12.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabel12.setText("Street address");
+        jLabel12.setText("Street address:");
         add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 450, -1, -1));
 
         jLabel13.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabel13.setText("City");
+        jLabel13.setText("State:");
         add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 530, -1, -1));
 
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
@@ -224,11 +215,11 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 640, 100, 40));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 640, 100, 40));
 
         jLabel3.setBackground(new java.awt.Color(0, 0, 0));
         jLabel3.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabel3.setText("Name");
+        jLabel3.setText("Name:");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 170, -1, -1));
 
         cityText.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
@@ -238,26 +229,22 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         add(nameText, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 170, 180, -1));
 
         jLabel14.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabel14.setText("State");
+        jLabel14.setText("Country:");
         add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 490, -1, -1));
 
         jLabel15.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabel15.setText("ZipCode");
+        jLabel15.setText("ZipCode:");
         add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 570, -1, -1));
-
-        jLabel5.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabel5.setText("Request Form For");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 100, -1, -1));
 
         zipText.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         add(zipText, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 570, 210, -1));
 
         jLabel16.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabel16.setText("Contact Number");
+        jLabel16.setText("Phone:");
         add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 270, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabel6.setText("DOB");
+        jLabel6.setText("DOB:");
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 220, -1, -1));
 
         contactText.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
@@ -269,7 +256,7 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         add(contactText, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 270, 170, -1));
 
         jLabel17.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabel17.setText("Email ID");
+        jLabel17.setText("Email:");
         add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 270, -1, -1));
 
         emailText.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
@@ -291,16 +278,16 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         add(ageText, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 220, 170, -1));
 
         jLabel8.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabel8.setText("Gender");
+        jLabel8.setText("Gender:");
         add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 320, -1, -1));
 
         jLabel19.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jLabel19.setText("\"If yes, please provide brief details of the medical condition.\"     ");
+        jLabel19.setText("\"If yes, Please explain.\"     ");
         add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 540, -1, 30));
 
         jLabel9.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabel9.setText("Blood Group");
-        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 320, -1, -1));
+        jLabel9.setText("Volume In Units:");
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 330, -1, -1));
 
         streetText.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         add(streetText, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 450, 210, -1));
@@ -328,7 +315,7 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         jLabel25.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel25.setForeground(new java.awt.Color(255, 255, 255));
         jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel25.setText("Patient Registration Form ");
+        jLabel25.setText("Blood Request Form ");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -350,7 +337,7 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1800, -1));
 
         jLabel20.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabel20.setText("Age");
+        jLabel20.setText("Age:");
         add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 220, -1, -1));
 
         stateJComboBox.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
@@ -372,14 +359,14 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         add(genderJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 320, 180, -1));
 
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jButton2.setText("New Form");
+        jButton2.setText("Cancel");
         jButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 640, 120, 40));
+        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 640, 110, 40));
         add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 380, 980, 10));
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
@@ -390,7 +377,7 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 380, 30, 250));
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabel2.setText("Patient Details");
+        jLabel2.setText("Beneficiary  Details");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 160, -1));
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
@@ -403,37 +390,18 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
                 hlaTypesTextActionPerformed(evt);
             }
         });
-        add(hlaTypesText, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 580, 290, -1));
-
-        btnBack.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        btnBack.setText("Back");
-        btnBack.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnBack.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBackActionPerformed(evt);
-            }
-        });
-        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 680, 110, 40));
+        add(hlaTypesText, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 580, 600, -1));
 
         jLabel21.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jLabel21.setText("Do you have any Medical Conditions that Hospital Needs to be aware of? ");
+        jLabel21.setText("Have you ever experienced any complications after recieving blood? ");
         add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 460, -1, 30));
 
         uidText.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         add(uidText, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 170, 170, -1));
 
         jLabel7.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabel7.setText("UID");
+        jLabel7.setText("PIN:");
         add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 170, -1, -1));
-
-        genderJComboBox1.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        genderJComboBox1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        genderJComboBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                genderJComboBox1ActionPerformed(evt);
-            }
-        });
-        add(genderJComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 100, 170, -1));
 
         bloodTypeComboBox.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         bloodTypeComboBox.addActionListener(new java.awt.event.ActionListener() {
@@ -441,7 +409,12 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
                 bloodTypeComboBoxActionPerformed(evt);
             }
         });
-        add(bloodTypeComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 320, 180, 40));
+        add(bloodTypeComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 320, 170, 40));
+        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 320, 180, 40));
+
+        jLabel11.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        jLabel11.setText("Blood Group:");
+        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 320, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -506,7 +479,6 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         if (nameText.getText().isEmpty() || emailText.getText().isEmpty() || cityText.getText().isEmpty() || contactText.getText().isEmpty()
                 || zipText.getText().isEmpty() || streetText.getText().isEmpty() || uidText.getText().isEmpty()
                 || String.valueOf(genderJComboBox.getSelectedItem()).equals("")
-                || String.valueOf(genderJComboBox1.getSelectedItem()).equals("")
 //                || String.valueOf(bloodType.getText()).equals("")
                 || String.valueOf(bloodTypeComboBox.getSelectedItem()).equals("")
                 || String.valueOf(stateJComboBox.getSelectedItem()).equals("")) {
@@ -655,7 +627,6 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         emailText.setEnabled(true);
         contactText.setEnabled(true);
         genderJComboBox.setEnabled(true);
-        genderJComboBox1.setEnabled(true);
 
 //        bloodType.setEnabled(true);
         bloodTypeComboBox.setEnabled(true);
@@ -678,7 +649,6 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
         bloodTypeComboBox.setSelectedItem("");
 
         genderJComboBox.setSelectedItem("");
-        genderJComboBox1.setSelectedItem("");
 
         stateJComboBox.setSelectedItem("");
 
@@ -708,21 +678,6 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
 
     }//GEN-LAST:event_uEmailKeyTyped
 
-    private void hlaTypesTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hlaTypesTextActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_hlaTypesTextActionPerformed
-
-    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-        // TODO add your handling code here:
-        JFrame frame = (JFrame) getWindowAncestor(this);
-        frame.dispose();
-        NewReceiverJPanel.super.setVisible(false);
-    }//GEN-LAST:event_btnBackActionPerformed
-
-    private void genderJComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_genderJComboBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_genderJComboBox1ActionPerformed
-
     private void bloodTypeComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bloodTypeComboBoxActionPerformed
         // TODO add your handling code here:
         }
@@ -738,11 +693,14 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
             bloodTypeComboBox.addItem("ON");
     }//GEN-LAST:event_bloodTypeComboBoxActionPerformed
 
+    private void hlaTypesTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hlaTypesTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_hlaTypesTextActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField ageText;
     private javax.swing.JComboBox<String> bloodTypeComboBox;
-    private javax.swing.JButton btnBack;
     private javax.swing.JRadioButton buttonNo;
     private javax.swing.JRadioButton buttonYes;
     private javax.swing.JTextField cityText;
@@ -750,12 +708,12 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
     private com.toedter.calendar.JDateChooser dobDateField;
     private javax.swing.JTextField emailText;
     private javax.swing.JComboBox genderJComboBox;
-    private javax.swing.JComboBox genderJComboBox1;
     private javax.swing.JTextField hlaTypesText;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -769,7 +727,6 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -777,6 +734,7 @@ public class NewReceiverJPanel extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField nameText;
     private javax.swing.JComboBox stateJComboBox;
     private javax.swing.JTextField streetText;

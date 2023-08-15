@@ -114,7 +114,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         BtnManageAuthentication.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         BtnManageAuthentication.setForeground(new java.awt.Color(255, 255, 255));
         BtnManageAuthentication.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        BtnManageAuthentication.setText("Manage Authentication");
+        BtnManageAuthentication.setText("Manage Accounts");
         BtnManageAuthentication.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BtnManageAuthentication.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {

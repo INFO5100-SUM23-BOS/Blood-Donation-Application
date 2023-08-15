@@ -7,10 +7,13 @@ package userinterface.WorldCordBlood_Centre_Coordinator_Role;
 
 import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
 import Business.Network.Network;
+import Business.Organization.WorldCord_Centre_Organization;
 import Business.People.Donor;
 import Magic.Design.*;
 import Business.People.Patient;
+import Business.People.PatientDirectory;
 import Magic.Design.MyJLabel;
 import Business.People.PatientRequest;
 import Business.UserAccount.UserAccount;
@@ -25,8 +28,14 @@ import javax.swing.table.DefaultTableModel;
  */
 public class PrepareOrderJPanel extends javax.swing.JPanel {
 
-    private EcoSystem system;
+     EcoSystem system;
     private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
+       boolean a = true;
+    private UserAccount userAccount;
+    WorldCord_Centre_Organization bloodBankOrganization;
+    Enterprise enterprise;
+    PatientDirectory patientDirectory;
+    private Network network;
 
     PrepareOrderJPanel(EcoSystem system, UserAccount userAccount, Network network) {
         initComponents();
@@ -80,7 +89,7 @@ public class PrepareOrderJPanel extends javax.swing.JPanel {
 
         btnPrepareOrder.setBackground(new java.awt.Color(204, 204, 204));
         btnPrepareOrder.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        btnPrepareOrder.setText("Prepare Order");
+        btnPrepareOrder.setText("View Details");
         btnPrepareOrder.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnPrepareOrder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -96,7 +105,7 @@ public class PrepareOrderJPanel extends javax.swing.JPanel {
         jLabel25.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel25.setForeground(new java.awt.Color(255, 255, 255));
         jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel25.setText("Prepare Order");
+        jLabel25.setText("New Requests");
         jPanel3.add(jLabel25);
 
         add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1800, -1));
@@ -139,14 +148,10 @@ public class PrepareOrderJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnPrepareOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrepareOrderActionPerformed
-        int selectedRow = patientTable1.getSelectedRow(); 
-        PatientRequest dr = (PatientRequest) patientTable1.getValueAt(selectedRow, 0);
-        // Pass patient into the page below
-        
-        // TODO: Pass code to Prepare Order Details Page
-        // TODO: PASS IN PATIENT REQUEST
-//        PrepareOrderDetailsJPanel panel = new PrepareOrderDetailsJPanel(system, userAccount, network);
-//        userProcessContainer.add("PrepareOrderDetailsJPanel", panel);
+     
+//        
+//        ViewRequestJPanel panel = new ViewRequestJPanel(system, userAccount, network);
+//        userProcessContainer.add("ViewRequestJPanel", panel);
 //        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
 //        layout.next(userProcessContainer);
         

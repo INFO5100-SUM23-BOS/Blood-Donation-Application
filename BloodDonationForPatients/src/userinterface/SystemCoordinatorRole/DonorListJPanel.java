@@ -29,7 +29,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author saiku
+ * @author maka
  */
 public class DonorListJPanel extends javax.swing.JPanel {
 

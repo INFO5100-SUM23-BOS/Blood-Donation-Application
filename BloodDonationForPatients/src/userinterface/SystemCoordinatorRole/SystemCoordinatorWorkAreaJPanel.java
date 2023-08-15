@@ -7,7 +7,7 @@ package userinterface.SystemCoordinatorRole;
 
 /**
  *
- * @author saiku
+ * @author maka
  */
 
 
@@ -91,8 +91,6 @@ public class SystemCoordinatorWorkAreaJPanel extends javax.swing.JPanel {
 
         Header = new javax.swing.JPanel();
         BtnDonorList = new javax.swing.JLabel();
-        BtnPatientsList = new javax.swing.JLabel();
-        BtnProfile = new javax.swing.JLabel();
         userProcessContainer = new javax.swing.JPanel();
 
         setPreferredSize(new java.awt.Dimension(1150, 720));
@@ -114,30 +112,6 @@ public class SystemCoordinatorWorkAreaJPanel extends javax.swing.JPanel {
         });
         Header.add(BtnDonorList);
 
-        BtnPatientsList.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        BtnPatientsList.setForeground(new java.awt.Color(255, 255, 255));
-        BtnPatientsList.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        BtnPatientsList.setText("Patients(Recievers) List");
-        BtnPatientsList.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        BtnPatientsList.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BtnPatientsListMouseClicked(evt);
-            }
-        });
-        Header.add(BtnPatientsList);
-
-        BtnProfile.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        BtnProfile.setForeground(new java.awt.Color(255, 255, 255));
-        BtnProfile.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        BtnProfile.setText("Profile");
-        BtnProfile.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        BtnProfile.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BtnProfileMouseClicked(evt);
-            }
-        });
-        Header.add(BtnProfile);
-
         add(Header, java.awt.BorderLayout.PAGE_START);
 
         userProcessContainer.setBackground(new java.awt.Color(255, 153, 153));
@@ -154,27 +128,9 @@ public class SystemCoordinatorWorkAreaJPanel extends javax.swing.JPanel {
         layout.next(userProcessContainer);
     }//GEN-LAST:event_BtnDonorListMouseClicked
 
-    private void BtnPatientsListMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnPatientsListMouseClicked
-        // TODO add your handling code here:
-        PatientListJPanel patientListJPanel = new PatientListJPanel(userAccount, system, network, systorganization);
-        userProcessContainer.add("PatientListJPanel",patientListJPanel);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
-    }//GEN-LAST:event_BtnPatientsListMouseClicked
-
-    private void BtnProfileMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnProfileMouseClicked
-        // TODO add your handling code here:
-        ManageSystemCoordinatorProfile manageSystCoordinatorProfile = new ManageSystemCoordinatorProfile(userAccount,systorganization,enterprise);
-        userProcessContainer.add("ManageSystemCoordinatorProfile",manageSystCoordinatorProfile);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
-    }//GEN-LAST:event_BtnProfileMouseClicked
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BtnDonorList;
-    private javax.swing.JLabel BtnPatientsList;
-    private javax.swing.JLabel BtnProfile;
     private javax.swing.JPanel Header;
     private javax.swing.JPanel userProcessContainer;
     // End of variables declaration//GEN-END:variables

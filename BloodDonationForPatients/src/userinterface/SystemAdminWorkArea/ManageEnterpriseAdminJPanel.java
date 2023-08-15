@@ -213,7 +213,6 @@ private boolean checkUserIdExists(String userName) {
         });
         tblAdminUserName.setGridColor(new java.awt.Color(0, 0, 0));
         tblAdminUserName.setRowHeight(30);
-        tblAdminUserName.setShowVerticalLines(false);
         jScrollPane3.setViewportView(tblAdminUserName);
         if (tblAdminUserName.getColumnModel().getColumnCount() > 0) {
             tblAdminUserName.getColumnModel().getColumn(0).setResizable(false);
@@ -289,7 +288,7 @@ private boolean checkUserIdExists(String userName) {
                                 .addComponent(txtUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel6)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
                                 .addComponent(txtAdminName, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(143, 143, 143)
@@ -346,9 +345,7 @@ private boolean checkUserIdExists(String userName) {
             }
         });
         enterpriseJTable.setGridColor(new java.awt.Color(0, 0, 0));
-        enterpriseJTable.setIntercellSpacing(new java.awt.Dimension(0, 0));
         enterpriseJTable.setRowHeight(30);
-        enterpriseJTable.setShowVerticalLines(false);
         enterpriseJTable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 enterpriseJTableMouseClicked(evt);

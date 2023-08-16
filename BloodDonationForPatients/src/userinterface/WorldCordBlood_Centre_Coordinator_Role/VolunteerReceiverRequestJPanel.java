@@ -9,7 +9,6 @@ import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
-import Magic.Design.*;
 import Business.Organization.LegalOfficerOrganization;
 import Business.Organization.Organization;
 import Business.People.Patient;
@@ -17,20 +16,20 @@ import Business.People.PatientRequest;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.System_Coordinator_Test_WorkRequest;
 import Business.WorkQueue.WorkRequest;
-import Magic.Design.MyJButton;
 import Magic.Design.MyTableFormat;
 import java.awt.Color;
 import java.awt.Image;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.BorderFactory;
+import javax.swing.DefaultCellEditor;
 import javax.swing.ImageIcon;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumn;
 
 
 /**
@@ -71,7 +70,16 @@ public class VolunteerReceiverRequestJPanel extends javax.swing.JPanel {
             row[3]= patientRequest.getStatus();
               
             dtm.addRow(row);
-        }        
+        }   
+         
+        TableColumn testColumn = requestTable.getColumnModel().getColumn(3);
+      JComboBox<String> comboBox = new JComboBox<>();
+      comboBox.addItem("Approved");
+      comboBox.addItem("Rejected");
+      comboBox.addItem("Cancelled");
+     
+      testColumn.setCellEditor(new DefaultCellEditor(comboBox));
+  
     }
 
     /**
@@ -139,7 +147,7 @@ public class VolunteerReceiverRequestJPanel extends javax.swing.JPanel {
                 buttonRejectActionPerformed(evt);
             }
         });
-        add(buttonReject, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 350, 100, 40));
+        add(buttonReject, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 350, 110, 40));
 
         buttonApprove.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         buttonApprove.setText("Approve");
@@ -294,14 +302,22 @@ public class VolunteerReceiverRequestJPanel extends javax.swing.JPanel {
                 "UID", "Name", "Contact", "Status"
             }
         ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.String.class
             };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, true
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
+        requestTable.setColumnSelectionAllowed(true);
         requestTable.setFocusable(false);
         requestTable.setGridColor(new java.awt.Color(0, 0, 0));
         requestTable.setRowHeight(30);
@@ -311,10 +327,22 @@ public class VolunteerReceiverRequestJPanel extends javax.swing.JPanel {
             }
         });
         jScrollPane1.setViewportView(requestTable);
+        requestTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        if (requestTable.getColumnModel().getColumnCount() > 0) {
+            requestTable.getColumnModel().getColumn(0).setHeaderValue("UID");
+            requestTable.getColumnModel().getColumn(1).setHeaderValue("Name");
+            requestTable.getColumnModel().getColumn(2).setHeaderValue("Contact");
+            requestTable.getColumnModel().getColumn(3).setHeaderValue("Status");
+        }
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, 980, 190));
 
         statusText.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        statusText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                statusTextActionPerformed(evt);
+            }
+        });
         add(statusText, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 510, 200, -1));
 
         jLabel1.setText("Status");
@@ -536,6 +564,10 @@ public class VolunteerReceiverRequestJPanel extends javax.swing.JPanel {
     private void hlaTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hlaTextActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_hlaTextActionPerformed
+
+    private void statusTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_statusTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_statusTextActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

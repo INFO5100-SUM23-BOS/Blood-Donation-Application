@@ -20,6 +20,8 @@ import Business.UserAccount.UserAccount;
 import Magic.Design.MyJButton;
 import Magic.Design.MyTableFormat;
 import java.awt.CardLayout;
+import java.awt.GridLayout;
+import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -36,10 +38,11 @@ public class PrepareOrderJPanel extends javax.swing.JPanel {
     Enterprise enterprise;
     PatientDirectory patientDirectory;
     private Network network;
-
+    JPanel jpanel;
     PrepareOrderJPanel(EcoSystem system, UserAccount userAccount, Network network) {
         initComponents();
         this.system = system;
+        this.jpanel=jPanel3;
          patientTable1.getTableHeader().setDefaultRenderer(new MyTableFormat());
         populatePatientRequestsTable();
         
@@ -76,7 +79,6 @@ public class PrepareOrderJPanel extends javax.swing.JPanel {
         jLabel25 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         patientTable1 = new javax.swing.JTable();
-        btnDelete = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 153, 153));
         setMinimumSize(new java.awt.Dimension(1100, 720));
@@ -100,13 +102,13 @@ public class PrepareOrderJPanel extends javax.swing.JPanel {
 
         jPanel3.setBackground(new java.awt.Color(31, 31, 31));
         jPanel3.setPreferredSize(new java.awt.Dimension(926, 70));
-        jPanel3.setLayout(new java.awt.GridLayout(1, 0));
+        jPanel3.setLayout(new java.awt.CardLayout());
 
         jLabel25.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel25.setForeground(new java.awt.Color(255, 255, 255));
         jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel25.setText("New Requests");
-        jPanel3.add(jLabel25);
+        jPanel3.add(jLabel25, "card2");
 
         add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1800, -1));
 
@@ -134,43 +136,21 @@ public class PrepareOrderJPanel extends javax.swing.JPanel {
         jScrollPane2.setViewportView(patientTable1);
 
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 150, 730, 210));
-
-        btnDelete.setBackground(new java.awt.Color(31, 31, 31));
-        btnDelete.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        btnDelete.setText("Delete");
-        btnDelete.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnDelete.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDeleteActionPerformed(evt);
-            }
-        });
-        add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 390, 120, 40));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnPrepareOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrepareOrderActionPerformed
      
-//        
-//        ViewRequestJPanel panel = new ViewRequestJPanel(system, userAccount, network);
-//        userProcessContainer.add("ViewRequestJPanel", panel);
-//        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-//        layout.next(userProcessContainer);
+        
+        ViewRequestJPanel panel = new ViewRequestJPanel(jpanel,system, userAccount, network, bloodBankOrganization,  enterprise);
+        jPanel3.add("ViewRequestJPanel", panel);
+        CardLayout layout;
+         layout = (CardLayout) jPanel3.getLayout();
+        layout.next(jPanel3);
         
     }//GEN-LAST:event_btnPrepareOrderActionPerformed
 
-    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-        // TODO add your handling code here:
-        int selectedRow = patientTable1.getSelectedRow(); 
-        PatientRequest dr = (PatientRequest) patientTable1.getValueAt(selectedRow, 0);
-
-        system.getPatientRequestDirectory().removePatientRequest(dr);
-
-        dB4OUtil.storeSystem(system);
-        populatePatientRequestsTable();
-    }//GEN-LAST:event_btnDeleteActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnPrepareOrder;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel25;
@@ -178,4 +158,6 @@ public class PrepareOrderJPanel extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable patientTable1;
     // End of variables declaration//GEN-END:variables
+
+   
 }

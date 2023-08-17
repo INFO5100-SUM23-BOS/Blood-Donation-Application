@@ -8,7 +8,7 @@ package Business.Organization;
 import Business.BloodTypes.BloodCount;
 import Business.BloodTypes.PersonBloodType;
 import Business.Role.DoctorRole;
-import Business.Role.Blood_Bank_CoordinatorRole;
+import Business.Role.LocalClinicRole;
 import Business.Role.Role;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -109,7 +109,7 @@ public class Blood_Donation_Bank_Organization extends Organization{
     @Override
     public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roles = new ArrayList();
-        roles.add(new Blood_Bank_CoordinatorRole());
+        roles.add(new LocalClinicRole());
         return roles;
     }
      

@@ -12,16 +12,16 @@ import Business.Organization.Blood_Donation_Bank_Organization;
 import Business.UserAccount.UserAccount;
 
 import javax.swing.JPanel;
-import userinterface.BloodDonationBankCoordinatorRole.BloodDonationBankCoordinatorWorkAreaJPanel;
+import userinterface.BloodDonationBankCoordinatorRole.LocalClinicWorkAreaJPanel;
 
 /**
  *
  * @author balumullamuri
  */
-public class Blood_Bank_CoordinatorRole extends Role {
+public class LocalClinicRole extends Role {
     
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business, Network network) {
-        return new BloodDonationBankCoordinatorWorkAreaJPanel(account, (Blood_Donation_Bank_Organization)organization, enterprise, business, network);
+        return new LocalClinicWorkAreaJPanel(account, (Blood_Donation_Bank_Organization)organization, enterprise, business, network);
     }
 }

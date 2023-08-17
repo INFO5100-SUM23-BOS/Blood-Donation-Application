@@ -5,7 +5,7 @@
  */
 package Business.Organization;
 
-import Business.Role.Blood_Centre_Coordinator_Role;
+import Business.Role.CaseManagerRole;
 import Business.Role.DoctorRole;
 import Business.Role.Role;
 import java.util.ArrayList;
@@ -22,7 +22,7 @@ public class WorldCord_Centre_Organization extends Organization {
     @Override
     public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roles = new ArrayList();
-        roles.add(new Blood_Centre_Coordinator_Role());
+        roles.add(new CaseManagerRole());
         return roles;
     }
     

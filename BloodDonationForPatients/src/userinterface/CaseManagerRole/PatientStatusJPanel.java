@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package userinterface.WorldCordBlood_Centre_Coordinator_Role;
+package userinterface.CaseManagerRole;
 
 import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;

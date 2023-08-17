@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor
  */
-package userinterface.WorldCordBlood_Centre_Coordinator_Role;
+package userinterface.CaseManagerRole;
 
 import static java.time.Clock.system;
 import javax.swing.JFrame;
@@ -38,7 +38,7 @@ import static javax.swing.SwingUtilities.getWindowAncestor;
  *
  * @author maka
  */
-public class WorldCordBlood_Centre_Coordinator_WorkAreaJPanel extends javax.swing.JPanel {
+public class CaseManagerWorkAreaJPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form WorldCordBlood_Centre_Coordinator_WorkAreaJPanel
@@ -54,7 +54,7 @@ public class WorldCordBlood_Centre_Coordinator_WorkAreaJPanel extends javax.swin
     private Network network;
     
     
-    public WorldCordBlood_Centre_Coordinator_WorkAreaJPanel(UserAccount account,WorldCord_Centre_Organization bloodBankOrganization, Enterprise enterprise, EcoSystem system, Network network) {
+    public CaseManagerWorkAreaJPanel(UserAccount account,WorldCord_Centre_Organization bloodBankOrganization, Enterprise enterprise, EcoSystem system, Network network) {
         initComponents();
         this.system = system;
         this.userAccount = account;

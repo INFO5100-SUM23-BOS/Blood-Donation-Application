@@ -30,7 +30,7 @@ import userinterface.BloodDonationBankCoordinatorRole.ManageBloodDonationBankCoo
  */
 
 
-public class BloodDonationBankCoordinatorWorkAreaJPanel extends javax.swing.JPanel {
+public class LocalClinicWorkAreaJPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form BoneMarrowBankCoordinatorWorkAreaJPanel
@@ -43,7 +43,7 @@ public class BloodDonationBankCoordinatorWorkAreaJPanel extends javax.swing.JPan
     private Network network;
     private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
     
-    public BloodDonationBankCoordinatorWorkAreaJPanel(UserAccount account, Blood_Donation_Bank_Organization bmBankOrganization, Enterprise enterprise, EcoSystem business, Network network) {
+    public LocalClinicWorkAreaJPanel(UserAccount account, Blood_Donation_Bank_Organization bmBankOrganization, Enterprise enterprise, EcoSystem business, Network network) {
         initComponents();
         this.userAccount = account;
         this.bmBankOrganization = bmBankOrganization;

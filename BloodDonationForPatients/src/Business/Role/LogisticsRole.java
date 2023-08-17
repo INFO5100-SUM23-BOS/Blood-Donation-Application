@@ -18,7 +18,7 @@ import userinterface.LegalOfficerRole.LegalOfficerWorkAreaJPanel;
  *
  * @author balumullamuri
  */
-public class LegalOfficerRole extends Role {
+public class LogisticsRole extends Role {
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business, Network network) {
         return new LegalOfficerWorkAreaJPanel(account, (LegalOfficerOrganization) organization, enterprise, business, network);

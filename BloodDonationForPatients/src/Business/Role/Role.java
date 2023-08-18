@@ -17,17 +17,18 @@ import javax.swing.JFrame;
  * @author balumullamuri
  */
 public abstract class Role {
-     public enum RoleType{
+
+    public enum RoleType {
         Admin("Admin"),
-        Doctor("Doctor"),
-        GovernmentCoordinator("GovernmentCoordinator"),
-        LegalOfficer("LegalOfficer"),
-        MedicalTechnician("MedTech"),
-        BloodBankCoordinator("BloodBankCoordinator"),
-        SystemCoordinator("SystemCoordinator");
-        
+        CaseManager("Case Manager"),
+        GovernmentAgent("Government Agent"),
+        LabEmployee("Lab Employee"),
+        LocalClinic("Local Clinic Staff"),
+        LogisticsOfficer("Logistics Officer");
+
         private String value;
-        private RoleType(String value){
+
+        private RoleType(String value) {
             this.value = value;
         }
 
@@ -40,11 +41,11 @@ public abstract class Role {
             return value;
         }
     }
-    
-    public abstract JPanel createWorkArea(JPanel userProcessContainer, 
-            UserAccount account, 
-            Organization organization, 
-            Enterprise enterprise, 
+
+    public abstract JPanel createWorkArea(JPanel userProcessContainer,
+            UserAccount account,
+            Organization organization,
+            Enterprise enterprise,
             EcoSystem business,
             Network network);
 
@@ -52,5 +53,5 @@ public abstract class Role {
     public String toString() {
         return this.getClass().getName();
     }
-    
+
 }

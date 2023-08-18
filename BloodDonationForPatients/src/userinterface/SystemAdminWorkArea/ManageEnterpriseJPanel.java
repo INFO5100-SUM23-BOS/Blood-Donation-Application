@@ -413,7 +413,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
          
         else {
          
-            for (Enterprise ent : network.getEnterprise_Directory().getEnterpriseList()) {
+            for (Enterprise ent : network.getEnterpriseDirectory().getEnterpriseList()) {
        
                 if (ent.getName().equals(txtName.getText())) {
                     JOptionPane.showMessageDialog(null, new JLabel("<html><b>Enterprise Name can not be same!</b></html>") , "Error", JOptionPane.ERROR_MESSAGE);
@@ -429,7 +429,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         {
             String name = txtName.getText();
 
-            Enterprise enterprise = network.getEnterprise_Directory().createAndAddEnterprise(name, type);
+            Enterprise enterprise = network.getEnterpriseDirectory().createAndAddEnterprise(name, type);
             enterprise.setContact( (Long.parseLong(txtContact.getText())));
             enterprise.setZipcode(txtZipCode.getText());
             enterprise.setEmail(txtEmail.getText());
@@ -475,11 +475,11 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
                     break;
                 }
             }
-            for (Enterprise ent : network.getEnterprise_Directory().getEnterpriseList()) {
+            for (Enterprise ent : network.getEnterpriseDirectory().getEnterpriseList()) {
        
                 if (ent.getName().equals(tblEnterprises.getValueAt(selectedRow, 0))) {
                     JOptionPane.showMessageDialog(null, new JLabel(ent.getName() + " enterprise deleted Succesfully!!") , "Error", JOptionPane.ERROR_MESSAGE);
-                    network.getEnterprise_Directory().getEnterpriseList().remove(ent);
+                    network.getEnterpriseDirectory().getEnterpriseList().remove(ent);
                     populateNetworkTable();
                     return;
                 }
@@ -526,7 +526,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
 
         model.setRowCount(0);
         for (Network network : system.getNetworkList()) {
-            for (Enterprise enterprise : network.getEnterprise_Directory().getEnterpriseList()) {
+            for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()) {
                 Object[] row = new Object[6];
                 row[0] = enterprise.getName();
                 row[1] = enterprise.getEnterpriseType().getValue();

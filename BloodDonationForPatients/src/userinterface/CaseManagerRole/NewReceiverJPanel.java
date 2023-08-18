@@ -35,8 +35,8 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import static javax.swing.SwingUtilities.getWindowAncestor;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import userinterface.GovernmentCoordinatorRole.NewDonorJPanel;
-import static userinterface.GovernmentCoordinatorRole.NewDonorJPanel.emailValidator;
+import userinterface.GovernmentAgentRole.NewDonorJPanel;
+import static userinterface.GovernmentAgentRole.NewDonorJPanel.emailValidator;
 
 /**
  *

@@ -11,7 +11,7 @@ import java.awt.CardLayout;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import userinterface.CaseManagerRole.NewReceiverJPanel;
-import userinterface.GovernmentCoordinatorRole.NewDonorJPanel;
+import userinterface.GovernmentAgentRole.NewDonorJPanel;
 
 
 public class DonorReceiverFramePage extends javax.swing.JFrame {

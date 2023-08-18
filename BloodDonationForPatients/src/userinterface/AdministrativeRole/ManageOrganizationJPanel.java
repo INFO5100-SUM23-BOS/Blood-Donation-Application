@@ -9,13 +9,9 @@ import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Magic.Design.MyJLabel;
 import Magic.Design.MyJTextField;
-import static Business.Enterprise.Enterprise.EnterpriseType.HRSA;
-import static Business.Enterprise.Enterprise.EnterpriseType.Legal;
+import static Business.Enterprise.Enterprise.EnterpriseType.Government;
+import static Business.Enterprise.Enterprise.EnterpriseType.Logistics;
 import Business.Organization.Organization;
-import Business.Organization.Organization.BloodCentreType;
-import Business.Organization.Organization.GovernmentType;
-import Business.Organization.Organization.LegalType;
-import Business.Organization.Organization.BloodBankType;
 import Business.Organization.Organization.Type;
 import Business.Organization.OrganizationDirectory;
 import Magic.Design.MyTableFormat;
@@ -27,9 +23,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 import Magic.Design.MyJButton;
-import static Business.Enterprise.Enterprise.EnterpriseType.BloodDonationBank;
-import static Business.Enterprise.Enterprise.EnterpriseType.WorldCordBloodCentre;
-
 
 public class ManageOrganizationJPanel extends javax.swing.JPanel {
 
@@ -39,11 +32,10 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
     EcoSystem system;
     private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
 
-    
     /**
      * Creates new form ManageOrganizationJPanel
      */
-    public ManageOrganizationJPanel(JPanel userProcessContainer,OrganizationDirectory directory, Enterprise enterprise, EcoSystem system ) {
+    public ManageOrganizationJPanel(JPanel userProcessContainer, OrganizationDirectory directory, Enterprise enterprise, EcoSystem system) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.directory = directory;
@@ -54,97 +46,31 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         populateTable();
         populateCombo();
     }
-    
-    private void populateCombo(){
+
+    private void populateCombo() {
         organizationJComboBox.removeAllItems();
-        boolean add = true; 
-       // for (Type type : Organization.Type.values()){
-        //    if (!type.getValue().equals(Type.Admin.getValue()))
-        //        organizationJComboBox.addItem(type);
-       // }
-       
-       System.out.println(enterprise.getEnterpriseType());
-       System.out.println(enterprise.getEnterpriseType().toString().equals(BloodDonationBank.toString()));
-       if(enterprise.getEnterpriseType().toString().equals(Legal.toString())){
-        for(Organization.LegalType legalType: Organization.LegalType.values()){
-            add = true;
-            if (legalType.getValue().equals(Organization.LegalType.LegalOfficer.getValue())){
-                for (Organization organization : directory.getOrganizationList()) {
-                    if(organization.getName().equals(legalType.getValue()))
-                        add = false;
-                }
-                if(add)
-                    organizationJComboBox.addItem(legalType);
+
+        for (Type type : Organization.Type.values()) {
+            if (enterprise.supportedOrgTypes.contains(type)) {
+                organizationJComboBox.addItem(type);
             }
         }
-        }
-       
-       else if(enterprise.getEnterpriseType().toString().equals(BloodDonationBank.toString())){
-        for(Organization.BloodBankType bmType: Organization.BloodBankType.values()){
-            add = true;
-            System.out.println(bmType.getValue());
-            System.out.println(Organization.BloodBankType.BloodDonationBank.getValue());
-            if (bmType.getValue().equals(Organization.BloodBankType.BloodDonationBank.getValue())){
-                for (Organization organization : directory.getOrganizationList()) {
-                    if(organization.getName().equals(bmType.getValue()))
-                        add = false;
-                }
-                if(add)
-                    organizationJComboBox.addItem(bmType);
-            }
-        }
-        }
-       else if(enterprise.getEnterpriseType().toString().equals(WorldCordBloodCentre.toString())){
-        for(Organization.BloodCentreType cancerType: Organization.BloodCentreType.values()){
-            if (cancerType.getValue().equals(Organization.BloodCentreType.BloodCentre.getValue())){
-                organizationJComboBox.addItem(cancerType);
-            }
-        }
-        }
-       else if(enterprise.getEnterpriseType().toString().equals(HRSA.toString())){
-        for(Organization.GovernmentType govtType: Organization.GovernmentType.values()){
-            add = true;
-            if (govtType.getValue().equals(Organization.GovernmentType.Government.getValue())){
-                for (Organization organization : directory.getOrganizationList()) {
-                    if(organization.getName().equals(govtType.getValue()))
-                        add = false;
-                }
-                if(add)
-                    organizationJComboBox.addItem(govtType);
-            }
-        }
-        }
-       else{
-        for (Organization.Type type : Organization.Type.values()){ 
-            add = true;
-            if (type.getValue().equals(Organization.Type.SystemCoordinator.getValue())
-                    ||type.getValue().equals(Organization.Type.Doctor.getValue())
-                    ||type.getValue().equals(Organization.Type.MedicalTechnician.getValue())
-                    ) {
-                for (Organization organization : directory.getOrganizationList()) {
-                    if(organization.getName().equals(type.getValue()))
-                        add = false;
-                }
-                if(add)
-                    organizationJComboBox.addItem(type);
-            }
-        }
-       
     }
-    }
-    private void populateTable(){
+
+    private void populateTable() {
         DefaultTableModel model = (DefaultTableModel) organizationJTable.getModel();
-        
+
         model.setRowCount(0);
-        
-        for (Organization organization : directory.getOrganizationList()){
+
+        for (Organization organization : directory.getOrganizationList()) {
             Object[] row = new Object[2];
             row[0] = organization.getName();
             row[1] = organization.getRealName();
-            
+
             model.addRow(row);
         }
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -317,71 +243,48 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
 
     private void addJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addJButtonActionPerformed
 
-        String check1 = "";    
-        
+        String check1 = "";
+
         if (txtOrgRealName.getText().isEmpty()) {
             txtOrgRealName.setBorder(BorderFactory.createLineBorder(Color.RED));
             txtOrgRealName.setForeground(Color.red);
 
-            JOptionPane.showMessageDialog(null, 
-                    new JLabel("<html><b>Organization Name can not be empty!</b></html>") , 
+            JOptionPane.showMessageDialog(null,
+                    new JLabel("<html><b>Organization Name can not be empty!</b></html>"),
                     "Error", JOptionPane.ERROR_MESSAGE);
-                   
 
             //JOptionPane.showMessageDialog(null, "Organization name cannot be empty!");
             check1 = "do not go further!";
             return;
         }
 
-        
         for (Organization organization : directory.getOrganizationList()) {
-
             if (organization.getName().equals(txtOrgRealName.getText())) {
-                
-            JOptionPane.showMessageDialog(null, 
-                    new JLabel("<html><b>Organization name already exists!</b></html>") , 
-                    "Error", JOptionPane.ERROR_MESSAGE);
-            
+                JOptionPane.showMessageDialog(null,
+                        new JLabel("<html><b>Organization name already exists!</b></html>"),
+                        "Error", JOptionPane.ERROR_MESSAGE);
+
                 check1 = "do not go further!";
                 return;
             }
         }
 
-// Main Process after validation checks
-        if(check1.equals("")){
-        if(enterprise.getEnterpriseType().toString().equals(Legal.toString())){
-            directory.createLegalOrganization((LegalType)organizationJComboBox.getSelectedItem(), txtOrgRealName.getText());
-        }
-        else if(enterprise.getEnterpriseType().toString().equals(HRSA.toString())){
-            directory.createGovernmentOrganization((GovernmentType)organizationJComboBox.getSelectedItem(), txtOrgRealName.getText());
-        }
-        else if(enterprise.getEnterpriseType().toString().equals(BloodDonationBank.toString())){
-            directory.createBoneMarrowOrganization((BloodBankType)organizationJComboBox.getSelectedItem(), txtOrgRealName.getText());
-        }
-        else if(enterprise.getEnterpriseType().toString().equals(WorldCordBloodCentre.toString())){
-            directory.createCancerCentreOrganization((BloodCentreType)organizationJComboBox.getSelectedItem(), txtOrgRealName.getText());
-        }
-        else{
-            
-        Type type = (Type) organizationJComboBox.getSelectedItem();
-        directory.createOrganization(type, txtOrgRealName.getText());
-        }
-        populateTable();
-        
-        
-       JOptionPane.showMessageDialog(null, 
-               new JLabel("<html><b>"+ txtOrgRealName.getText() + " Organization Created!</b></html>"),
-                "Approved",
-                JOptionPane.INFORMATION_MESSAGE,
-                new javax.swing.ImageIcon(getClass().getResource("/images/approved.png"))
-       );
-                   
-        
-        
-        dB4OUtil.storeSystem(system);
-        
-        
-        txtOrgRealName.setText("");
+        // Main Process after validation checks
+        if (check1.equals("")) {
+            Type type = (Type) organizationJComboBox.getSelectedItem();
+            directory.createOrganization(type, txtOrgRealName.getText());
+            populateTable();
+
+            JOptionPane.showMessageDialog(null,
+                    new JLabel("<html><b>" + txtOrgRealName.getText() + " Organization Created!</b></html>"),
+                    "Approved",
+                    JOptionPane.INFORMATION_MESSAGE,
+                    new javax.swing.ImageIcon(getClass().getResource("/images/approved.png"))
+            );
+
+            dB4OUtil.storeSystem(system);
+
+            txtOrgRealName.setText("");
 //        organizationJComboBox.removeItem(organizationJComboBox.getSelectedItem());
         }
         populateCombo();

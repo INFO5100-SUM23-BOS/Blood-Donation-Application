@@ -17,9 +17,8 @@ import Business.EcoSystem;
 import userinterface.DoctorRole.*;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
-import Business.Organization.Blood_Donation_Bank_Organization;
-import Business.Organization.WorldCord_Centre_Organization;
-import Business.Organization.DoctorOrganization;
+import Business.Organization.LocalClinicOrganization;
+import Business.Organization.HeadquarterOrganization;
 import Business.Organization.Organization;
 import Business.People.PatientDirectory;
 import Business.UserAccount.UserAccount;
@@ -46,7 +45,7 @@ public class CaseManagerWorkAreaJPanel extends javax.swing.JPanel {
      */
     boolean a = true;
     private UserAccount userAccount;
-    WorldCord_Centre_Organization bloodBankOrganization;
+    HeadquarterOrganization bloodBankOrganization;
     Enterprise enterprise;
     EcoSystem system;
     PatientDirectory patientDirectory;
@@ -54,7 +53,7 @@ public class CaseManagerWorkAreaJPanel extends javax.swing.JPanel {
     private Network network;
     
     
-    public CaseManagerWorkAreaJPanel(UserAccount account,WorldCord_Centre_Organization bloodBankOrganization, Enterprise enterprise, EcoSystem system, Network network) {
+    public CaseManagerWorkAreaJPanel(UserAccount account,HeadquarterOrganization bloodBankOrganization, Enterprise enterprise, EcoSystem system, Network network) {
         initComponents();
         this.system = system;
         this.userAccount = account;

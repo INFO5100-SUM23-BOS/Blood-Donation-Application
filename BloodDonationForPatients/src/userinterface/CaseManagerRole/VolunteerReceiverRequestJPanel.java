@@ -9,7 +9,7 @@ import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
-import Business.Organization.LegalOfficerOrganization;
+import Business.Organization.LogisticsOrganization;
 import Business.Organization.Organization;
 import Business.People.Patient;
 import Business.People.PatientRequest;
@@ -412,7 +412,7 @@ public class VolunteerReceiverRequestJPanel extends javax.swing.JPanel {
         Enterprise ent = null;
         Organization org = null;
         
-        for (Enterprise enterprise : network.getEnterprise_Directory().getEnterpriseList()) {
+        for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()) {
             if (enterprise.getEnterpriseType().toString().equals("Legal")) {
             
                 ent = enterprise;
@@ -424,7 +424,7 @@ public class VolunteerReceiverRequestJPanel extends javax.swing.JPanel {
         
        
         for (Organization organization : ent.getOrganizationDirectory().getOrganizationList()) {
-            if(organization instanceof LegalOfficerOrganization) {
+            if(organization instanceof LogisticsOrganization) {
                 org = organization;
                 break;
             }

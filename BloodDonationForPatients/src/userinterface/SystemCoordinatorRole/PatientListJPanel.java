@@ -10,9 +10,8 @@ import Business.EcoSystem;
 import Magic.Design.*;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
-import Business.Organization.DoctorOrganization;
+import Business.Organization.LogisticsOrganization;
 import Business.Organization.Organization;
-import Business.Organization.SystemCoordinatorOrganization;
 import Business.People.Patient;
 import Business.People.PatientDirectory;
 import Business.UserAccount.UserAccount;
@@ -38,10 +37,10 @@ public class PatientListJPanel extends javax.swing.JPanel {
     private UserAccount userAccount;
     private  EcoSystem system;
     private Network network;
-    private SystemCoordinatorOrganization systorganization;
+    private LogisticsOrganization systorganization;
     private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
     
-    public PatientListJPanel(UserAccount userAccount, EcoSystem system, Network network, SystemCoordinatorOrganization systorganization) {
+    public PatientListJPanel(UserAccount userAccount, EcoSystem system, Network network, LogisticsOrganization systorganization) {
         initComponents();
         this.userAccount = userAccount;
         this.system = system;
@@ -63,10 +62,10 @@ public class PatientListJPanel extends javax.swing.JPanel {
         dtm.setRowCount(0);
         
         System.out.println("list of enterprises:");
-       // System.out.println(Enterprise_Directory.getEnterpriseList());
+       // System.out.println(EnterpriseDirectory.getEnterpriseList());
         System.out.println("list of enterprises ends");
         System.out.println(network.getName());
-        for (Enterprise enterprise : network.getEnterprise_Directory().getEnterpriseList()){
+        for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()){
             if(enterprise.getEnterpriseType().toString().equals("Hospital")){
                 System.out.println("Hosp");
                 Object[] row = new Object[2];
@@ -248,13 +247,13 @@ public class PatientListJPanel extends javax.swing.JPanel {
                     
                     
                     Organization org = null;
-                    Enterprise enterprise = (Enterprise) tblHospital.getValueAt(row1, 0);
-                    for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
-                            if (organization instanceof DoctorOrganization) {
-                                org = organization;
-                                break;
-                            }
-                    }
+//                    Enterprise enterprise = (Enterprise) tblHospital.getValueAt(row1, 0);
+//                    for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
+//                            if (organization instanceof DoctorOrganization) {
+//                                org = organization;
+//                                break;
+//                            }
+//                    }
                     if (org != null) {
                         org.getWorkQueue().getWorkRequestList().add(request);
                         System.out.println(org.getName());

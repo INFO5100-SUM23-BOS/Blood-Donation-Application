@@ -17,9 +17,8 @@ import Business.EcoSystem;
 import userinterface.DoctorRole.*;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
-import Business.Organization.DoctorOrganization;
+import Business.Organization.LogisticsOrganization;
 import Business.Organization.Organization;
-import Business.Organization.SystemCoordinatorOrganization;
 import Business.People.DonorDirectory;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
@@ -31,7 +30,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 import static javax.swing.SwingUtilities.getWindowAncestor;
-import userinterface.GovernmentCoordinatorRole.ManageGovernmentCoordinatorProfile;
+import userinterface.GovernmentAgentRole.ManageGovernmentCoordinatorProfile;
 import Magic.Design.*;
 
 
@@ -44,7 +43,7 @@ public class SystemCoordinatorWorkAreaJPanel extends javax.swing.JPanel {
     
     private UserAccount userAccount;
     boolean a=true;
-    private SystemCoordinatorOrganization systorganization;
+    private LogisticsOrganization systorganization;
     private Enterprise enterprise;
     private EcoSystem system;
     private DonorDirectory donorDirectory;
@@ -52,7 +51,7 @@ public class SystemCoordinatorWorkAreaJPanel extends javax.swing.JPanel {
     private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
     
     
-    public SystemCoordinatorWorkAreaJPanel(UserAccount account, SystemCoordinatorOrganization systorganization, Enterprise enterprise, EcoSystem business, Network network) {
+    public SystemCoordinatorWorkAreaJPanel(UserAccount account, LogisticsOrganization systorganization, Enterprise enterprise, EcoSystem business, Network network) {
         initComponents();
         this.userAccount = account;
         this.systorganization = systorganization;

@@ -4,8 +4,7 @@
  */
 package Business.Organization;
 
-import Business.Role.DoctorRole;
-import Business.Role.GovernmentCoordinatorRole;
+import Business.Role.GovernmentAgentRole;
 import Business.Role.Role;
 import java.util.ArrayList;
 
@@ -15,14 +14,14 @@ import java.util.ArrayList;
  */
 public class GovernmentOrganization extends Organization{
 
-    public GovernmentOrganization() {
-        super(Organization.GovernmentType.Government.getValue());
+    public GovernmentOrganization(String name, OrganizationDirectory parent) {
+        super(name == null ? Organization.Type.Government.getValue() : name, parent);
     }
     
     @Override
     public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roles = new ArrayList();
-        roles.add(new GovernmentCoordinatorRole());
+        roles.add(new GovernmentAgentRole());
         return roles;
     }
      

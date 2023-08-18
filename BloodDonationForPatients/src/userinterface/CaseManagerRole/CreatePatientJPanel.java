@@ -12,7 +12,7 @@ import Magic.Design.MyJLabel;
 import Magic.Design.MyJButton;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
-import Business.Organization.LegalOfficerOrganization;
+import Business.Organization.LogisticsOrganization;
 import Business.Organization.Organization;
 import Business.People.Patient;
 import Business.People.PatientDirectory;
@@ -317,7 +317,7 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         Enterprise ent = null;
         Organization org = null;
         
-        for (Enterprise enterprise : network.getEnterprise_Directory().getEnterpriseList()) {
+        for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()) {
             if (enterprise.getEnterpriseType().toString().equals("Legal")) {
             
                 ent = enterprise;
@@ -336,7 +336,7 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         
        
         for (Organization organization : ent.getOrganizationDirectory().getOrganizationList()) {
-            if(organization instanceof LegalOfficerOrganization) {
+            if(organization instanceof LogisticsOrganization) {
                 org = organization;
                 break;
             }

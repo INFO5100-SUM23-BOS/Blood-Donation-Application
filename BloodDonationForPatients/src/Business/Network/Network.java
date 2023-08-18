@@ -4,24 +4,24 @@
  */
 package Business.Network;
 
-import Business.Enterprise.Enterprise_Directory;
+import Business.Enterprise.EnterpriseDirectory;
 
 /**
  *
  * @author balumullamuri
  */
 public class Network {
+
     private String name;
     private String state;
     private String country;
-    
-    
-    
-    private Enterprise_Directory Enterprise_Directory;
-    
-    public Network(){
-        Enterprise_Directory=new Enterprise_Directory();
+
+    private EnterpriseDirectory enterpriseDirectory;
+
+    public Network() {
+        enterpriseDirectory = new EnterpriseDirectory();
     }
+
     public String getName() {
         return name;
     }
@@ -30,8 +30,8 @@ public class Network {
         this.name = name;
     }
 
-    public Enterprise_Directory getEnterprise_Directory() {
-        return Enterprise_Directory;
+    public EnterpriseDirectory getEnterpriseDirectory() {
+        return enterpriseDirectory;
     }
 
     public String getState() {
@@ -49,13 +49,10 @@ public class Network {
     public void setCountry(String country) {
         this.country = country;
     }
-    
-    
-    
-    
+
     @Override
-    public String toString(){
+    public String toString() {
         return name;
     }
-    
+
 }

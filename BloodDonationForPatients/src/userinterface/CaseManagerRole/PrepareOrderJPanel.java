@@ -9,7 +9,7 @@ import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
-import Business.Organization.WorldCord_Centre_Organization;
+import Business.Organization.HeadquarterOrganization;
 import Business.People.Donor;
 import Magic.Design.*;
 import Business.People.Patient;
@@ -34,7 +34,7 @@ public class PrepareOrderJPanel extends javax.swing.JPanel {
     private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
        boolean a = true;
     private UserAccount userAccount;
-    WorldCord_Centre_Organization bloodBankOrganization;
+    HeadquarterOrganization bloodBankOrganization;
     Enterprise enterprise;
     PatientDirectory patientDirectory;
     private Network network;

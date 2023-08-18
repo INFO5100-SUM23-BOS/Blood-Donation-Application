@@ -8,7 +8,7 @@ import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
-import Business.Organization.WorldCord_Centre_Organization;
+import Business.Organization.HeadquarterOrganization;
 import Business.People.PatientDirectory;
 import Business.People.PatientRequest;
 import Business.UserAccount.UserAccount;
@@ -30,13 +30,13 @@ public class ViewRequestJPanel extends javax.swing.JPanel {
     private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
     boolean a = true;
     private UserAccount userAccount;
-    WorldCord_Centre_Organization bloodBankOrganization;
+    HeadquarterOrganization bloodBankOrganization;
     Enterprise enterprise;
     PatientDirectory patientDirectory;
     private Network network;
     UserAccount account;
      JPanel jPanel3;
-    public ViewRequestJPanel(JPanel jPanel3, EcoSystem system, UserAccount userAccount, Network network, WorldCord_Centre_Organization bloodBankOrganization, Enterprise enterpris) {
+    public ViewRequestJPanel(JPanel jPanel3, EcoSystem system, UserAccount userAccount, Network network, HeadquarterOrganization bloodBankOrganization, Enterprise enterpris) {
 this.jPanel3=jPanel3;
         initComponents();
         this.system = system;

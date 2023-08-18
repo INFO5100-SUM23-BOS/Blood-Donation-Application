@@ -12,6 +12,7 @@ import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Color;
+import java.util.Arrays;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -30,7 +31,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
     public MainJFrame() {
         initComponents();
-        
+
         system = dB4OUtil.retrieveSystem();
         this.setSize(1680, 1050);
     }
@@ -235,12 +236,9 @@ public class MainJFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void loginJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginJButtonActionPerformed
-        // Get user name
         String userName = userNameJTextField.getText();
-        // Get Password
-        char[] passwordCharArray = passwordField.getPassword();
-        String password = String.valueOf(passwordCharArray);
-        
+        String password = Arrays.toString(passwordField.getPassword());
+
         //Step1: Check in the system admin user account directory if you have the user
 //        System.out.println(system.getName());
 //        System.out.println("1");
@@ -248,71 +246,68 @@ public class MainJFrame extends javax.swing.JFrame {
 //        System.out.println("2");
 //        System.out.println(userName);
 //        System.out.println(password);
-        UserAccount userAccount=system.getUserAccountDirectory().authenticateUser(userName, password);
-        
-        Enterprise inEnterprise=null;
-        Organization inOrganization=null;
-        Network inNetwork=null;
-        
-        if(userAccount==null){
+        UserAccount userAccount = system.getUserAccountDirectory().authenticateUser(userName, password);
+
+        Enterprise inEnterprise = null;
+        Organization inOrganization = null;
+        Network inNetwork = null;
+
+        if (userAccount == null) {
             //Step 2: Go inside each network and check each enterprise
-            for(Network network:system.getNetworkList()){
+            for (Network network : system.getNetworkList()) {
                 //Step 2.a: check against each enterprise
-                for(Enterprise enterprise:network.getEnterprise_Directory().getEnterpriseList()){
-                    userAccount=enterprise.getUserAccountDirectory().authenticateUser(userName, password);
-                    if(userAccount==null){
-                       //Step 3:check against each organization for each enterprise
-                       for(Organization organization:enterprise.getOrganizationDirectory().getOrganizationList()){
-                           userAccount=organization.getUserAccountDirectory().authenticateUser(userName, password);
-                           if(userAccount!=null){
-                               inEnterprise=enterprise;
-                               inOrganization=organization;
-                               inNetwork = network;
-                               break;
-                           }
-                       }
-                        
-                    }
-                    else{
-                       inEnterprise=enterprise;
-                       break;
-                    }
-                    if(inOrganization!=null){
+                for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()) {
+                    userAccount = enterprise.getUserAccountDirectory().authenticateUser(userName, password);
+                    if (userAccount == null) {
+                        //Step 3:check against each organization for each enterprise
+                        for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
+                            userAccount = organization.getUserAccountDirectory().authenticateUser(userName, password);
+                            if (userAccount != null) {
+                                inEnterprise = enterprise;
+                                inOrganization = organization;
+                                inNetwork = network;
+                                break;
+                            }
+                        }
+
+                    } else {
+                        inEnterprise = enterprise;
                         break;
-                    }  
+                    }
+                    if (inOrganization != null) {
+                        break;
+                    }
                 }
-                if(inEnterprise!=null){
+                if (inEnterprise != null) {
                     break;
                 }
             }
         }
-        
-        if(userAccount==null){
-        JOptionPane.showMessageDialog(null, 
-                new JLabel("<html><b>" + " Invalid Credentials!</b></html>"),
-                "Error",
-                JOptionPane.ERROR_MESSAGE
-        );
-            
-            
+
+        if (userAccount == null) {
+            JOptionPane.showMessageDialog(null,
+                    new JLabel("<html><b>" + " Invalid Credentials!</b></html>"),
+                    "Error",
+                    JOptionPane.ERROR_MESSAGE
+            );
+
             //JOptionPane.showMessageDialog(null, "Invalid credentials!");
             return;
-        }
-        else{
-            CardLayout layout=(CardLayout)rightJPanel.getLayout();
+        } else {
+            CardLayout layout = (CardLayout) rightJPanel.getLayout();
             System.out.println(inEnterprise);
             System.out.println(userAccount.getRole());
             System.out.println(system);
-            rightJPanel.add("workArea",userAccount.getRole().createWorkArea(rightJPanel, userAccount, inOrganization, inEnterprise, system, inNetwork));
-            
+            rightJPanel.add("workArea", userAccount.getRole().createWorkArea(rightJPanel, userAccount, inOrganization, inEnterprise, system, inNetwork));
+
             layout.next(rightJPanel);
         }
-        
+
 //        jLabel11.setEnabled(false);
         //logoutJButton.setEnabled(true);
         userNameJTextField.setEnabled(false);
         passwordField.setEnabled(false);
-        
+
         loginJButton.setEnabled(false);
         logoutJButton.setEnabled(true);
         userNameJTextField.setEnabled(false);
@@ -326,7 +321,7 @@ public class MainJFrame extends javax.swing.JFrame {
         userNameJTextField.setEnabled(true);
         passwordField.setEnabled(true);
         loginJButton.setEnabled(true);
-        
+
         donorSignUpBtn.setEnabled(true);
         patientRegistrationBtn.setEnabled(true);
 
@@ -334,7 +329,7 @@ public class MainJFrame extends javax.swing.JFrame {
         passwordField.setText("");
 
         rightJPanel.removeAll();
-        
+
         JPanel blankJP = new JPanel();
         blankJP.setBackground(new Color(241, 250, 238)); //[241,250,238]
         rightJPanel.add("blankJP", blankJP);

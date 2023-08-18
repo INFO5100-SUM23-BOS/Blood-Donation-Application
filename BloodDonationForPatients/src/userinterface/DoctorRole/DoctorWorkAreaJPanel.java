@@ -9,7 +9,6 @@ import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
-import Business.Organization.DoctorOrganization;
 import Business.UserAccount.UserAccount;
 import Magic.Design.*;
 import java.awt.CardLayout;
@@ -24,7 +23,6 @@ import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
-import Business.Organization.DoctorOrganization;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JFrame;
@@ -41,19 +39,19 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
     /**
      * Creates new form DoctorWorkAreaJPanel
      */
-    private UserAccount userAccount;
-    boolean a = true;
-    DoctorOrganization doctorOrganization;
-    Enterprise enterprise;
-    EcoSystem system;
-    private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
-    public DoctorWorkAreaJPanel(UserAccount account, DoctorOrganization doctorOrganization, Enterprise enterprise, EcoSystem system, Network network) {
-        initComponents();
-        this.system = system;
-        this.userAccount = account;
-        this.doctorOrganization = doctorOrganization;
-        this.enterprise = enterprise;
-    }
+//    private UserAccount userAccount;
+//    boolean a = true;
+//    DoctorOrganization doctorOrganization;
+//    Enterprise enterprise;
+//    EcoSystem system;
+//    private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
+//    public DoctorWorkAreaJPanel(UserAccount account, DoctorOrganization doctorOrganization, Enterprise enterprise, EcoSystem system, Network network) {
+//        initComponents();
+//        this.system = system;
+//        this.userAccount = account;
+//        this.doctorOrganization = doctorOrganization;
+//        this.enterprise = enterprise;
+//    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -180,18 +178,18 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
         // TODO add your handling code here:
-        ManageDoctorProfile manageDoctorProfile = new ManageDoctorProfile(userAccount,doctorOrganization,enterprise);
-        userProcessContainer.add("ManageDoctorProfile",manageDoctorProfile);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
+//        ManageDoctorProfile manageDoctorProfile = new ManageDoctorProfile(userAccount,doctorOrganization,enterprise);
+//        userProcessContainer.add("ManageDoctorProfile",manageDoctorProfile);
+//        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+//        layout.next(userProcessContainer);
     }//GEN-LAST:event_jLabel4MouseClicked
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-        // TODO add your handling code here:
-        ManageDoctorRequestJPanel manageDoctorRequestJPanel = new ManageDoctorRequestJPanel(system, userAccount, doctorOrganization, enterprise);
-        userProcessContainer.add("ManageDoctorRequestJPanel",manageDoctorRequestJPanel);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
+//        // TODO add your handling code here:
+//        ManageDoctorRequestJPanel manageDoctorRequestJPanel = new ManageDoctorRequestJPanel(system, userAccount, doctorOrganization, enterprise);
+//        userProcessContainer.add("ManageDoctorRequestJPanel",manageDoctorRequestJPanel);
+//        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+//        layout.next(userProcessContainer);
     }//GEN-LAST:event_jLabel5MouseClicked
 
 

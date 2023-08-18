@@ -24,62 +24,18 @@ public class OrganizationDirectory {
     
     public Organization createOrganization(Organization.Type type, String realName){
         Organization organization = null;
-        if (type.getValue().equals(Organization.Type.Doctor.getValue())){
-            organization = new DoctorOrganization();
-            organization.setRealName(realName);
-            organizationList.add(organization);
+        if (type.getValue().equals(Organization.Type.Government.getValue())){
+            organization = new GovernmentOrganization(realName, this);
+        } else if (type.getValue().equals(Organization.Type.Headquarter.getValue())){
+            organization = new HeadquarterOrganization(realName, this);
+        } else if (type.getValue().equals(Organization.Type.Laboratory.getValue())){
+            organization = new LaboratoryOrganization(realName, this);
+        } else if (type.getValue().equals(Organization.Type.LocalClinic.getValue())){
+            organization = new LocalClinicOrganization(realName, this);
+        } else if (type.getValue().equals(Organization.Type.Logistics.getValue())){
+            organization = new LogisticsOrganization(realName, this);
         }
-        else if (type.getValue().equals(Organization.Type.SystemCoordinator.getValue())){
-            organization = new SystemCoordinatorOrganization();
-            organization.setRealName(realName);
-            organizationList.add(organization);
-        }
-        else if (type.getValue().equals(Organization.Type.MedicalTechnician.getValue())){
-            organization = new MedicalTechnicianOrganization();
-            organization.setRealName(realName);
-            organizationList.add(organization);
-        }
+        organizationList.add(organization);
         return organization;
     }
-    
-    public Organization createLegalOrganization(Organization.LegalType legalType, String realName){
-        Organization organization = null;
-        if (legalType.getValue().equals(Organization.LegalType.LegalOfficer.getValue())){
-            organization = new LegalOfficerOrganization();
-            organization.setRealName(realName);
-            organizationList.add(organization);
-        }
-        return organization;
-    }
-    
-     public Organization createBoneMarrowOrganization(Organization.BloodBankType bmBankType, String realName){
-        Organization organization = null;
-        if (bmBankType.getValue().equals(Organization.BloodBankType.BloodDonationBank.getValue())){
-            organization = new Blood_Donation_Bank_Organization();
-            organization.setRealName(realName);
-            organizationList.add(organization);
-        }
-        return organization;
-    }
-     
-     public Organization createCancerCentreOrganization(Organization.BloodCentreType cancerType, String realName){
-        Organization organization = null;
-        if (cancerType.getValue().equals(Organization.BloodCentreType.BloodCentre.getValue())){
-            organization = new WorldCord_Centre_Organization();
-            organization.setRealName(realName);
-            organizationList.add(organization);
-        }
-        return organization;
-    }
-     
-      public Organization createGovernmentOrganization(Organization.GovernmentType govtType, String realName){
-        Organization organization = null;
-        if (govtType.getValue().equals(Organization.GovernmentType.Government.getValue())){
-            organization = new GovernmentOrganization();
-            organization.setRealName(realName);
-            organizationList.add(organization);
-        }
-        return organization;
-    }
-     
 }

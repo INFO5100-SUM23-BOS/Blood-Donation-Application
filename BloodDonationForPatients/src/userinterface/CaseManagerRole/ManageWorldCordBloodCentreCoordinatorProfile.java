@@ -5,9 +5,9 @@
  */
 package userinterface.CaseManagerRole;
 import Business.Enterprise.Enterprise;
-import Business.Organization.Blood_Donation_Bank_Organization;
+import Business.Organization.LocalClinicOrganization;
 import Business.Organization.GovernmentOrganization;
-import Business.Organization.WorldCord_Centre_Organization;
+import Business.Organization.HeadquarterOrganization;
 import Business.UserAccount.UserAccount;
 import Magic.Design.MyJButton;
 import Magic.Design.MyJLabel;
@@ -26,11 +26,11 @@ public class ManageWorldCordBloodCentreCoordinatorProfile extends javax.swing.JP
      private UserAccount userAccount;
      private Enterprise enterprise ;
      private GovernmentOrganization govtOrganization;
-     private WorldCord_Centre_Organization bloodBankOrganization;
+     private HeadquarterOrganization bloodBankOrganization;
     
 
 
-    ManageWorldCordBloodCentreCoordinatorProfile(UserAccount userAccount, WorldCord_Centre_Organization bloodBankOrganization, Enterprise enterprise) {
+    ManageWorldCordBloodCentreCoordinatorProfile(UserAccount userAccount, HeadquarterOrganization bloodBankOrganization, Enterprise enterprise) {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
          initComponents();
         this.userAccount = userAccount;

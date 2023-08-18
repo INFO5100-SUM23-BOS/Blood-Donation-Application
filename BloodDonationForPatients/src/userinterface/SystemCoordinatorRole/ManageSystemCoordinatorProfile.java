@@ -9,8 +9,7 @@ import userinterface.DoctorRole.*;
 import Business.EcoSystem;
 import Magic.Design.*;
 import Business.Enterprise.Enterprise;
-import Business.Organization.DoctorOrganization;
-import Business.Organization.SystemCoordinatorOrganization;
+import Business.Organization.LogisticsOrganization;
 import Business.UserAccount.UserAccount;
 import Magic.Design.MyJButton;
 import java.util.Date;
@@ -27,9 +26,9 @@ public class ManageSystemCoordinatorProfile extends javax.swing.JPanel {
      
      private UserAccount userAccount;
      private Enterprise enterprise ;
-     private SystemCoordinatorOrganization systOrganization;
+     private LogisticsOrganization systOrganization;
     
-    public ManageSystemCoordinatorProfile(UserAccount userAccount, SystemCoordinatorOrganization systOrganization, Enterprise enterprise) {
+    public ManageSystemCoordinatorProfile(UserAccount userAccount, LogisticsOrganization systOrganization, Enterprise enterprise) {
         initComponents();
         this.userAccount = userAccount;
         this.enterprise = enterprise;

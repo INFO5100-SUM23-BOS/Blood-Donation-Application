@@ -7,7 +7,7 @@ package Business.Role;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
-import Business.Organization.WorldCord_Centre_Organization;
+import Business.Organization.HeadquarterOrganization;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 
@@ -22,6 +22,6 @@ public class CaseManagerRole extends Role {
     
      @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business, Network network) {
-        return new CaseManagerWorkAreaJPanel(account, (WorldCord_Centre_Organization) organization, enterprise, business, network);
+        return new CaseManagerWorkAreaJPanel(account, (HeadquarterOrganization) organization, enterprise, business, network);
     }
 }

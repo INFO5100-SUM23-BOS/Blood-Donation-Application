@@ -10,10 +10,10 @@ import Business.EcoSystem;
 import Magic.Design.*;
 import Magic.Design.MyJButton;
 import Business.Enterprise.Enterprise;
-import Business.Enterprise.Enterprise_Directory;
+import Business.Enterprise.EnterpriseDirectory;
 import Business.Network.Network;
 import Business.Organization.Organization;
-import Business.Organization.MedicalTechnicianOrganization;
+import Business.Organization.LaboratoryOrganization;
 import Business.People.Donor;
 import Business.People.DonorDirectory;
 import Business.UserAccount.UserAccount;
@@ -38,7 +38,7 @@ public class DonorListJPanel extends javax.swing.JPanel {
      */
     //private DonorDirectory donorDirectory;
     private EcoSystem system;
-    private Enterprise_Directory Enterprise_Directory;
+    private EnterpriseDirectory Enterprise_Directory;
     private Network network;
     private UserAccount userAccount;
     private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
@@ -81,10 +81,10 @@ public class DonorListJPanel extends javax.swing.JPanel {
         dtm.setRowCount(0);
         
         System.out.println("list of enterprises:");
-       // System.out.println(Enterprise_Directory.getEnterpriseList());
+       // System.out.println(EnterpriseDirectory.getEnterpriseList());
         System.out.println("list of enterprises ends");
         System.out.println(network.getName());
-        for (Enterprise enterprise : network.getEnterprise_Directory().getEnterpriseList()){
+        for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()){
             if(enterprise.getEnterpriseType().toString().equals("Hospital")){
                 System.out.println("Hosp");
                 Object[] row = new Object[2];
@@ -348,7 +348,7 @@ public class DonorListJPanel extends javax.swing.JPanel {
                 Organization org = null;
                 Enterprise enterprise = (Enterprise) tblHospital.getValueAt(row1, 0);
                 for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
-                    if (organization instanceof MedicalTechnicianOrganization) {
+                    if (organization instanceof LaboratoryOrganization) {
                         org = organization;
                         break;
                     }

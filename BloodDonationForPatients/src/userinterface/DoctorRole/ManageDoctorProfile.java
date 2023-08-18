@@ -7,7 +7,6 @@ package userinterface.DoctorRole;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
-import Business.Organization.DoctorOrganization;
 import Business.UserAccount.UserAccount;
 import Magic.Design.*;
 import Magic.Design.MyJButton;
@@ -22,33 +21,33 @@ public class ManageDoctorProfile extends javax.swing.JPanel {
     /**
      * Creates new form ManageDoctorProfile
      */
-     
-     private UserAccount userAccount;
-     private Enterprise enterprise ;
-     private DoctorOrganization doctorOrganization;
-    
-    public ManageDoctorProfile(UserAccount userAccount, DoctorOrganization doctorOrganization, Enterprise enterprise) {
-        initComponents();
-        this.userAccount = userAccount;
-        this.enterprise = enterprise;
-        this.doctorOrganization = doctorOrganization;
-        populateFields();
-    }
-
-    private void populateFields(){
-        
-        comboGender.removeAllItems();
-        comboGender.addItem("Male");
-        comboGender.addItem("Female");
-        txtAddress.setText(userAccount.getEmployee().getAddress());
-        txtCity.setText(userAccount.getEmployee().getCity());
-        txtContact.setText(String.valueOf(userAccount.getEmployee().getContactNumber()));
-        txtDOB.setText(String.valueOf(userAccount.getEmployee().getDateOfBirth()));
-        txtName.setText(userAccount.getEmployee().getName());
-        txtState.setText(userAccount.getEmployee().getState());
-        
-        
-    }
+//     
+//     private UserAccount userAccount;
+//     private Enterprise enterprise ;
+//     private DoctorOrganization doctorOrganization;
+//    
+//    public ManageDoctorProfile(UserAccount userAccount, DoctorOrganization doctorOrganization, Enterprise enterprise) {
+//        initComponents();
+//        this.userAccount = userAccount;
+//        this.enterprise = enterprise;
+//        this.doctorOrganization = doctorOrganization;
+//        populateFields();
+//    }
+//
+//    private void populateFields(){
+//        
+//        comboGender.removeAllItems();
+//        comboGender.addItem("Male");
+//        comboGender.addItem("Female");
+//        txtAddress.setText(userAccount.getEmployee().getAddress());
+//        txtCity.setText(userAccount.getEmployee().getCity());
+//        txtContact.setText(String.valueOf(userAccount.getEmployee().getContactNumber()));
+//        txtDOB.setText(String.valueOf(userAccount.getEmployee().getDateOfBirth()));
+//        txtName.setText(userAccount.getEmployee().getName());
+//        txtState.setText(userAccount.getEmployee().getState());
+//        
+//        
+//    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -201,14 +200,14 @@ public class ManageDoctorProfile extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-        // TODO add your handling code here:
-        userAccount.getEmployee().setCity(txtCity.getText());
-        userAccount.getEmployee().setContactNumber(Integer.parseInt(txtContact.getText()));
-        userAccount.getEmployee().setDateOfBirth(new Date(txtDOB.getText()));
-        userAccount.getEmployee().setGender((String) comboGender.getSelectedItem());
-        userAccount.getEmployee().setAddress(txtAddress.getText());
-        userAccount.getEmployee().setState(txtCity.getText());
-        
+//        // TODO add your handling code here:
+//        userAccount.getEmployee().setCity(txtCity.getText());
+//        userAccount.getEmployee().setContactNumber(Integer.parseInt(txtContact.getText()));
+//        userAccount.getEmployee().setDateOfBirth(new Date(txtDOB.getText()));
+//        userAccount.getEmployee().setGender((String) comboGender.getSelectedItem());
+//        userAccount.getEmployee().setAddress(txtAddress.getText());
+//        userAccount.getEmployee().setState(txtCity.getText());
+//        
         
     }//GEN-LAST:event_btnSaveActionPerformed
 

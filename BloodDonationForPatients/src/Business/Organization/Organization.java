@@ -20,6 +20,7 @@ import java.util.ArrayList;
  */
 public abstract class Organization {
     
+    private OrganizationDirectory directory;
     private int organizationID;
     private String name;
     private String realName;
@@ -34,11 +35,13 @@ public abstract class Organization {
     
     
     public enum Type{
-        Admin("Admin Organization"), 
+        Admin("Admin Organization"),
+        Government("Government Agency Organization"),
+        Headquarter("HQ Organization"),
+        Laboratory("Laboratory Organization"),
+        Logistics("Logistics Organization"),
+        LocalClinic("Local Clinic Organization");
         
-        SystemCoordinator("System Coorinator Organization"),
-        Doctor("Doctor Organization"), 
-        MedicalTechnician("MedTech Organization");
         private String value;
         private Type(String value) {
             this.value = value;
@@ -48,65 +51,9 @@ public abstract class Organization {
         }
     }
     
-     public enum BloodBankType {
-         
-        BloodDonationBank("Blood Bank Coordinator Organization");
-        private String value;
-
-        private BloodBankType(String value) {
-            this.value = value;
-        }
-
-        public String getValue() {
-            return value;
-        }
-     }
-    
-    public enum BloodCentreType {
-         
-        BloodCentre("Blood centre coordinaor Organization");
-        private String value;
-
-        private BloodCentreType(String value) {
-            this.value = value;
-        }
-
-        public String getValue() {
-            return value;
-        }
-     }
-    
-    public enum GovernmentType {
-         
-        Government("Government Coordinator Organization");
-        private String value;
-
-        private GovernmentType(String value) {
-            this.value = value;
-        }
-
-        public String getValue() {
-            return value;
-        }
-     }
-    
-    
-     public enum LegalType {
-         
-        LegalOfficer("Legal Officer Organization");
-        private String value;
-
-        private LegalType(String value) {
-            this.value = value;
-        }
-
-        public String getValue() {
-            return value;
-        }
-     }
-
-    public Organization(String name) {
+    public Organization(String name, OrganizationDirectory directory) {
         this.name = name;
+        this.directory = directory;
         workQueue = new WorkQueue();
         System.out.println("initialise work queue");
         employeeDirectory = new EmployeeDirectory();
@@ -166,8 +113,6 @@ public abstract class Organization {
         this.realName = realName;
     }
 
-    
-    
     
     @Override
     public String toString() {

@@ -4,6 +4,10 @@
  */
 package Business.Requests;
 
+import Business.BloodTypes.BloodInventory;
+import Business.BloodTypes.BloodTransaction;
+import Business.BloodTypes.PersonBloodTypes;
+import Business.EcoSystem;
 import Business.Requests.DonorRequest;
 import java.util.ArrayList;
 
@@ -12,25 +16,38 @@ import java.util.ArrayList;
  * @author balumullamuri
  */
 public class PatientRequestDirectory {
-    
-     private ArrayList<PatientRequest> patientRequestList;
 
-    public ArrayList<PatientRequest> getPatientRequestList() {return patientRequestList;}
-    public void setPatientRequestList(ArrayList<PatientRequest> patientRequestList) {this.patientRequestList = patientRequestList;}
-    
-    public PatientRequestDirectory(){
+    EcoSystem system;
+    private ArrayList<PatientRequest> patientRequestList;
+
+    public ArrayList<PatientRequest> getPatientRequestList() {
+        return patientRequestList;
+    }
+
+    public void setPatientRequestList(ArrayList<PatientRequest> patientRequestList) {
+        this.patientRequestList = patientRequestList;
+    }
+
+    public PatientRequestDirectory(EcoSystem system) {
         patientRequestList = new ArrayList<PatientRequest>();
+        this.system = system;
     }
-    
-    public PatientRequest addPatientRequest(PatientRequest patientRequest)
-    {
+
+    public void addPatientRequest(PatientRequest patientRequest) {
         patientRequestList.add(patientRequest);
-        return patientRequest;
     }
-    
-    public DonorRequest removePatientRequest(PatientRequest p)
-    {
+
+    public DonorRequest removePatientRequest(PatientRequest p) {
         patientRequestList.remove(p);
         return null;
-}
+    }
+
+    public EcoSystem getEcoSystem() {
+        return system;
+    }
+
+    public void registerBloodRequestForInventory(PersonBloodTypes.BloodType bloodType, PatientRequest request, int volume) {
+        BloodInventory inventory = system.getInventory();
+        inventory.addTransaction(bloodType, volume, BloodTransaction.TransactionType.Out, request);
+    }
 }

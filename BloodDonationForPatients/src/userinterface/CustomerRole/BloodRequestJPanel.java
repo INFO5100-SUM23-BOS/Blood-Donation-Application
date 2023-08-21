@@ -114,6 +114,7 @@ public class BloodRequestJPanel extends javax.swing.JPanel {
         emailText.setEnabled(false);
         contactText.setEnabled(false);
         genderJComboBox.setEnabled(false);
+        txtVolumeInUnits.setEnabled(false);
 
 //        bloodType.setEnabled(false);
         bloodTypeComboBox.setEnabled(false);
@@ -178,11 +179,11 @@ public class BloodRequestJPanel extends javax.swing.JPanel {
         uidText = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         bloodTypeComboBox = new javax.swing.JComboBox<>();
-        jTextField1 = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         buttonNo1 = new javax.swing.JRadioButton();
         buttonYes1 = new javax.swing.JRadioButton();
         jLabel22 = new javax.swing.JLabel();
+        txtVolumeInUnits = new javax.swing.JFormattedTextField();
 
         setBackground(new java.awt.Color(255, 153, 153));
         setMinimumSize(new java.awt.Dimension(1350, 718));
@@ -282,7 +283,7 @@ public class BloodRequestJPanel extends javax.swing.JPanel {
 
         jLabel9.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel9.setText("Volume In Units:");
-        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 110, -1, -1));
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 100, -1, -1));
 
         streetText.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         add(streetText, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 450, 210, -1));
@@ -399,7 +400,6 @@ public class BloodRequestJPanel extends javax.swing.JPanel {
             }
         });
         add(bloodTypeComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 250, 170, 40));
-        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 100, 180, 40));
 
         jLabel11.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel11.setText("Blood Group:");
@@ -416,11 +416,15 @@ public class BloodRequestJPanel extends javax.swing.JPanel {
         jLabel22.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel22.setText("Did your doctor prescribe a blood transfusion?");
         add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 470, -1, 30));
+
+        txtVolumeInUnits.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
+        txtVolumeInUnits.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        add(txtVolumeInUnits, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 100, 140, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        PatientRequest patientrequest = new PatientRequest();//system.getPatientRequestDirectory().addPatientRequest();
+        PatientRequest patientrequest = new PatientRequest(system.getPatientRequestDirectory());
         if (stateJComboBox.getSelectedItem().equals("")) {
             stateJComboBox.setBorder(BorderFactory.createLineBorder(Color.RED));
             stateJComboBox.setForeground(Color.red);
@@ -526,14 +530,20 @@ public class BloodRequestJPanel extends javax.swing.JPanel {
 //           JOptionPane.showMessageDialog(null, "Email ID must be in correct format!" , "Error", JOptionPane.ERROR_MESSAGE);
             return;
         } //
-        //
-        //
         else {
             try {
-//                patientrequest.getHla().updateBloodTypelist(bloodType.getText());
+//              patientrequest.getHla().updateBloodTypelist(bloodType.getText());
                 patientrequest.setBloodType(system.getPersonBloodTypes().findBloodType((bloodTypeComboBox.getSelectedItem().toString())));
             } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, new JLabel("<html><b>Patient's Blodd Type can only be one of these AN,AP,BP,BN,ABP,ABN,OP,ON where N-Negative, P-Positive.</b></html>"));
+                JOptionPane.showMessageDialog(null, new JLabel("<html><b>Patient's Blood Type can only be one of these AN,AP,BP,BN,ABP,ABN,OP,ON where N-Negative, P-Positive.</b></html>"));
+                return;
+            }
+            
+            try {
+                int volumeRequested = Integer.parseInt(txtVolumeInUnits.getText());
+
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, new JLabel("<html><b>You have to define number of units.</b></html>"));
                 return;
             }
 
@@ -547,8 +557,8 @@ public class BloodRequestJPanel extends javax.swing.JPanel {
                 patientrequest.setDob(dobDateField.getDate()); // DOB 
                 patientrequest.setAge(Integer.parseInt(ageText.getText())); // Age
                 patientrequest.setGender((String) genderJComboBox.getSelectedItem()); // gender
-
-//        patientrequest.getHla().updateHLAlist((String) hlaTypesText.getText()); // HLAType
+                patientrequest.setVolume(Integer.parseInt(txtVolumeInUnits.getText()));
+                
                 patientrequest.setStreetAddress(streetText.getText()); // streetAddress
                 patientrequest.setCity(cityText.getText()); // city
                 patientrequest.setState((String) stateJComboBox.getSelectedItem()); // state
@@ -734,11 +744,11 @@ public class BloodRequestJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField nameText;
     private javax.swing.JComboBox stateJComboBox;
     private javax.swing.JTextField streetText;
     private javax.swing.JPanel titlePanel;
+    private javax.swing.JFormattedTextField txtVolumeInUnits;
     private javax.swing.JTextField uidText;
     private javax.swing.JTextField zipText;
     // End of variables declaration//GEN-END:variables

@@ -37,6 +37,7 @@ public class DonorRequest {
     private boolean contagiousDiseases;
     private String imagePath;
     private byte[] dP;
+    private int numberOfUnits;
 
     public DonorRequest(DonorRequestDirectory directory) {
         this.directory = directory;

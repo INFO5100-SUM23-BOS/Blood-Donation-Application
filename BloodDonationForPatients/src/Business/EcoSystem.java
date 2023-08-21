@@ -48,7 +48,7 @@ public class EcoSystem extends Organization {
         this.donorDirectory = new DonorDirectory();
         this.patientDirectory = new PatientDirectory();
         this.donorRequestDirectory = new DonorRequestDirectory(this);
-        this.patientRequestDirectory = new PatientRequestDirectory();
+        this.patientRequestDirectory = new PatientRequestDirectory(this);
         this.userAccountDirectory = new UserAccountDirectory();
         this.bloodRequestStatus = new BloodRequestStatuses();
         this.donorApplicationStatus = new DonorApplicationStatuses();
@@ -83,7 +83,7 @@ public class EcoSystem extends Organization {
 
     public PatientRequestDirectory getPatientRequestDirectory() {
         if (this.patientRequestDirectory == null) {
-            this.patientRequestDirectory = new PatientRequestDirectory();
+            this.patientRequestDirectory = new PatientRequestDirectory(this);
         }
         return patientRequestDirectory;
     }

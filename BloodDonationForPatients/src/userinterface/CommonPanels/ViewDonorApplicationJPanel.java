@@ -374,7 +374,7 @@ public class ViewDonorApplicationJPanel extends javax.swing.JPanel {
         add(dobDateField, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 160, 180, -1));
 
         jButton2.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jButton2.setText("Cancel");
+        jButton2.setText("Close");
         jButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -83,7 +83,7 @@ public class ConfigureASystem {
 
         
         
-        addSampleRequestData(system);
+        // addSampleRequestData(system);
 
         return system;
     }
@@ -92,7 +92,7 @@ public class ConfigureASystem {
 
         PatientRequestDirectory prd = system.getPatientRequestDirectory();
 
-        PatientRequest sampleRequest = new PatientRequest();
+        PatientRequest sampleRequest = new PatientRequest(prd);
         sampleRequest.setName("Jack");
         sampleRequest.setAge(35);
         sampleRequest.setCity("Boston");

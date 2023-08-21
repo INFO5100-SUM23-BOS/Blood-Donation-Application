@@ -5,7 +5,7 @@
  */
 package userinterface.LabEmployeeRole;
 
-import Business.BloodTypes.PersonBloodType;
+import Business.BloodTypes.PersonBloodTypes;
 import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
 import Magic.Design.*;
@@ -94,7 +94,7 @@ public class ManageMedicalTechnicianRequests extends javax.swing.JPanel {
             row[1] = request.getDonor();
             row[2] = request.getDonor().getName();
             //row[3] = request.getDonor().getContact();
-            row[3] = String.join(", ",request.getDonor().getHLA().getBloodTypeValuesList());
+            row[3] = request.getDonor().getBloodType();
             row[4] = request.getUserAccount().getUsername();
             row[5] = request.getStatus();
              
@@ -448,28 +448,28 @@ public class ManageMedicalTechnicianRequests extends javax.swing.JPanel {
         }  
         WorkRequest request = (WorkRequest)tblMedTechDonors.getValueAt(selectedRow, 0);
         
-        try {
-            org.getAllHLAs().add(PersonBloodType.createHLA(String.valueOf(txtHLAList.getText())));
-            PersonBloodType h = new PersonBloodType();
-            h.updateBloodTypelist(txtHLAList.getText());
-            ((LocalClinicOrganization)org).getInventory().bloodTypeComboCountAdd(h);
-          }
-        catch( NullPointerException ex   )
-          { System.out.println("");
-          }
-        
-                request.setStatus("BoneMarrow added to Bank");
-                
-                dB4OUtil.storeSystem(system);
-                
-                populateOrganizationDonorTable();
-                populateMedTechDonorTable();
-            
-                JOptionPane.showMessageDialog(null, new JLabel(  "<html><b>BoneMarrow added to the bank!</b></html>"));
-           
-                
-                buttonAddMarrow.setEnabled(false);
-                buttonBoneMarrowDiscard.setEnabled(false);        
+//        try {
+//            org.getAllHLAs().add(PersonBloodTypes.createHLA(String.valueOf(txtHLAList.getText())));
+//            PersonBloodTypes h = new PersonBloodTypes();
+//            h.updateBloodTypelist(txtHLAList.getText());
+//            ((LocalClinicOrganization)org).getInventory().bloodTypeComboCountAdd(h);
+//          }
+//        catch( NullPointerException ex   )
+//          { System.out.println("");
+//          }
+//        
+//                request.setStatus("BoneMarrow added to Bank");
+//                
+//                dB4OUtil.storeSystem(system);
+//                
+//                populateOrganizationDonorTable();
+//                populateMedTechDonorTable();
+//            
+//                JOptionPane.showMessageDialog(null, new JLabel(  "<html><b>BoneMarrow added to the bank!</b></html>"));
+//           
+//                
+//                buttonAddMarrow.setEnabled(false);
+//                buttonBoneMarrowDiscard.setEnabled(false);        
          }
          dB4OUtil.storeSystem(system);
          

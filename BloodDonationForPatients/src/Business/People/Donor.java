@@ -4,7 +4,8 @@
  */
 package Business.People;
 
-import Business.BloodTypes.PersonBloodType;
+import Business.BloodTypes.PersonBloodTypes;
+import Business.BloodTypes.PersonBloodTypes.BloodType;
 import java.util.Date;
 
 /**
@@ -18,7 +19,7 @@ public class Donor {
     private Date dob;
     private int age;
     private String gender;
-    private PersonBloodType hla;
+    private BloodType bloodType;
     private String streetAddress;
     private String city;
     private String state;
@@ -43,7 +44,6 @@ public class Donor {
     }
     
     public Donor(){
-        this.hla = new PersonBloodType();
     }
     
     
@@ -69,14 +69,8 @@ public class Donor {
     public void setAge(int age) {        this.age = age;    }
     public String getGender() {        return gender;    }
     public void setGender(String gender) {        this.gender = gender;    }
-    public PersonBloodType getHLA() {        
-        if(this.hla == null){
-            this.hla = new PersonBloodType();
-            hla.updateBloodTypelist("HLA_A,HLA_B");
-        }
-        return hla;    
-    }
-    public void setHLA(PersonBloodType hla) {        this.hla = hla;    }
+    public BloodType getBloodType() { return this.bloodType; }
+    public void setHLA(BloodType bloodType) {        this.bloodType = bloodType;    }
     public String getStreetAddress() {        return streetAddress;    }
     public void setStreetAddress(String streetAddress) {        this.streetAddress = streetAddress;    }
     public String getCity() {        return city;    }
@@ -97,16 +91,7 @@ public class Donor {
     public void setDiabitiesBP(boolean diabitiesBP) {        this.diabitiesBP = diabitiesBP;    }
     public boolean isBreathingProb() {return breathingProb;}
     public void setBreathingProb(boolean breathingProb) {        this.breathingProb = breathingProb;    }
-
-    public PersonBloodType getHla() {
-        return hla;
-    }
-
-    public void setHla(PersonBloodType hla) {
-        this.hla = hla;
-    }
-          
-    
+  
     
     @Override
     public String toString() {

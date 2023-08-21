@@ -5,32 +5,19 @@
  */
 package userinterface.CaseManagerRole;
 
-import static java.time.Clock.system;
-import javax.swing.JFrame;
-import Magic.Design.MyJLabel;
-import Magic.Design.*;
-import static javax.swing.SwingUtilities.getWindowAncestor;
 
+import userinterface.CommonPanels.BloodRequestsListJPanel;
 import Business.DB4OUtil.DB4OUtil;
-import userinterface.SystemCoordinatorRole.*;
 import Business.EcoSystem;
-import userinterface.DoctorRole.*;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
-import Business.Organization.LocalClinicOrganization;
 import Business.Organization.HeadquarterOrganization;
-import Business.Organization.Organization;
 import Business.People.PatientDirectory;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Color;
-import java.awt.Dimension;
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.SwingUtilities;
-import static javax.swing.SwingUtilities.getWindowAncestor;
+import userinterface.CommonPanels.DonorApplicationListJPanel;
 
 
 /**
@@ -162,7 +149,7 @@ public class CaseManagerWorkAreaJPanel extends javax.swing.JPanel {
         btnPrepareOrder.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btnPrepareOrder.setForeground(new java.awt.Color(255, 255, 255));
         btnPrepareOrder.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnPrepareOrder.setText("Prepare Request Order");
+        btnPrepareOrder.setText("Prepare Request");
         btnPrepareOrder.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnPrepareOrderMouseClicked(evt);
@@ -179,16 +166,17 @@ public class CaseManagerWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btnReceiveRequestsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnReceiveRequestsMouseClicked
         // TODO add your handling code here:
-        
-        VolunteerReceiverRequestJPanel panel = new VolunteerReceiverRequestJPanel(system, userAccount, network);
-        userProcessContainer.add("VolunteerReceiverRequestJPanel", panel);
+        userProcessContainer.removeAll();
+        DonorApplicationListJPanel panel = new DonorApplicationListJPanel(system, userAccount, network, userProcessContainer);
+        userProcessContainer.add("DonorApplicationListJPanel", panel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnReceiveRequestsMouseClicked
 
     private void btnManageInventoryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnManageInventoryMouseClicked
         // TODO add your handling code here:
-        ManageInventoryJPanel panel = new ManageInventoryJPanel(system, userAccount, network);
+        userProcessContainer.removeAll();
+        ManageInventoryJPanel panel = new ManageInventoryJPanel(system, userProcessContainer);
         userProcessContainer.add("ManageInventoryJPanel", panel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
@@ -196,8 +184,9 @@ public class CaseManagerWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btnPrepareOrderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPrepareOrderMouseClicked
         // TODO add your handling code here:
-        PrepareOrderJPanel panel = new PrepareOrderJPanel(system, userAccount, network);
-        userProcessContainer.add("PrepareOrderJPanel", panel);
+        userProcessContainer.removeAll();
+        BloodRequestsListJPanel panel = new BloodRequestsListJPanel(system, userAccount, network, userProcessContainer);
+        userProcessContainer.add("BloodRequestsListJPanel", panel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnPrepareOrderMouseClicked

@@ -4,7 +4,8 @@
  */
 package Business.People;
 
-import Business.BloodTypes.PersonBloodType;
+import Business.BloodTypes.PersonBloodTypes;
+import Business.BloodTypes.PersonBloodTypes.BloodType;
 import java.util.Date;
 
 /**
@@ -17,7 +18,7 @@ public class Patient {
     private Date dob;
     private int age;
     private String gender;
-    private PersonBloodType hla;
+    private BloodType bloodType;
     private String streetAddress;
     private String city;
     private String state;
@@ -33,7 +34,6 @@ public class Patient {
     private byte[] dP;
 
     public Patient() {
-        this.hla = new PersonBloodType();
     }
     
     public byte[] getdP() {
@@ -65,8 +65,8 @@ public class Patient {
     public void setAge(int age) {        this.age = age;    }
     public String getGender() {        return gender;    }
     public void setGender(String gender) {        this.gender = gender;    }
-    public PersonBloodType getHLA() {        return hla;    }
-    public void setHLA(PersonBloodType hla) {        this.hla = hla;    }
+    public BloodType getBloodType() {        return this.bloodType;    }
+    public void setBloodType(BloodType bloodType) {        this.bloodType = bloodType;    }
     public String getStreetAddress() {        return streetAddress;    }
     public void setStreetAddress(String streetAddress) {        this.streetAddress = streetAddress;    }
     public String getCity() {        return city;    }

@@ -2,9 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Business.People;
+package Business.Requests;
 
-import Business.BloodTypes.PersonBloodType;
+import Business.BloodTypes.PersonBloodTypes;
+import Business.BloodTypes.PersonBloodTypes.BloodType;
 import java.util.Date;
 
 /**
@@ -13,13 +14,15 @@ import java.util.Date;
  */
 public class PatientRequest {
     
-     private String receiverID;
+    private String receiverID;
     private String name;
     private Date dob;
     private Date cancerDiagnosedDate;
     private int age;
     private String gender;
-    private PersonBloodType hla;
+    private BloodType bloodType;
+
+ 
     private String streetAddress;
     private String city;
     private String state;
@@ -32,7 +35,6 @@ public class PatientRequest {
     private byte[] dP;
     
     public PatientRequest() {
-        this.hla = new PersonBloodType();
     }
 
     public byte[] getdP() {
@@ -79,15 +81,14 @@ public class PatientRequest {
     public void setStatus(String status) {        this.status = status;    }
     public boolean isLabConfirmation() {        return labConfirmation;    }
     public void setLabConfirmation(boolean labConfirmation) {        this.labConfirmation = labConfirmation;    }
-
-    public PersonBloodType getHla() {
-        return hla;
+       public BloodType getBloodType() {
+        return bloodType;
     }
 
-    public void setHla(PersonBloodType hla) {
-        this.hla = hla;
+    public void setBloodType(BloodType bloodType) {
+        this.bloodType = bloodType;
     }
-    
+
     @Override
     public String toString() {
         return receiverID;

@@ -10,21 +10,7 @@ package userinterface.LabEmployeeRole;
  * @author balumullamuri
  */
 
-import Business.DB4OUtil.DB4OUtil;
-import Magic.Design.MyJLabel;
-import Business.EcoSystem;
-import Business.Enterprise.Enterprise;
-import Business.Network.Network;
-import Business.UserAccount.UserAccount;
-import Magic.Design.*;
-import java.awt.CardLayout;
 import java.awt.Color;
-import java.awt.Dimension;
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import static javax.swing.SwingUtilities.getWindowAncestor;
 import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
@@ -32,16 +18,14 @@ import Business.Network.Network;
 import Business.Organization.LaboratoryOrganization;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
-import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.SwingUtilities;
-import static javax.swing.SwingUtilities.getWindowAncestor;
+import userinterface.CommonPanels.DonorApplicationListJPanel;
 
 
-public class MedicalTechnicianWorkAreaJPanel extends javax.swing.JPanel {
+public class LabEmployeeWorkAreaJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form MedicalTechnicianWorkAreaJPanel
+     * Creates new form LabEmployeeWorkAreaJPanel
      */
     
     
@@ -53,7 +37,7 @@ public class MedicalTechnicianWorkAreaJPanel extends javax.swing.JPanel {
     private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
     private Network network;
     
-    public MedicalTechnicianWorkAreaJPanel(UserAccount account, LaboratoryOrganization pathoorganization, Enterprise enterprise, EcoSystem business, Network network) {
+    public LabEmployeeWorkAreaJPanel(UserAccount account, LaboratoryOrganization pathoorganization, Enterprise enterprise, EcoSystem business, Network network) {
         initComponents();
         this.userAccount = account;
         this.medhTechOrg = pathoorganization;
@@ -78,11 +62,9 @@ public class MedicalTechnicianWorkAreaJPanel extends javax.swing.JPanel {
         
         if(numberbool == 1){
             
-            h1.setBackground(new Color(70,55,37));
             h2.setBackground(new Color(216,99,1));        
         }
         else{
-            h1.setBackground(new Color(216,99,1));
             h2.setBackground(new Color(70,55,37));   
         }  
     }
@@ -93,7 +75,6 @@ public class MedicalTechnicianWorkAreaJPanel extends javax.swing.JPanel {
 
         jSpinField1 = new com.toedter.components.JSpinField();
         Header = new javax.swing.JPanel();
-        BtnProfile = new javax.swing.JLabel();
         BtnManageRequest = new javax.swing.JLabel();
         userProcessContainer = new javax.swing.JPanel();
 
@@ -104,22 +85,10 @@ public class MedicalTechnicianWorkAreaJPanel extends javax.swing.JPanel {
         Header.setPreferredSize(new java.awt.Dimension(800, 70));
         Header.setLayout(new java.awt.GridLayout(1, 0));
 
-        BtnProfile.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        BtnProfile.setForeground(new java.awt.Color(255, 255, 255));
-        BtnProfile.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        BtnProfile.setText("Profile");
-        BtnProfile.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        BtnProfile.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BtnProfileMouseClicked(evt);
-            }
-        });
-        Header.add(BtnProfile);
-
         BtnManageRequest.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         BtnManageRequest.setForeground(new java.awt.Color(255, 255, 255));
         BtnManageRequest.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        BtnManageRequest.setText("Manage Request");
+        BtnManageRequest.setText("Appointment Handling");
         BtnManageRequest.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BtnManageRequest.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -135,19 +104,11 @@ public class MedicalTechnicianWorkAreaJPanel extends javax.swing.JPanel {
         add(userProcessContainer, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BtnProfileMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnProfileMouseClicked
-        // TODO add your handling code here:
-        
-        ManageMedicalTechnicianProfile manageMedTechProfile = new ManageMedicalTechnicianProfile(userAccount,medhTechOrg,enterprise);
-        userProcessContainer.add("ManageMedTechProfile",manageMedTechProfile);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
-    }//GEN-LAST:event_BtnProfileMouseClicked
-
     private void BtnManageRequestMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnManageRequestMouseClicked
         // TODO add your handling code here:
-        ManageMedicalTechnicianRequests manageMedTechRequest = new ManageMedicalTechnicianRequests(system,userAccount,medhTechOrg,enterprise, network);
-        userProcessContainer.add("ManageMedTechRequests", manageMedTechRequest);
+        userProcessContainer.removeAll();
+        DonorApplicationListJPanel panel = new DonorApplicationListJPanel(system, userAccount, network, userProcessContainer);
+        userProcessContainer.add("DonorApplicationListJPanel", panel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
         
@@ -156,7 +117,6 @@ public class MedicalTechnicianWorkAreaJPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BtnManageRequest;
-    private javax.swing.JLabel BtnProfile;
     private javax.swing.JPanel Header;
     private com.toedter.components.JSpinField jSpinField1;
     private javax.swing.JPanel userProcessContainer;

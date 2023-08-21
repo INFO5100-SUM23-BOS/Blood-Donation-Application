@@ -13,16 +13,8 @@ import Business.Organization.LocalClinicOrganization;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Color;
-import java.awt.Dimension;
-import Magic.Design.*;
-import javax.swing.ImageIcon;
-import Magic.Design.MyJLabel;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.SwingUtilities;
-import static javax.swing.SwingUtilities.getWindowAncestor;
-import userinterface.LocalClinicStaffRole.ManageBloodDonationBankCoordinatorProfile;
+import userinterface.CommonPanels.BloodRequestsListJPanel;
 
 /**
  *
@@ -80,7 +72,6 @@ public class LocalClinicWorkAreaJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         Header = new javax.swing.JPanel();
-        BtnProfile = new javax.swing.JLabel();
         BtnManageRequests = new javax.swing.JLabel();
         userProcessContainer = new javax.swing.JPanel();
 
@@ -91,22 +82,10 @@ public class LocalClinicWorkAreaJPanel extends javax.swing.JPanel {
         Header.setPreferredSize(new java.awt.Dimension(800, 50));
         Header.setLayout(new java.awt.GridLayout(1, 0));
 
-        BtnProfile.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        BtnProfile.setForeground(new java.awt.Color(255, 255, 255));
-        BtnProfile.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        BtnProfile.setText("Profile");
-        BtnProfile.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        BtnProfile.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BtnProfileMouseClicked(evt);
-            }
-        });
-        Header.add(BtnProfile);
-
         BtnManageRequests.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         BtnManageRequests.setForeground(new java.awt.Color(255, 255, 255));
         BtnManageRequests.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        BtnManageRequests.setText("Manage Requests");
+        BtnManageRequests.setText("Blood Administration");
         BtnManageRequests.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BtnManageRequests.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -122,26 +101,18 @@ public class LocalClinicWorkAreaJPanel extends javax.swing.JPanel {
         add(userProcessContainer, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BtnProfileMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnProfileMouseClicked
-        // TODO add your handling code here:
-        ManageBloodDonationBankCoordinatorProfile managebmBankProfile = new ManageBloodDonationBankCoordinatorProfile(userAccount,bmBankOrganization,enterprise);
-        userProcessContainer.add("ManageBloodDonationBankCoordinatorProfile",managebmBankProfile);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
-    }//GEN-LAST:event_BtnProfileMouseClicked
-
     private void BtnManageRequestsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnManageRequestsMouseClicked
         // TODO add your handling code here:
-        BloodDonationRequestJPanel bmBankRequestJPanel = new BloodDonationRequestJPanel( userAccount,  bmBankOrganization, enterprise, network, system);
-        userProcessContainer.add("BloodDonationRequestJPanel",bmBankRequestJPanel);
+        userProcessContainer.removeAll();
+        BloodRequestsListJPanel panel = new BloodRequestsListJPanel(system, userAccount, network, userProcessContainer);
+        userProcessContainer.add("BloodRequestsListJPanel", panel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer); 
+        layout.next(userProcessContainer);
     }//GEN-LAST:event_BtnManageRequestsMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BtnManageRequests;
-    private javax.swing.JLabel BtnProfile;
     private javax.swing.JPanel Header;
     private javax.swing.JPanel userProcessContainer;
     // End of variables declaration//GEN-END:variables

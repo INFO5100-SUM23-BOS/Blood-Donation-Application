@@ -13,7 +13,7 @@ import Magic.Design.*;
 import Business.Organization.LogisticsOrganization;
 import Business.Organization.Organization;
 import Business.People.Patient;
-import Business.People.PatientRequest;
+import Business.Requests.PatientRequest;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.System_Coordinator_Test_WorkRequest;
 import Business.WorkQueue.WorkRequest;
@@ -23,6 +23,7 @@ import java.awt.Color;
 import java.awt.Image;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -309,10 +310,10 @@ public class PrepareOrderDetailsJPanel extends javax.swing.JPanel {
         
         try {
 
-            patient.getHLA().updateBloodTypelist(bloodTypeText.getText());
+            patient.setBloodType(system.getPersonBloodTypes().findBloodType(bloodTypeText.getText()));
         }
         catch (Exception e) {
-                            JOptionPane.showMessageDialog(null, new JLabel("<html><b>Please check the patients blood group. It Should be AN,AP,BP,BN,ABP,ABN,OP,ON where N-Negative, P-Positive.</b></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, new JLabel("<html><b>Please check the patients blood group. It Should be AN,AP,BP,BN,ABP,ABN,OP,ON where N-Negative, P-Positive.</b></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
 
             return;
         }
@@ -484,15 +485,12 @@ public class PrepareOrderDetailsJPanel extends javax.swing.JPanel {
     private void populateRequestDetails(PatientRequest patientRequest) {
             uidText.setText(patientRequest.getReceiverID());
             nameText.setText(patientRequest.getName());
-            bloodTypeText.setText(String.join(", ", (Iterable<String>) patientRequest.getHla().getBloodTypeValuesList()));
+            bloodTypeText.setText(patientRequest.getBloodType().toString());
             contactText.setText(String.valueOf(patientRequest.getContact()));
             emailText.setText(patientRequest.getEmailID());
             statusText.setText(patientRequest.getStatus());
             
             labConfirmationText.setText(String.valueOf(patientRequest.isLabConfirmation()));
-            
-            
-             
              
             uidText.setEditable(false);
             nameText.setEditable(false);

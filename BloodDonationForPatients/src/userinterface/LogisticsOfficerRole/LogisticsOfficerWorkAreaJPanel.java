@@ -6,33 +6,24 @@
 package userinterface.LogisticsOfficerRole;
 
 import Business.DB4OUtil.DB4OUtil;
-import userinterface.SystemCoordinatorRole.*;
 import Business.EcoSystem;
-import userinterface.DoctorRole.*;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
 import Business.Organization.LogisticsOrganization;
-import Business.Organization.Organization;
-import Magic.Design.*;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Color;
-import java.awt.Dimension;
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.SwingUtilities;
-import static javax.swing.SwingUtilities.getWindowAncestor;
+import userinterface.CommonPanels.BloodRequestsListJPanel;
 
 /**
  *
  * @author balumullamuri
  */
-public class LegalOfficerWorkAreaJPanel extends javax.swing.JPanel {
+public class LogisticsOfficerWorkAreaJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form LegalOfficerWorkAreaJPanel
+     * Creates new form LogisticsOfficerWorkAreaJPanel
      */
     
     private UserAccount userAccount;
@@ -44,7 +35,7 @@ public class LegalOfficerWorkAreaJPanel extends javax.swing.JPanel {
     
     private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
     
-    public LegalOfficerWorkAreaJPanel(UserAccount account, LogisticsOrganization legalofficerorganization, Enterprise enterprise, EcoSystem business, Network network) {
+    public LogisticsOfficerWorkAreaJPanel(UserAccount account, LogisticsOrganization legalofficerorganization, Enterprise enterprise, EcoSystem business, Network network) {
         initComponents();
         this.system = system;
         this.userAccount = account;
@@ -84,7 +75,6 @@ public class LegalOfficerWorkAreaJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         Header = new javax.swing.JPanel();
-        BtnProfile = new javax.swing.JLabel();
         BtnManageRequests = new javax.swing.JLabel();
         userProcessContainer = new javax.swing.JPanel();
 
@@ -95,22 +85,10 @@ public class LegalOfficerWorkAreaJPanel extends javax.swing.JPanel {
         Header.setPreferredSize(new java.awt.Dimension(800, 50));
         Header.setLayout(new java.awt.GridLayout(1, 0));
 
-        BtnProfile.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        BtnProfile.setForeground(new java.awt.Color(255, 255, 255));
-        BtnProfile.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        BtnProfile.setText("Profile");
-        BtnProfile.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        BtnProfile.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BtnProfileMouseClicked(evt);
-            }
-        });
-        Header.add(BtnProfile);
-
         BtnManageRequests.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         BtnManageRequests.setForeground(new java.awt.Color(255, 255, 255));
         BtnManageRequests.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        BtnManageRequests.setText("Manage Requests");
+        BtnManageRequests.setText("Shipping Blood");
         BtnManageRequests.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BtnManageRequests.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -128,24 +106,16 @@ public class LegalOfficerWorkAreaJPanel extends javax.swing.JPanel {
 
     private void BtnManageRequestsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnManageRequestsMouseClicked
         // TODO add your handling code here:
-        ManageLegalOfficerRequestJPanel manageLegalOfficerRequest = new ManageLegalOfficerRequestJPanel(system, userAccount, legalofficerorganization, enterprise);
-        userProcessContainer.add("ManageLegalOfficerRequestJPanel",manageLegalOfficerRequest);
+        userProcessContainer.removeAll();
+        BloodRequestsListJPanel panel = new BloodRequestsListJPanel(system, userAccount, network, userProcessContainer);
+        userProcessContainer.add("BloodRequestsListJPanel", panel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_BtnManageRequestsMouseClicked
 
-    private void BtnProfileMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnProfileMouseClicked
-        // TODO add your handling code here:
-        ManageLegalOfficerProfile manageLegalOfficerProfile = new ManageLegalOfficerProfile(userAccount,legalofficerorganization,enterprise);
-        userProcessContainer.add("ManageLegalOfficerProfile",manageLegalOfficerProfile);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
-    }//GEN-LAST:event_BtnProfileMouseClicked
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BtnManageRequests;
-    private javax.swing.JLabel BtnProfile;
     private javax.swing.JPanel Header;
     private javax.swing.JPanel userProcessContainer;
     // End of variables declaration//GEN-END:variables

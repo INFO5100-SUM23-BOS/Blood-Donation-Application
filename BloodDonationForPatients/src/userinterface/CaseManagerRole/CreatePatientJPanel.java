@@ -287,13 +287,7 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         patient.setReceiverID(uidTextField.getText());
         patient.setName(nameTextField.getText());
         patient.setEmailID((emailTextField.getText()));
-        try {
-            patient.getHLA().updateBloodTypelist(HLATypesTextField.getText());
-        }
-        catch (Exception e) {
-            JOptionPane.showMessageDialog(null, new JLabel(  "<html><b>Patient's HLA Type can only be one of these HLA_A,HLA_B,HLA_C,HLA_DR,HLA_DBQ1</b></html>"));
-            return;
-        }
+        patient.setBloodType(system.getPersonBloodTypes().findBloodType(HLATypesTextField.getText()));
         patient.setEmergencyStatus(chkEmergency.isSelected());
         patient.setStatus("Centre Approved");
         

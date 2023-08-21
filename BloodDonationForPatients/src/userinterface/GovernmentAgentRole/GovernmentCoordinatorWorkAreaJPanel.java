@@ -11,29 +11,15 @@ package userinterface.GovernmentAgentRole;
  */
 
 import Business.DB4OUtil.DB4OUtil;
-import userinterface.SystemCoordinatorRole.*;
 import Business.EcoSystem;
-import userinterface.DoctorRole.*;
-import Magic.Design.*;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
 import Business.Organization.GovernmentOrganization;
-import Business.Organization.Organization;
-import Business.People.DonorDirectory;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Color;
-import java.awt.Dimension;
-import java.io.IOException;
-import java.security.GeneralSecurityException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.SwingUtilities;
-import static javax.swing.SwingUtilities.getWindowAncestor;
+import userinterface.CommonPanels.BloodRequestsListJPanel;
 
 
 public class GovernmentCoordinatorWorkAreaJPanel extends javax.swing.JPanel {
@@ -48,13 +34,16 @@ public class GovernmentCoordinatorWorkAreaJPanel extends javax.swing.JPanel {
     private Enterprise enterprise;
     private EcoSystem system;
     private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
+    private Network network;
+    
+    
     public GovernmentCoordinatorWorkAreaJPanel(UserAccount account, GovernmentOrganization govtorganization, Enterprise enterprise, EcoSystem business, Network network) {
         initComponents();
-        this.system = system;
         this.userAccount = account;
         this.govtorganization = govtorganization;
         this.enterprise = enterprise;
         this.system = business;
+        this.network = network;
     }
 
     /**
@@ -87,9 +76,7 @@ public class GovernmentCoordinatorWorkAreaJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         Header = new javax.swing.JPanel();
-        BtnSelfProfile = new javax.swing.JLabel();
         BtnDonorStatus = new javax.swing.JLabel();
-        BtnDonorRequests = new javax.swing.JLabel();
         userProcessContainer = new javax.swing.JPanel();
 
         setPreferredSize(new java.awt.Dimension(800, 500));
@@ -99,22 +86,10 @@ public class GovernmentCoordinatorWorkAreaJPanel extends javax.swing.JPanel {
         Header.setPreferredSize(new java.awt.Dimension(800, 50));
         Header.setLayout(new java.awt.GridLayout(1, 0));
 
-        BtnSelfProfile.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        BtnSelfProfile.setForeground(new java.awt.Color(255, 255, 255));
-        BtnSelfProfile.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        BtnSelfProfile.setText("Edit Self Profile");
-        BtnSelfProfile.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        BtnSelfProfile.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BtnSelfProfileMouseClicked(evt);
-            }
-        });
-        Header.add(BtnSelfProfile);
-
         BtnDonorStatus.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         BtnDonorStatus.setForeground(new java.awt.Color(255, 255, 255));
         BtnDonorStatus.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        BtnDonorStatus.setText("Check Donor Status");
+        BtnDonorStatus.setText("Blood Request Forms");
         BtnDonorStatus.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BtnDonorStatus.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -123,18 +98,6 @@ public class GovernmentCoordinatorWorkAreaJPanel extends javax.swing.JPanel {
         });
         Header.add(BtnDonorStatus);
 
-        BtnDonorRequests.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        BtnDonorRequests.setForeground(new java.awt.Color(255, 255, 255));
-        BtnDonorRequests.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        BtnDonorRequests.setText("Volunteer Donor Requests");
-        BtnDonorRequests.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        BtnDonorRequests.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BtnDonorRequestsMouseClicked(evt);
-            }
-        });
-        Header.add(BtnDonorRequests);
-
         add(Header, java.awt.BorderLayout.PAGE_START);
 
         userProcessContainer.setBackground(new java.awt.Color(255, 153, 153));
@@ -142,37 +105,19 @@ public class GovernmentCoordinatorWorkAreaJPanel extends javax.swing.JPanel {
         add(userProcessContainer, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BtnSelfProfileMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnSelfProfileMouseClicked
-        // TODO add your handling code here:
-        ManageGovernmentCoordinatorProfile manageGovtCoordinatorProfile = new ManageGovernmentCoordinatorProfile(userAccount,govtorganization,enterprise);
-        userProcessContainer.add("ManageGovernmentCoordinatorProfile",manageGovtCoordinatorProfile);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
-    }//GEN-LAST:event_BtnSelfProfileMouseClicked
-
     private void BtnDonorStatusMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnDonorStatusMouseClicked
         // TODO add your handling code here:
         
-        DonorStatusJPanel Profile = new DonorStatusJPanel(system);
-        userProcessContainer.add("DonorStatusJPanel", Profile);
+        userProcessContainer.removeAll();
+        BloodRequestsListJPanel panel = new BloodRequestsListJPanel(system, userAccount, network, userProcessContainer);
+        userProcessContainer.add("BloodRequestsListJPanel", panel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_BtnDonorStatusMouseClicked
 
-    private void BtnDonorRequestsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnDonorRequestsMouseClicked
-        // TODO add your handling code here:
-        
-        VolunteerDonorRequestJPanel Profile = new VolunteerDonorRequestJPanel(system);
-        userProcessContainer.add("VolunteerDonorRequestJPanel", Profile);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
-    }//GEN-LAST:event_BtnDonorRequestsMouseClicked
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel BtnDonorRequests;
     private javax.swing.JLabel BtnDonorStatus;
-    private javax.swing.JLabel BtnSelfProfile;
     private javax.swing.JPanel Header;
     private javax.swing.JPanel userProcessContainer;
     // End of variables declaration//GEN-END:variables

@@ -2,8 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Business.People;
+package Business.Requests;
 
+import Business.BloodTypes.BloodInventory;
+import Business.BloodTypes.BloodTransaction;
+import Business.BloodTypes.PersonBloodTypes;
+import Business.EcoSystem;
 import java.util.ArrayList;
 
 /**
@@ -11,13 +15,14 @@ import java.util.ArrayList;
  * @author balumullamuri
  */
 public class DonorRequestDirectory {
-    
-     private ArrayList<DonorRequest> donorRequestList;
+    EcoSystem system;
+    private ArrayList<DonorRequest> donorRequestList;
 
     public ArrayList<DonorRequest> getDonorRequestList() {return donorRequestList;}
     public void setDonorRequestList(ArrayList<DonorRequest> donorRequestList) {this.donorRequestList = donorRequestList;}
     
-    public DonorRequestDirectory(){
+    public DonorRequestDirectory(EcoSystem system){
+        this.system = system;
         donorRequestList = new ArrayList<DonorRequest>();
     }
     
@@ -33,6 +38,15 @@ public class DonorRequestDirectory {
         donorRequestList.remove(donorReq);
         //return donorRequest;
         return null;
+    }
+    
+    public EcoSystem getEcoSystem(){
+        return system;
+    }
+    
+    public void registerDonorApplicationForInventory(PersonBloodTypes.BloodType bloodType, DonorRequest request) {
+        BloodInventory inventory = system.getInventory();
+        inventory.addTransaction(bloodType, 1, BloodTransaction.TransactionType.In, request);
     }
     
 }

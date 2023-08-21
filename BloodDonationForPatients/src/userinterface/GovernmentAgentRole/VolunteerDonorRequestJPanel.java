@@ -7,9 +7,9 @@ package userinterface.GovernmentAgentRole;
 
 import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
-import Business.BloodTypes.PersonBloodType;
+import Business.BloodTypes.PersonBloodTypes;
 import Business.People.Donor;
-import Business.People.DonorRequest;
+import Business.Requests.DonorRequest;
 import Magic.Design.*;
 import Magic.Design.MyTableFormat;
 import Magic.Design.MyJLabel;
@@ -444,7 +444,7 @@ public class VolunteerDonorRequestJPanel extends javax.swing.JPanel {
             dobDateField.setDate(donorRequest.getDob());
             ageText.setText(String.valueOf(donorRequest.getAge()));
             genderText.setText(donorRequest.getGender());
-            hlaTypesTextField.setText(String.join(", ",donorRequest.getHLA().getBloodTypeValuesList()));
+            hlaTypesTextField.setText(donorRequest.getBloodType().toString());
             streetText.setText(donorRequest.getStreetAddress());
             cityText.setText(donorRequest.getCity());
             stateText.setText(donorRequest.getState());
@@ -551,18 +551,7 @@ public class VolunteerDonorRequestJPanel extends javax.swing.JPanel {
                
         donor.setAge(Integer.parseInt(ageText.getText())); // Age
         donor.setGender(genderText.getText()); // gender
-        try {
-            donor.getHla().updateBloodTypelist(hlaTypesTextField.getText());
-        }
-        catch (NullPointerException e) {
-            if(donor.getHla() == null)
-                donor.setHla(new PersonBloodType());
-            donor.getHla().updateBloodTypelist(hlaTypesTextField.getText());
-        }
-        catch(Exception e) {
-            JOptionPane.showMessageDialog(null, new JLabel(  "<html><b>Patient's HLA Type can only be one of these HLA_A,HLA_B,HLA_C,HLA_DR,HLA_DBQ1</b></html>"));
-            return;
-        }
+        donor.setHLA(system.getPersonBloodTypes().findBloodType(hlaTypesTextField.getText()));
         donor.setStreetAddress(streetText.getText()); // streetAddress
         donor.setCity(cityText.getText()); // city
         donor.setState(stateText.getText()); // state

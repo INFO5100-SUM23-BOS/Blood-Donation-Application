@@ -5,17 +5,13 @@
  */
 package userinterface.CaseManagerRole;
 
-import Business.DB4OUtil.DB4OUtil;
+import Business.BloodTypes.BloodInventory;
+import Business.BloodTypes.BloodTransaction;
+import Business.BloodTypes.PersonBloodTypes.BloodType;
 import Business.EcoSystem;
-import Business.Network.Network;
-import Business.People.Donor;
-import Magic.Design.*;
-import Business.People.Patient;
-import Magic.Design.MyJLabel;
-import Business.People.PatientRequest;
-import Business.UserAccount.UserAccount;
-import Magic.Design.MyJButton;
-import Magic.Design.MyTableFormat;
+import Business.Requests.DonorRequest;
+import java.awt.CardLayout;
+import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -25,11 +21,13 @@ import javax.swing.table.DefaultTableModel;
 public class ManageInventoryJPanel extends javax.swing.JPanel {
 
     private EcoSystem system;
-      private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
+    private JPanel userProcessContainer;
 
-    ManageInventoryJPanel(EcoSystem system, UserAccount userAccount, Network network) {
+    ManageInventoryJPanel(EcoSystem system, JPanel userProcessContainer) {
         initComponents();
         this.system = system;
+        this.userProcessContainer = userProcessContainer;
+        populateInventoryBalances();
         
     }
 
@@ -37,7 +35,11 @@ public class ManageInventoryJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanel3 = new javax.swing.JPanel();
-        jLabel25 = new javax.swing.JLabel();
+        lblPageTitle = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblBloodAvailability = new javax.swing.JTable();
+        lblTableTitle = new javax.swing.JLabel();
+        btnPrepareOrder1 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 153, 153));
         setMinimumSize(new java.awt.Dimension(1100, 720));
@@ -48,18 +50,92 @@ public class ManageInventoryJPanel extends javax.swing.JPanel {
         jPanel3.setPreferredSize(new java.awt.Dimension(926, 70));
         jPanel3.setLayout(new java.awt.GridLayout(1, 0));
 
-        jLabel25.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel25.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel25.setText("                                                                         Manage Inventory");
-        jPanel3.add(jLabel25);
+        lblPageTitle.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        lblPageTitle.setForeground(new java.awt.Color(255, 255, 255));
+        lblPageTitle.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblPageTitle.setText("                                                                         Manage Inventory");
+        jPanel3.add(lblPageTitle);
 
         add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1800, -1));
+
+        tblBloodAvailability.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        tblBloodAvailability.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Blood Types", "Count", "Last transaction time"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Integer.class, java.lang.Object.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, true
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tblBloodAvailability.setRowHeight(30);
+        jScrollPane1.setViewportView(tblBloodAvailability);
+
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 1100, 170));
+
+        lblTableTitle.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        lblTableTitle.setText("Current Inventory Balance");
+        add(lblTableTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, 330, 30));
+
+        btnPrepareOrder1.setBackground(new java.awt.Color(204, 204, 204));
+        btnPrepareOrder1.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        btnPrepareOrder1.setText("<< Back");
+        btnPrepareOrder1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnPrepareOrder1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPrepareOrder1ActionPerformed(evt);
+            }
+        });
+        add(btnPrepareOrder1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 670, 170, 40));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnPrepareOrder1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrepareOrder1ActionPerformed
+        // TODO add your handling code here:
+        userProcessContainer.remove(this);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_btnPrepareOrder1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel25;
+    private javax.swing.JButton btnPrepareOrder1;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblPageTitle;
+    private javax.swing.JLabel lblTableTitle;
+    private javax.swing.JTable tblBloodAvailability;
     // End of variables declaration//GEN-END:variables
+
+    private void populateInventoryBalances() {
+        DefaultTableModel dtm = (DefaultTableModel) tblBloodAvailability.getModel();
+
+        dtm.setRowCount(0);
+
+        BloodInventory inventory = system.getInventory();
+        
+        for (BloodType bt : inventory.getInventoryBalance().keySet()) {
+            Object row[] = new Object[3];
+            row[0] = bt;
+            row[1] = inventory.getBloodTypeBalance(bt);
+            BloodTransaction lastTrans = inventory.findLastTransactions(bt);
+            row[2] = (lastTrans != null) ? lastTrans.getTimestamp() : "No transaction recorded.";
+
+            dtm.addRow(row);
+        }
+        
+    }
 }

@@ -24,7 +24,7 @@ public class BloodCount {
         bloodTypeComboCounts = new HashMap<>();
     }
 
-    public void bloodTypeComboCountAdd(PersonBloodType bloodType) {
+    public void bloodTypeComboCountAdd(PersonBloodTypes bloodType) {
         ArrayList<String> bloodTypeValues = bloodType.getBloodTypeValuesList();
         Collections.sort(bloodTypeValues);
         String bloodTypeCombo = String.join(", ", bloodTypeValues);
@@ -32,7 +32,7 @@ public class BloodCount {
         bloodTypeComboCounts.put(bloodTypeCombo, bloodTypeComboCounts.get(bloodTypeCombo) + 1);
     }
 
-    public void bloodTypeComboCountAdd(PersonBloodType bloodType, Integer i) {
+    public void bloodTypeComboCountAdd(PersonBloodTypes bloodType, Integer i) {
         ArrayList<String> bloodTypeValues = bloodType.getBloodTypeValuesList();
         Collections.sort(bloodTypeValues);
         String bloodTypeCombo = String.join(", ", bloodTypeValues);
@@ -40,7 +40,7 @@ public class BloodCount {
         bloodTypeComboCounts.put(bloodTypeCombo, bloodTypeComboCounts.get(bloodTypeCombo) + i);
     }
 
-    public void bloodTypeComboCountSubtract(PersonBloodType bloodType) {
+    public void bloodTypeComboCountSubtract(PersonBloodTypes bloodType) {
         ArrayList<String> bloodTypeValues = bloodType.getBloodTypeValuesList();
         Collections.sort(bloodTypeValues);
         String bloodTypeCombo = String.join(", ", bloodTypeValues);

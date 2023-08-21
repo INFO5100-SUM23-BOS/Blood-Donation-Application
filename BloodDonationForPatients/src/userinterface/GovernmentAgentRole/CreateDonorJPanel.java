@@ -5,6 +5,7 @@
  */
 package userinterface.GovernmentAgentRole;
 
+import Business.BloodTypes.PersonBloodTypes;
 import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
 import Business.People.Donor;
@@ -330,13 +331,7 @@ public class CreateDonorJPanel extends javax.swing.JPanel {
         
         System.out.println(contactTextField.getText());  
         donor.setContact((int) Double.parseDouble(contactTextField.getText())); 
-        try {
-            donor.getHla().updateBloodTypelist(hlaTypeTextField.getText());
-        }
-        catch (Exception e) {
-            JOptionPane.showMessageDialog(null, new JLabel(  "<html><b>Donor's HLA Type can only be one of these HLA_A,HLA_B,HLA_C,HLA_DR,HLA_DBQ1</b></html>"));
-            return;
-        }
+        donor.setHLA(system.getPersonBloodTypes().findBloodType(hlaTypeTextField.getText()));
         donor.setStatus("Government Approved");
         system.getDonorDirectory().addDonor(donor);
 

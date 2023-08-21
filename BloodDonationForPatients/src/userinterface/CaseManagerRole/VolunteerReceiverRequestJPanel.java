@@ -12,7 +12,7 @@ import Business.Network.Network;
 import Business.Organization.LogisticsOrganization;
 import Business.Organization.Organization;
 import Business.People.Patient;
-import Business.People.PatientRequest;
+import Business.Requests.PatientRequest;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.System_Coordinator_Test_WorkRequest;
 import Business.WorkQueue.WorkRequest;
@@ -257,8 +257,8 @@ public class VolunteerReceiverRequestJPanel extends javax.swing.JPanel {
         add(zipText, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 630, 180, -1));
 
         jLabel19.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabel19.setText("\"Confirmed by a medical practitioner: Do you meet the minimum hematocrit level for blood donation?\"     ");
-        add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 550, -1, -1));
+        jLabel19.setText("Confirmed by a medical practitioner: Do you meet the minimum hematocrit level for blood donation?    ");
+        add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 550, 990, -1));
 
         jPanel3.setBackground(new java.awt.Color(102, 102, 102));
         jPanel3.setPreferredSize(new java.awt.Dimension(926, 70));
@@ -289,7 +289,7 @@ public class VolunteerReceiverRequestJPanel extends javax.swing.JPanel {
         add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1580, -1));
 
         labConfirmationText.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        add(labConfirmationText, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 580, 210, -1));
+        add(labConfirmationText, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 610, 210, -1));
 
         requestTable.setBackground(new java.awt.Color(0, 0, 0));
         requestTable.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
@@ -371,10 +371,10 @@ public class VolunteerReceiverRequestJPanel extends javax.swing.JPanel {
         
         try {
 
-            patient.getHLA().updateBloodTypelist(hlaText.getText());
+            patient.setBloodType(system.getPersonBloodTypes().findBloodType(hlaText.getText()));
         }
         catch (Exception e) {
-                            JOptionPane.showMessageDialog(null, new JLabel("<html><b>Please check the patients blood group. It Should be AN,AP,BP,BN,ABP,ABN,OP,ON where N-Negative, P-Positive.</b></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, new JLabel("<html><b>Please check the patients blood group. It Should be AN,AP,BP,BN,ABP,ABN,OP,ON where N-Negative, P-Positive.</b></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
 
             return;
         }
@@ -600,7 +600,7 @@ public class VolunteerReceiverRequestJPanel extends javax.swing.JPanel {
             dobDateField.setDate(patientRequest.getDob());
             ageText.setText(String.valueOf(patientRequest.getAge()));
             genderText.setText(patientRequest.getGender());
-            hlaText.setText(String.join(", ", (Iterable<String>) patientRequest.getHla().getBloodTypeValuesList()));
+            hlaText.setText(patientRequest.getBloodType().toString());
             streetText.setText(patientRequest.getStreetAddress());
             cityText.setText(patientRequest.getCity());
             stateText.setText(patientRequest.getState());
@@ -610,9 +610,6 @@ public class VolunteerReceiverRequestJPanel extends javax.swing.JPanel {
             statusText.setText(patientRequest.getStatus());
             
             labConfirmationText.setText(String.valueOf(patientRequest.isLabConfirmation()));
-            
-            
-            
             
              if(patientRequest.getdP() !=null){
             //Working line

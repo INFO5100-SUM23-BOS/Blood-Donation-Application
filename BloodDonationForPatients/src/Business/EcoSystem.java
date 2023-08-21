@@ -5,16 +5,20 @@
  */
 package Business;
 
+import Business.BloodTypes.BloodInventory;
+import Business.BloodTypes.PersonBloodTypes;
 import Business.Employee.Employee;
 import Business.Network.Network;
 import Business.Organization.Organization;
 import Business.People.DonorDirectory;
-import Business.People.DonorRequestDirectory;
+import Business.Requests.DonorRequestDirectory;
 import Business.People.PatientDirectory;
-import Business.People.PatientRequestDirectory;
+import Business.Requests.PatientRequestDirectory;
 
 import Business.Role.Role;
 import Business.Role.SystemAdminRole;
+import Business.Statuses.BloodRequestStatuses;
+import Business.Statuses.DonorApplicationStatuses;
 import Business.UserAccount.UserAccount;
 import Business.UserAccount.UserAccountDirectory;
 import java.util.ArrayList;
@@ -27,22 +31,30 @@ public class EcoSystem extends Organization {
 
     private static EcoSystem business;
 
-    /*
-private UserAccountDirectory userAccountDirectory;
-
-    public UserAccountDirectory getUserAccountDirectory() {
-        return userAccountDirectory;
-    }
-
-    public void setUserAccountDirectory(UserAccountDirectory userAccountDirectory) {
-        this.userAccountDirectory = userAccountDirectory;
-    }
-     */
     private DonorDirectory donorDirectory;
     private PatientDirectory patientDirectory;
     private DonorRequestDirectory donorRequestDirectory;
     private PatientRequestDirectory patientRequestDirectory;
     private UserAccountDirectory userAccountDirectory;
+    private PersonBloodTypes personBloodTypes;
+    private BloodRequestStatuses bloodRequestStatus;
+    private DonorApplicationStatuses donorApplicationStatus;
+    private BloodInventory inventory;
+    
+
+    private EcoSystem() {
+        super("Worldcord", null);
+        networkList = new ArrayList<Network>();
+        this.donorDirectory = new DonorDirectory();
+        this.patientDirectory = new PatientDirectory();
+        this.donorRequestDirectory = new DonorRequestDirectory(this);
+        this.patientRequestDirectory = new PatientRequestDirectory();
+        this.userAccountDirectory = new UserAccountDirectory();
+        this.bloodRequestStatus = new BloodRequestStatuses();
+        this.donorApplicationStatus = new DonorApplicationStatuses();
+        this.personBloodTypes = new PersonBloodTypes();
+        this.inventory = new BloodInventory(this);
+    }
 
     public UserAccountDirectory getUserAccountDirectory() {
         if (this.userAccountDirectory == null) {
@@ -60,7 +72,7 @@ private UserAccountDirectory userAccountDirectory;
 
     public DonorRequestDirectory getDonorRequestDirectory() {
         if (this.donorRequestDirectory == null) {
-            this.donorRequestDirectory = new DonorRequestDirectory();
+            this.donorRequestDirectory = new DonorRequestDirectory(this);
         }
         return donorRequestDirectory;
     }
@@ -124,14 +136,12 @@ private UserAccountDirectory userAccountDirectory;
         return roleList;
     }
 
-    private EcoSystem() {
-        super("New Organization", null);
-        networkList = new ArrayList<Network>();
-        this.donorDirectory = new DonorDirectory();
-        this.patientDirectory = new PatientDirectory();
-        this.donorRequestDirectory = new DonorRequestDirectory();
-        this.patientRequestDirectory = new PatientRequestDirectory();
-        this.userAccountDirectory = new UserAccountDirectory();
+    public void setBloodRequestStatus(BloodRequestStatuses bloodRequestStatus) {
+        this.bloodRequestStatus = bloodRequestStatus;
+    }
+
+    public BloodRequestStatuses getBloodRequestStatus() {
+        return bloodRequestStatus;
     }
 
     public ArrayList<Network> getNetworkList() {
@@ -140,6 +150,10 @@ private UserAccountDirectory userAccountDirectory;
 
     public void setNetworkList(ArrayList<Network> networkList) {
         this.networkList = networkList;
+    }
+    
+    public PersonBloodTypes getPersonBloodTypes(){
+        return personBloodTypes;
     }
 
     public boolean checkIfUserIsUnique(String userName) {
@@ -150,5 +164,13 @@ private UserAccountDirectory userAccountDirectory;
 
         }
         return true;
+    }
+    
+    public DonorApplicationStatuses getDonorApplicationStatus(){
+        return donorApplicationStatus;
+    }
+    
+    public BloodInventory getInventory(){
+        return inventory;
     }
 }

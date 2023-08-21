@@ -388,11 +388,11 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Arial" size="20" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="&quot;Confirmed by a medical practitioner: Do you meet the minimum hematocrit level for blood donation?&quot;     "/>
+        <Property name="text" type="java.lang.String" value="Confirmed by a medical practitioner: Do you meet the minimum hematocrit level for blood donation?    "/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="480" y="550" width="-1" height="-1"/>
+          <AbsoluteConstraints x="480" y="550" width="990" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -455,7 +455,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="610" y="580" width="210" height="-1"/>
+          <AbsoluteConstraints x="670" y="610" width="210" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>

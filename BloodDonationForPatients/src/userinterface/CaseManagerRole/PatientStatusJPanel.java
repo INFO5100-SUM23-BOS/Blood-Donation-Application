@@ -11,7 +11,7 @@ import Business.People.Donor;
 import Magic.Design.*;
 import Business.People.Patient;
 import Magic.Design.MyJLabel;
-import Business.People.PatientRequest;
+import Business.Requests.PatientRequest;
 import Magic.Design.MyJButton;
 import Magic.Design.MyTableFormat;
 import javax.swing.table.DefaultTableModel;
